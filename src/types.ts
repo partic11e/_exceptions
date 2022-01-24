@@ -1,5 +1,5 @@
 /**
- * Contains the shared types for Exceptions module in the particle11 core
+ * Contains the shared types for exception module in the particle11 core
  * library.
  *
  * @copyright 2021-2022 IntegerEleven. All rights reserved. MIT license.
