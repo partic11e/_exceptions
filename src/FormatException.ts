@@ -1,6 +1,14 @@
-import { Exception } from "./Exception.ts";
+/**
+ * Contains the class and types for creating a {@link FormatException}.
+ *
+ * @copyright 2021-2022 IntegerEleven. All rights reserved. MIT license.
+ */
+
 import { TExceptionInit } from "./types.ts";
+
 import type { FormatterType } from "../deps.ts";
+
+import { Exception } from "./Exception.ts";
 
 /**
  * The default {@link FormatException} message.
@@ -35,14 +43,14 @@ const msgFromInit = (init: FormatExceptionInit): string => {
  */
 export type FormatExceptionInit = TExceptionInit<{
   /**
-   * The type of formatter.
-   */
-  formatter?: FormatterType;
-
-  /**
    * The format expression that is invalid.
    */
   formatExpression?: string;
+
+  /**
+   * The type of formatter.
+   */
+  formatter?: FormatterType;
 }>;
 
 /**
@@ -52,7 +60,10 @@ export type FormatExceptionInit = TExceptionInit<{
 export class FormatException<
   T extends FormatExceptionInit = FormatExceptionInit,
 > extends Exception<T> {
-  //#region Constructors
+  /**
+   * The exception code for the {@link FormatException} class.
+   */
+  public readonly code: number = 17;
 
   /**
    * Creates a new {@link FormatException} with the default message,
@@ -76,13 +87,10 @@ export class FormatException<
    * @param init The {@link FormatExceptionInit} properties.
    */
   constructor(message: string, init?: T);
-  //  implementation
   constructor(msgOrInit: string | T = DEFAULT_MSG, maybeInit?: T) {
-    //  (message: string, init?: T)
     let message: string = msgOrInit as string;
     let init: T | undefined = maybeInit;
 
-    //  (init: T)
     if (typeof msgOrInit !== "string") {
       init = msgOrInit;
       message = msgFromInit(init);
@@ -90,14 +98,4 @@ export class FormatException<
 
     super(message, init);
   }
-
-  //#endregion
-  //#region Public properties
-
-  /**
-   * The exception code for the {@link FormatException} class.
-   */
-  public readonly code: number = 17;
-
-  //#endregion
 }

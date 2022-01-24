@@ -1,5 +1,12 @@
-import { Exception, ExceptionInit } from "./Exception.ts";
+/**
+ * Contains the class and types for creating an {@link AbortedException}.
+ *
+ * @copyright 2021-2022 IntegerEleven. All rights reserved. MIT license.
+ */
+
 import type { OperationType } from "../deps.ts";
+
+import { Exception, ExceptionInit } from "./Exception.ts";
 
 /**
  * The default {@link AbortedException} message.
@@ -54,7 +61,10 @@ export interface AbortedExceptionInit extends ExceptionInit {
 export class AbortedException<
   T extends AbortedExceptionInit = AbortedExceptionInit,
 > extends Exception<T> {
-  //#region Constructors
+  /**
+   * The exception code for the {@link AbortedException} class.
+   */
+  public readonly code: number = 9;
 
   /**
    * Creates a new {@link AbortedException} with the default message,
@@ -78,13 +88,10 @@ export class AbortedException<
    * @param init The {@link AbortedExceptionInit} properties.
    */
   constructor(message: string, init?: T);
-  //  implementation
   constructor(msgOrInit: string | T = DEFAULT_MSG, maybeInit?: T) {
-    //  (message: string, init?: T)
     let message: string = msgOrInit as string;
     let init: T | undefined = maybeInit;
 
-    //  (init: T)
     if (typeof msgOrInit !== "string") {
       init = msgOrInit;
       message = msgFromInit(init);
@@ -92,14 +99,4 @@ export class AbortedException<
 
     super(message, init);
   }
-
-  //#endregion
-  //#region Public properties
-
-  /**
-   * The exception code for the {@link AbortedException} class.
-   */
-  public readonly code: number = 9;
-
-  //#endregion
 }

@@ -1,3 +1,9 @@
+/**
+ * Contains the class and types for creating an {@link ArgumentIndexException}.
+ *
+ * @copyright 2021-2022 IntegerEleven. All rights reserved. MIT license.
+ */
+
 import { Exception, ExceptionInit } from "./Exception.ts";
 import { ValueException } from "./ValueException.ts";
 
@@ -6,6 +12,13 @@ import { ValueException } from "./ValueException.ts";
  */
 const DEFAULT_MSG = "An index is outside the bounds of an array argument.";
 
+/**
+ * Validates that the the upper bound is greater than the lower bound of an
+ * index range.
+ *
+ * @param lower The lower bound of the index range.
+ * @param upper The lower bound of the index range
+ */
 const validateBoundaries = (lower: number, upper: number): void => {
   if (upper <= lower) {
     throw new ValueException({
@@ -118,7 +131,10 @@ export interface ArgumentIndexExceptionInit extends ExceptionInit {
 export class ArgumentIndexException<
   T extends ArgumentIndexExceptionInit = ArgumentIndexExceptionInit,
 > extends Exception<T> {
-  //#region Constructors
+  /**
+   * The exception code for the {@link ArgumentIndexException} class.
+   */
+  public readonly code: number = 12;
 
   /**
    * Creates a new {@link ArgumentIndexException} with the default message,
@@ -143,13 +159,10 @@ export class ArgumentIndexException<
    * @param init The {@link ArgumentIndexExceptionInit} properties.
    */
   constructor(message: string, init?: T);
-  //  implementation
   constructor(msgOrInit: string | T = DEFAULT_MSG, maybeInit?: T) {
-    //  (message: string, init?: T)
     let message: string = msgOrInit as string;
     let init: T | undefined = maybeInit;
 
-    //  (init: T)
     if (typeof msgOrInit !== "string") {
       init = msgOrInit;
       message = msgFromInit(init);
@@ -157,14 +170,4 @@ export class ArgumentIndexException<
 
     super(message, init);
   }
-
-  //#endregion
-  //#region Public properties
-
-  /**
-   * The exception code for the {@link ArgumentIndexException} class.
-   */
-  public readonly code: number = 12;
-
-  //#endregion
 }

@@ -1,5 +1,12 @@
-import { Exception, ExceptionInit } from "./Exception.ts";
+/**
+ * Contains the class and types for creating a {@link DecoratorException}.
+ *
+ * @copyright 2021-2022 IntegerEleven. All rights reserved. MIT license.
+ */
+
 import type { DecoratorType } from "../deps.ts";
+
+import { Exception, ExceptionInit } from "./Exception.ts";
 
 /**
  * The default {@link DecoratorException} message.
@@ -54,7 +61,10 @@ export interface DecoratorExceptionInit extends ExceptionInit {
 export class DecoratorException<
   T extends DecoratorExceptionInit = DecoratorExceptionInit,
 > extends Exception<T> {
-  //#region Constructors
+  /**
+   * The exception code for the {@link DecoratorException} class.
+   */
+  public readonly code: number = 10;
 
   /**
    * Creates a new {@link DecoratorException} with the default message,
@@ -78,13 +88,10 @@ export class DecoratorException<
    * @param init The {@link DecoratorExceptionInit} properties.
    */
   constructor(message: string, init?: T);
-  //  implementation
   constructor(msgOrInit: string | T = DEFAULT_MSG, maybeInit?: T) {
-    //  (message: string, init?: T)
     let message: string = msgOrInit as string;
     let init: T | undefined = maybeInit;
 
-    //  (init: T)
     if (typeof msgOrInit !== "string") {
       init = msgOrInit;
       message = msgFromInit(init);
@@ -92,14 +99,4 @@ export class DecoratorException<
 
     super(message, init);
   }
-
-  //#endregion
-  //#region Public properties
-
-  /**
-   * The exception code for the {@link DecoratorException} class.
-   */
-  public readonly code: number = 10;
-
-  //#endregion
 }

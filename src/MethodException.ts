@@ -1,3 +1,9 @@
+/**
+ * Contains the class and types for creating a {@link MethodException}.
+ *
+ * @copyright 2021-2022 IntegerEleven. All rights reserved. MIT license.
+ */
+
 import { Exception, ExceptionInit } from "./Exception.ts";
 
 /**
@@ -43,11 +49,6 @@ const msgFromInit = (init: MethodExceptionInit): string => {
  */
 export interface MethodExceptionInit extends ExceptionInit {
   /**
-   * The name of the symbol representing the object.
-   */
-  valueName?: string;
-
-  /**
    * The method name that is not a valid method.
    */
   methodName?: string;
@@ -56,6 +57,11 @@ export interface MethodExceptionInit extends ExceptionInit {
    * The list of valid method names.
    */
   validMethods?: string[];
+
+  /**
+   * The name of the symbol representing the object.
+   */
+  valueName?: string;
 }
 
 /**
@@ -65,7 +71,10 @@ export interface MethodExceptionInit extends ExceptionInit {
 export class MethodException<
   T extends MethodExceptionInit = MethodExceptionInit,
 > extends Exception<T> {
-  //#region Constructors
+  /**
+   * The exception code for the {@link MethodException} class.
+   */
+  public readonly code: number = 8;
 
   /**
    * Creates a new {@link MethodException} with the default message,
@@ -89,13 +98,10 @@ export class MethodException<
    * @param init The {@link MethodExceptionInit} properties.
    */
   constructor(message: string, init?: T);
-  //  implementation
   constructor(msgOrInit: string | T = DEFAULT_MSG, maybeInit?: T) {
-    //  (message: string, init?: T)
     let message: string = msgOrInit as string;
     let init: T | undefined = maybeInit;
 
-    //  (init: T)
     if (typeof msgOrInit !== "string") {
       init = msgOrInit;
       message = msgFromInit(init);
@@ -103,14 +109,4 @@ export class MethodException<
 
     super(message, init);
   }
-
-  //#endregion
-  //#region Public properties
-
-  /**
-   * The exception code for the {@link MethodException} class.
-   */
-  public readonly code: number = 8;
-
-  //#endregion
 }

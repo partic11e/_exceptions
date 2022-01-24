@@ -1,13 +1,14 @@
 /**
+ * Tests the features of the {@link ArgumentIndexException}.
+ *
  * The majority of the functionality for Exception is tested in the Exception
  * tests. This test only test feature differences caused by the the differing
  * code, messaging, and `ExceptionInit` properties.
+ *
+ * @copyright 2021-2022 IntegerEleven. All rights reserved. MIT license.
  */
+
 import { assertEquals, assertThrows } from "../dev_deps.ts";
-import {
-  ExceptionSerializationData as esd,
-  I11N_EXC_KB,
-} from "../src/_constants.ts";
 
 import {
   ArgumentIndexException,
@@ -15,7 +16,10 @@ import {
   ValueException,
 } from "../mod.ts";
 
-//#region Test Data
+import {
+  ExceptionSerializationData as esd,
+  P11_EXC_KB,
+} from "../src/_constants.ts";
 
 const exCode = 12;
 const exName = "ArgumentIndexException";
@@ -24,14 +28,11 @@ const index = 2;
 const lowerBound = 1;
 const upperBound = 4;
 
-//#endregion
-//#region Test constructors
-
 Deno.test("ArgumentIndexException()", () => {
   const exMsg = "An index is outside the bounds of an array argument.";
   const ex = new ArgumentIndexException();
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }`;
 
@@ -50,7 +51,7 @@ Deno.test("ArgumentIndexException({argumentName})", () => {
   const dataEncoded = encodeURIComponent(JSON.stringify(data));
   const ex = new ArgumentIndexException(data);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }&${esd.data}=${dataEncoded}`;
 
@@ -69,7 +70,7 @@ Deno.test("ArgumentIndexException({index})", () => {
   const dataEncoded = encodeURIComponent(JSON.stringify(data));
   const ex = new ArgumentIndexException(data);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }&${esd.data}=${dataEncoded}`;
 
@@ -88,7 +89,7 @@ Deno.test("ArgumentIndexException({lowerBound})", () => {
   const dataEncoded = encodeURIComponent(JSON.stringify(data));
   const ex = new ArgumentIndexException(data);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }&${esd.data}=${dataEncoded}`;
 
@@ -107,7 +108,7 @@ Deno.test("ArgumentIndexException({upperBound})", () => {
   const dataEncoded = encodeURIComponent(JSON.stringify(data));
   const ex = new ArgumentIndexException(data);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }&${esd.data}=${dataEncoded}`;
 
@@ -126,7 +127,7 @@ Deno.test("ArgumentIndexException({valueName, index})", () => {
   const dataEncoded = encodeURIComponent(JSON.stringify(data));
   const ex = new ArgumentIndexException(data);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }&${esd.data}=${dataEncoded}`;
 
@@ -145,7 +146,7 @@ Deno.test("ArgumentIndexException({valueName, lowerBound})", () => {
   const dataEncoded = encodeURIComponent(JSON.stringify(data));
   const ex = new ArgumentIndexException(data);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }&${esd.data}=${dataEncoded}`;
 
@@ -164,7 +165,7 @@ Deno.test("ArgumentIndexException({argumentName, upperBound})", () => {
   const dataEncoded = encodeURIComponent(JSON.stringify(data));
   const ex = new ArgumentIndexException(data);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }&${esd.data}=${dataEncoded}`;
 
@@ -183,7 +184,7 @@ Deno.test("ArgumentIndexException({index, lowerBound})", () => {
   const dataEncoded = encodeURIComponent(JSON.stringify(data));
   const ex = new ArgumentIndexException(data);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }&${esd.data}=${dataEncoded}`;
 
@@ -202,7 +203,7 @@ Deno.test("ArgumentIndexException({index, upperBound})", () => {
   const dataEncoded = encodeURIComponent(JSON.stringify(data));
   const ex = new ArgumentIndexException(data);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }&${esd.data}=${dataEncoded}`;
 
@@ -221,7 +222,7 @@ Deno.test("ArgumentIndexException({lowerBound, upperBound})", () => {
   const dataEncoded = encodeURIComponent(JSON.stringify(data));
   const ex = new ArgumentIndexException(data);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }&${esd.data}=${dataEncoded}`;
 
@@ -240,7 +241,7 @@ Deno.test("ArgumentIndexException({argumentName, index, lowerBound})", () => {
   const dataEncoded = encodeURIComponent(JSON.stringify(data));
   const ex = new ArgumentIndexException(data);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }&${esd.data}=${dataEncoded}`;
 
@@ -259,7 +260,7 @@ Deno.test("ArgumentIndexException({argumentName, index, upperBound})", () => {
   const dataEncoded = encodeURIComponent(JSON.stringify(data));
   const ex = new ArgumentIndexException(data);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }&${esd.data}=${dataEncoded}`;
 
@@ -282,7 +283,7 @@ Deno.test("ArgumentIndexException({argumentName, lowerBound, upperBound})", () =
   const dataEncoded = encodeURIComponent(JSON.stringify(data));
   const ex = new ArgumentIndexException(data);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }&${esd.data}=${dataEncoded}`;
 
@@ -306,7 +307,7 @@ Deno.test("ArgumentIndexException({argumentName, index, lowerBound, upperBound})
   const dataEncoded = encodeURIComponent(JSON.stringify(data));
   const ex = new ArgumentIndexException(data);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }&${esd.data}=${dataEncoded}`;
 
@@ -323,7 +324,7 @@ Deno.test("ArgumentIndexException(message)", () => {
     "The provided index is outside the range of the array argument.";
   const ex = new ArgumentIndexException(exMsg);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }`;
 
@@ -338,7 +339,6 @@ Deno.test("ArgumentIndexException(message)", () => {
 Deno.test("ArgumentIndexException(message, {argumentName, index, lowerBound, upperBound})", () => {
   const exMsg =
     "The provided index is outside the range of the array argument.";
-
   const data: ArgumentIndexExceptionInit = {
     argumentName,
     index,
@@ -346,10 +346,9 @@ Deno.test("ArgumentIndexException(message, {argumentName, index, lowerBound, upp
     upperBound,
   };
   const dataEncoded = encodeURIComponent(JSON.stringify(data));
-
   const ex = new ArgumentIndexException(exMsg, data);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }&${esd.data}=${dataEncoded}`;
 
@@ -373,5 +372,3 @@ Deno.test("ArgumentIndexException({lowerBound, upperBound}) - upperBound <= lowe
     `The symbol "init.upperBound" has the correct type, but an invalid value. It has the following constraints: positive integer, greater than init.lowerBound.`,
   );
 });
-
-//#endregion

@@ -2,7 +2,10 @@
  * This test tests that the Exceptions and Warnings in the core libraries have
  * a unique `code` property. This is important as the `code` property is used
  * in the Ex^2 (Exception Explain) application.
+ *
+ * @copyright 2021-2022 IntegerEleven. All rights reserved. MIT license.
  */
+
 import { assertEquals } from "../dev_deps.ts";
 import {
   AbortedException,

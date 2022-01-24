@@ -1,31 +1,32 @@
 /**
+ * Tests the features of the {@link ArgumentException}.
+ *
  * The majority of the functionality for Exception is tested in the Exception
  * tests. This test only test feature differences caused by the the differing
  * code, messaging, and `ExceptionInit` properties.
+ *
+ * @copyright 2021-2022 IntegerEleven. All rights reserved. MIT license.
  */
+
 import { assertEquals } from "../dev_deps.ts";
-import {
-  ExceptionSerializationData as esd,
-  I11N_EXC_KB,
-} from "../src/_constants.ts";
 
 import { ArgumentException, ArgumentExceptionInit } from "../mod.ts";
 
-//#region Test Data
+import {
+  ExceptionSerializationData as esd,
+  P11_EXC_KB,
+} from "../src/_constants.ts";
 
 const exCode = 11;
 const exName = "ArgumentException";
 const argumentName = "exampleArgument";
 const argumentConstraints = ["number", "between 1 and 20"];
 
-//#endregion
-//#region Test constructors
-
 Deno.test("ArgumentException()", () => {
   const exMsg = "An argument has the correct type, but an invalid value.";
   const ex = new ArgumentException();
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }`;
 
@@ -44,7 +45,7 @@ Deno.test("ArgumentException({argumentName})", () => {
   const dataEncoded = encodeURIComponent(JSON.stringify(data));
   const ex = new ArgumentException(data);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }&${esd.data}=${dataEncoded}`;
 
@@ -65,7 +66,7 @@ Deno.test("ArgumentException({argumentConstraints})", () => {
   const dataEncoded = encodeURIComponent(JSON.stringify(data));
   const ex = new ArgumentException(data);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }&${esd.data}=${dataEncoded}`;
 
@@ -86,7 +87,7 @@ Deno.test("ArgumentException({argumentName, argumentConstraints})", () => {
   const dataEncoded = encodeURIComponent(JSON.stringify(data));
   const ex = new ArgumentException(data);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }&${esd.data}=${dataEncoded}`;
 
@@ -102,7 +103,7 @@ Deno.test("ArgumentException(message)", () => {
   const exMsg = "A correct type was provided, but with an incorrect value";
   const ex = new ArgumentException(exMsg);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }`;
 
@@ -116,13 +117,11 @@ Deno.test("ArgumentException(message)", () => {
 
 Deno.test("ArgumentException(message, {argumentName, argumentConstraints})", () => {
   const exMsg = "An argument is invalid.";
-
   const data: ArgumentExceptionInit = { argumentName, argumentConstraints };
   const dataEncoded = encodeURIComponent(JSON.stringify(data));
-
   const ex = new ArgumentException(exMsg, data);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }&${esd.data}=${dataEncoded}`;
 
@@ -133,5 +132,3 @@ Deno.test("ArgumentException(message, {argumentName, argumentConstraints})", () 
   assertEquals(ex.toString(), ex2String);
   assertEquals(ex.helpUrl, exHelpUrl);
 });
-
-//#endregion

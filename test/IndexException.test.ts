@@ -1,17 +1,21 @@
 /**
+ * Tests the features of the {@link IndexException}.
+ *
  * The majority of the functionality for Exception is tested in the Exception
  * tests. This test only test feature differences caused by the the differing
  * code, messaging, and `ExceptionInit` properties.
+ *
+ * @copyright 2021-2022 IntegerEleven. All rights reserved. MIT license.
  */
+
 import { assertEquals, assertThrows } from "../dev_deps.ts";
-import {
-  ExceptionSerializationData as esd,
-  I11N_EXC_KB,
-} from "../src/_constants.ts";
 
 import { IndexException, IndexExceptionInit, ValueException } from "../mod.ts";
 
-//#region Test Data
+import {
+  ExceptionSerializationData as esd,
+  P11_EXC_KB,
+} from "../src/_constants.ts";
 
 const exCode = 6;
 const exName = "IndexException";
@@ -20,14 +24,11 @@ const index = 2;
 const lowerBound = 1;
 const upperBound = 4;
 
-//#endregion
-//#region Test constructors
-
 Deno.test("IndexException()", () => {
   const exMsg = "An index is outside the bounds of an array.";
   const ex = new IndexException();
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }`;
 
@@ -45,7 +46,7 @@ Deno.test("IndexException({valueName})", () => {
   const dataEncoded = encodeURIComponent(JSON.stringify(data));
   const ex = new IndexException(data);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }&${esd.data}=${dataEncoded}`;
 
@@ -63,7 +64,7 @@ Deno.test("IndexException({index})", () => {
   const dataEncoded = encodeURIComponent(JSON.stringify(data));
   const ex = new IndexException(data);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }&${esd.data}=${dataEncoded}`;
 
@@ -82,7 +83,7 @@ Deno.test("IndexException({lowerBound})", () => {
   const dataEncoded = encodeURIComponent(JSON.stringify(data));
   const ex = new IndexException(data);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }&${esd.data}=${dataEncoded}`;
 
@@ -101,7 +102,7 @@ Deno.test("IndexException({upperBound})", () => {
   const dataEncoded = encodeURIComponent(JSON.stringify(data));
   const ex = new IndexException(data);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }&${esd.data}=${dataEncoded}`;
 
@@ -120,7 +121,7 @@ Deno.test("IndexException({valueName, index})", () => {
   const dataEncoded = encodeURIComponent(JSON.stringify(data));
   const ex = new IndexException(data);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }&${esd.data}=${dataEncoded}`;
 
@@ -139,7 +140,7 @@ Deno.test("IndexException({valueName, lowerBound})", () => {
   const dataEncoded = encodeURIComponent(JSON.stringify(data));
   const ex = new IndexException(data);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }&${esd.data}=${dataEncoded}`;
 
@@ -158,7 +159,7 @@ Deno.test("IndexException({valueName, upperBound})", () => {
   const dataEncoded = encodeURIComponent(JSON.stringify(data));
   const ex = new IndexException(data);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }&${esd.data}=${dataEncoded}`;
 
@@ -177,7 +178,7 @@ Deno.test("IndexException({index, lowerBound})", () => {
   const dataEncoded = encodeURIComponent(JSON.stringify(data));
   const ex = new IndexException(data);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }&${esd.data}=${dataEncoded}`;
 
@@ -196,7 +197,7 @@ Deno.test("IndexException({index, upperBound})", () => {
   const dataEncoded = encodeURIComponent(JSON.stringify(data));
   const ex = new IndexException(data);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }&${esd.data}=${dataEncoded}`;
 
@@ -215,7 +216,7 @@ Deno.test("IndexException({lowerBound, upperBound})", () => {
   const dataEncoded = encodeURIComponent(JSON.stringify(data));
   const ex = new IndexException(data);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }&${esd.data}=${dataEncoded}`;
 
@@ -234,7 +235,7 @@ Deno.test("IndexException({valueName, index, lowerBound})", () => {
   const dataEncoded = encodeURIComponent(JSON.stringify(data));
   const ex = new IndexException(data);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }&${esd.data}=${dataEncoded}`;
 
@@ -253,7 +254,7 @@ Deno.test("IndexException({valueName, index, upperBound})", () => {
   const dataEncoded = encodeURIComponent(JSON.stringify(data));
   const ex = new IndexException(data);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }&${esd.data}=${dataEncoded}`;
 
@@ -272,7 +273,7 @@ Deno.test("IndexException({valueName, lowerBound, upperBound})", () => {
   const dataEncoded = encodeURIComponent(JSON.stringify(data));
   const ex = new IndexException(data);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }&${esd.data}=${dataEncoded}`;
 
@@ -291,7 +292,7 @@ Deno.test("IndexException({valueName, index, lowerBound, upperBound})", () => {
   const dataEncoded = encodeURIComponent(JSON.stringify(data));
   const ex = new IndexException(data);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }&${esd.data}=${dataEncoded}`;
 
@@ -307,7 +308,7 @@ Deno.test("IndexException(message)", () => {
   const exMsg = "The provided index is outside the range of the array.";
   const ex = new IndexException(exMsg);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }`;
 
@@ -321,13 +322,11 @@ Deno.test("IndexException(message)", () => {
 
 Deno.test("IndexException(message, {valueName, index, lowerBound, upperBound})", () => {
   const exMsg = "The provided index is outside the range of the array.";
-
   const data: IndexExceptionInit = { valueName, index, lowerBound, upperBound };
   const dataEncoded = encodeURIComponent(JSON.stringify(data));
-
   const ex = new IndexException(exMsg, data);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }&${esd.data}=${dataEncoded}`;
 
@@ -351,5 +350,3 @@ Deno.test("IndexException({lowerBound, upperBound}) - upperBound <= lowerBound",
     `The symbol "init.upperBound" has the correct type, but an invalid value. It has the following constraints: positive integer, greater than init.lowerBound.`,
   );
 });
-
-//#endregion

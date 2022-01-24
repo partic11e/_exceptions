@@ -1,17 +1,21 @@
 /**
+ * Tests the features of the {@link MethodException}.
+ *
  * The majority of the functionality for Exception is tested in the Exception
  * tests. This test only test feature differences caused by the the differing
  * code, messaging, and `ExceptionInit` properties.
+ *
+ * @copyright 2021-2022 IntegerEleven. All rights reserved. MIT license.
  */
+
 import { assertEquals } from "../dev_deps.ts";
-import {
-  ExceptionSerializationData as esd,
-  I11N_EXC_KB,
-} from "../src/_constants.ts";
 
 import { MethodException, MethodExceptionInit } from "../mod.ts";
 
-//#region Test Data
+import {
+  ExceptionSerializationData as esd,
+  P11_EXC_KB,
+} from "../src/_constants.ts";
 
 const exCode = 8;
 const exName = "MethodException";
@@ -19,14 +23,11 @@ const valueName = "middleware";
 const methodName = "testMiddleware";
 const validMethods = ["cors", "authn", "autho"];
 
-//#endregion
-//#region Test constructors
-
 Deno.test("MethodException()", () => {
   const exMsg = "Unable to locate a method on an object.";
   const ex = new MethodException();
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }`;
 
@@ -44,7 +45,7 @@ Deno.test("MethodException({valueName})", () => {
   const dataEncoded = encodeURIComponent(JSON.stringify(data));
   const ex = new MethodException(data);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }&${esd.data}=${dataEncoded}`;
 
@@ -62,7 +63,7 @@ Deno.test("MethodException({methodName})", () => {
   const dataEncoded = encodeURIComponent(JSON.stringify(data));
   const ex = new MethodException(data);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }&${esd.data}=${dataEncoded}`;
 
@@ -83,7 +84,7 @@ Deno.test("MethodException({validMethods})", () => {
   const dataEncoded = encodeURIComponent(JSON.stringify(data));
   const ex = new MethodException(data);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }&${esd.data}=${dataEncoded}`;
 
@@ -102,7 +103,7 @@ Deno.test("MethodException({valueName, methodName})", () => {
   const dataEncoded = encodeURIComponent(JSON.stringify(data));
   const ex = new MethodException(data);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }&${esd.data}=${dataEncoded}`;
 
@@ -123,7 +124,7 @@ Deno.test("MethodException({valueName, validMethods})", () => {
   const dataEncoded = encodeURIComponent(JSON.stringify(data));
   const ex = new MethodException(data);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }&${esd.data}=${dataEncoded}`;
 
@@ -144,7 +145,7 @@ Deno.test("MethodException({methodName, validMethods})", () => {
   const dataEncoded = encodeURIComponent(JSON.stringify(data));
   const ex = new MethodException(data);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }&${esd.data}=${dataEncoded}`;
 
@@ -165,7 +166,7 @@ Deno.test("MethodException({valueName, methodName, validMethods})", () => {
   const dataEncoded = encodeURIComponent(JSON.stringify(data));
   const ex = new MethodException(data);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }&${esd.data}=${dataEncoded}`;
 
@@ -181,7 +182,7 @@ Deno.test("MethodException(message)", () => {
   const exMsg = "The provided method is not found on the object.";
   const ex = new MethodException(exMsg);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }`;
 
@@ -195,13 +196,11 @@ Deno.test("MethodException(message)", () => {
 
 Deno.test("MethodException(message, {valueName, methodName, validMethods})", () => {
   const exMsg = "The provided key is not found on the object.";
-
   const data: MethodExceptionInit = { valueName, methodName, validMethods };
   const dataEncoded = encodeURIComponent(JSON.stringify(data));
-
   const ex = new MethodException(exMsg, data);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }&${esd.data}=${dataEncoded}`;
 
@@ -212,5 +211,3 @@ Deno.test("MethodException(message, {valueName, methodName, validMethods})", () 
   assertEquals(ex.toString(), ex2String);
   assertEquals(ex.helpUrl, exHelpUrl);
 });
-
-//#endregion

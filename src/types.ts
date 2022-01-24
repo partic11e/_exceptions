@@ -1,5 +1,8 @@
 /**
- * The shared types for Exceptions module in the particle11 core library.
+ * Contains the shared types for Exceptions module in the particle11 core
+ * library.
+ *
+ * @copyright 2021-2022 IntegerEleven. All rights reserved. MIT license.
  */
 
 import type { Exception } from "./Exception.ts";

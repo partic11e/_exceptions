@@ -1,3 +1,9 @@
+/**
+ * Contains the class and types for creating a {@link TimeoutException}.
+ *
+ * @copyright 2021-2022 IntegerEleven. All rights reserved. MIT license.
+ */
+
 import { Exception, ExceptionInit } from "./Exception.ts";
 
 /**
@@ -54,7 +60,10 @@ export interface TimeoutExceptionInit extends ExceptionInit {
 export class TimeoutException<
   T extends TimeoutExceptionInit = TimeoutExceptionInit,
 > extends Exception<T> {
-  //#region Constructors
+  /**
+   * The exception code for the {@link TimeoutException} class.
+   */
+  public readonly code: number = 3;
 
   /**
    * Creates a new {@link TimeoutException} with the default message,
@@ -78,13 +87,10 @@ export class TimeoutException<
    * @param init The {@link TimeoutExceptionInit} properties.
    */
   constructor(message: string, init?: T);
-  //  implementation
   constructor(msgOrInit: string | T = DEFAULT_MSG, maybeInit?: T) {
-    //  (message: string, init?: T)
     let message: string = msgOrInit as string;
     let init: T | undefined = maybeInit;
 
-    //  (init: T)
     if (typeof msgOrInit !== "string") {
       init = msgOrInit;
       message = msgFromInit(init);
@@ -92,14 +98,4 @@ export class TimeoutException<
 
     super(message, init);
   }
-
-  //#endregion
-  //#region Public properties
-
-  /**
-   * The exception code for the {@link TimeoutException} class.
-   */
-  public readonly code: number = 3;
-
-  //#endregion
 }

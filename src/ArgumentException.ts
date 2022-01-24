@@ -1,3 +1,9 @@
+/**
+ * Contains the class and types for creating an {@link ArgumentException}.
+ *
+ * @copyright 2021-2022 IntegerEleven. All rights reserved. MIT license.
+ */
+
 import { Exception, ExceptionInit } from "./Exception.ts";
 
 /**
@@ -35,14 +41,14 @@ const msgFromInit = (init: ArgumentExceptionInit): string => {
  */
 export interface ArgumentExceptionInit extends ExceptionInit {
   /**
-   * The name of the argument that has an invalid value.
-   */
-  argumentName?: string;
-
-  /**
    * The constraints of the argument.
    */
   argumentConstraints?: string[];
+
+  /**
+   * The name of the argument that has an invalid value.
+   */
+  argumentName?: string;
 }
 
 /**
@@ -52,7 +58,10 @@ export interface ArgumentExceptionInit extends ExceptionInit {
 export class ArgumentException<
   T extends ArgumentExceptionInit = ArgumentExceptionInit,
 > extends Exception<T> {
-  //#region Constructors
+  /**
+   * The exception code for the {@link ArgumentException} class.
+   */
+  public readonly code: number = 11;
 
   /**
    * Creates a new {@link ArgumentException} with the default message,
@@ -77,13 +86,10 @@ export class ArgumentException<
    * @param init The {@link ArgumentExceptionInit} properties.
    */
   constructor(message: string, init?: T);
-  //  implementation
   constructor(msgOrInit: string | T = DEFAULT_MSG, maybeInit?: T) {
-    //  (message: string, init?: T)
     let message: string = msgOrInit as string;
     let init: T | undefined = maybeInit;
 
-    //  (init: T)
     if (typeof msgOrInit !== "string") {
       init = msgOrInit;
       message = msgFromInit(init);
@@ -91,14 +97,4 @@ export class ArgumentException<
 
     super(message, init);
   }
-
-  //#endregion
-  //#region Public properties
-
-  /**
-   * The exception code for the {@link ArgumentException} class.
-   */
-  public readonly code: number = 11;
-
-  //#endregion
 }

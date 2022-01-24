@@ -1,8 +1,12 @@
+/**
+ * Contains the class and types for creating an {@link Exception}.
+ *
+ * @copyright 2021-2022 IntegerEleven. All rights reserved. MIT license.
+ */
+
 import { IExceptionInit, TExceptionInit } from "./types.ts";
-import {
-  ExceptionSerializationData as esd,
-  I11N_EXC_KB,
-} from "./_constants.ts";
+
+import { ExceptionSerializationData as esd, P11_EXC_KB } from "./_constants.ts";
 
 /**
  * An interface describing the `init` properties for the {@link Exception}
@@ -17,31 +21,6 @@ export type ExceptionInit = TExceptionInit;
  * All particle11 exception classes derive from this class.
  */
 export class Exception<T extends IExceptionInit = ExceptionInit> extends Error {
-  //#region Constructors
-
-  /**
-   * Creates a new {@link Exception} instance with a message describing the
-   * exception, optionally with additional exception information.
-   *
-   * @param message A message describing the exception.
-   * @param init Additional exception information.
-   */
-  constructor(message: string, protected init?: T) {
-    super(message);
-  }
-  //#endregion
-  //#region Public properties
-
-  /**
-   * The exception code for the {@link Exception} class.
-   */
-  public readonly code: number = 0;
-
-  /**
-   * The friendly name of the {@link Exception}.
-   */
-  public readonly name = this.constructor.name;
-
   /**
    * The underlying, or specific cause, of the exception.
    *
@@ -54,6 +33,11 @@ export class Exception<T extends IExceptionInit = ExceptionInit> extends Error {
 
     return init?.cause;
   }
+
+  /**
+   * The exception code for the {@link Exception} class.
+   */
+  public readonly code: number = 0;
 
   /**
    * The additional data excluding `cause` from the {@link ExceptionInit}.
@@ -83,24 +67,25 @@ export class Exception<T extends IExceptionInit = ExceptionInit> extends Error {
     const data = this.getUrlEncodedData();
     const causes = this.getUrlEncodedCauses();
 
-    return `${I11N_EXC_KB}/0x${
+    return `${P11_EXC_KB}/0x${
       code.toString(16)
     }?${esd.message}=${msg}${data}${causes}`;
   }
 
-  //#endregion
-
-  //#region Native overrides
+  /**
+   * The friendly name of the {@link Exception}.
+   */
+  public readonly name = this.constructor.name;
 
   /**
-   * Returns the primitive value of the {@link Excpetion}.
+   * Creates a new {@link Exception} instance with a message describing the
+   * exception, optionally with additional exception information.
    *
-   * This primitive value is the {@link Exception} `code` property.
-   *
-   * @returns The {@link Exception} `code` property.
+   * @param message A message describing the exception.
+   * @param init Additional exception information.
    */
-  public override valueOf(): number {
-    return this.code;
+  constructor(message: string, protected init?: T) {
+    super(message);
   }
 
   /**
@@ -117,24 +102,15 @@ export class Exception<T extends IExceptionInit = ExceptionInit> extends Error {
     return `${name} [0x${code.toString(16)}]: ${message}`;
   }
 
-  //#endregion
-  //#region Protected methods
-
   /**
-   * Returns a querystring parameter containing {@link data} in a URL-encoded
-   * JSON string; or if no {@link data}, an empty string.
+   * Returns the primitive value of the {@link Excpetion}.
    *
-   * Used to construct a portion of {@link helpUrl}.
+   * This primitive value is the {@link Exception} `code` property.
    *
-   * @returns A querystring parameter containing {@link data} in a URL-encoded
-   * JSON string, or an empty string.
+   * @returns The {@link Exception} `code` property.
    */
-  protected getUrlEncodedData(): string {
-    const { data } = this;
-
-    if (!data || !Object.keys(data).length) return "";
-
-    return `&${esd.data}=${encodeURIComponent(JSON.stringify(data))}`;
+  public override valueOf(): number {
+    return this.code;
   }
 
   /**
@@ -152,16 +128,28 @@ export class Exception<T extends IExceptionInit = ExceptionInit> extends Error {
     if (!cause) return "";
 
     const data = {
-      //  name
       [esd.name]: cause.name,
-      //  mesage
       [esd.message]: cause.message,
-      //  helpURL
       [esd.helpUrl]: cause instanceof Exception ? cause.helpUrl : "",
     };
 
     return `&${esd.cause}=${encodeURIComponent(JSON.stringify(data))}`;
   }
 
-  //#endregion
+  /**
+   * Returns a querystring parameter containing {@link data} in a URL-encoded
+   * JSON string; or if no {@link data}, an empty string.
+   *
+   * Used to construct a portion of {@link helpUrl}.
+   *
+   * @returns A querystring parameter containing {@link data} in a URL-encoded
+   * JSON string, or an empty string.
+   */
+  protected getUrlEncodedData(): string {
+    const { data } = this;
+
+    if (!data || !Object.keys(data).length) return "";
+
+    return `&${esd.data}=${encodeURIComponent(JSON.stringify(data))}`;
+  }
 }

@@ -1,3 +1,9 @@
+/**
+ * Contains the class and types for creating a {@link KeyException}.
+ *
+ * @copyright 2021-2022 IntegerEleven. All rights reserved. MIT license.
+ */
+
 import { Exception, ExceptionInit } from "./Exception.ts";
 
 /**
@@ -42,11 +48,6 @@ const msgFromInit = (init: KeyExceptionInit): string => {
  */
 export interface KeyExceptionInit extends ExceptionInit {
   /**
-   * The name of the symbol representing the object or record.
-   */
-  valueName?: string;
-
-  /**
    * The key that is not a valid key.
    */
   key?: string;
@@ -55,6 +56,11 @@ export interface KeyExceptionInit extends ExceptionInit {
    * The list of valid keys.
    */
   validKeys?: string[];
+
+  /**
+   * The name of the symbol representing the object or record.
+   */
+  valueName?: string;
 }
 
 /**
@@ -64,7 +70,10 @@ export interface KeyExceptionInit extends ExceptionInit {
 export class KeyException<
   T extends KeyExceptionInit = KeyExceptionInit,
 > extends Exception<T> {
-  //#region Constructors
+  /**
+   * The exception code for the {@link KeyException} class.
+   */
+  public readonly code: number = 7;
 
   /**
    * Creates a new {@link KeyException} with the default message,
@@ -89,13 +98,10 @@ export class KeyException<
    * @param init The {@link KeyExceptionInit} properties.
    */
   constructor(message: string, init?: T);
-  //  implementation
   constructor(msgOrInit: string | T = DEFAULT_MSG, maybeInit?: T) {
-    //  (message: string, init?: T)
     let message: string = msgOrInit as string;
     let init: T | undefined = maybeInit;
 
-    //  (init: T)
     if (typeof msgOrInit !== "string") {
       init = msgOrInit;
       message = msgFromInit(init);
@@ -103,14 +109,4 @@ export class KeyException<
 
     super(message, init);
   }
-
-  //#endregion
-  //#region Public properties
-
-  /**
-   * The exception code for the {@link KeyException} class.
-   */
-  public readonly code: number = 7;
-
-  //#endregion
 }

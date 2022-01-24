@@ -1,5 +1,12 @@
-import { Exception } from "./Exception.ts";
+/**
+ * Contains the class and types for creating a {@link NotSupportedException}.
+ *
+ * @copyright 2021-2022 IntegerEleven. All rights reserved. MIT license.
+ */
+
 import { TExceptionInit } from "./types.ts";
+
+import { Exception } from "./Exception.ts";
 
 /**
  * The default {@link NotSupportedException} message.
@@ -38,7 +45,10 @@ export type NotSupportedExceptionInit = TExceptionInit<{
 export class NotSupportedException<
   T extends NotSupportedExceptionInit = NotSupportedExceptionInit,
 > extends Exception<T> {
-  //#region Constructors
+  /**
+   * The exception code for the {@link NotSupportedException} class.
+   */
+  public readonly code: number = 14;
 
   /**
    * Creates a new {@link NotSupportedException} with the default message,
@@ -62,13 +72,10 @@ export class NotSupportedException<
    * @param init The {@link NotSupportedExceptionInit} properties.
    */
   constructor(message: string, init?: T);
-  //  implementation
   constructor(msgOrInit: string | T = DEFAULT_MSG, maybeInit?: T) {
-    //  (message: string, init?: T)
     let message: string = msgOrInit as string;
     let init: T | undefined = maybeInit;
 
-    //  (init: T)
     if (typeof msgOrInit !== "string") {
       init = msgOrInit;
       message = msgFromInit(init);
@@ -76,14 +83,4 @@ export class NotSupportedException<
 
     super(message, init);
   }
-
-  //#endregion
-  //#region Public properties
-
-  /**
-   * The exception code for the {@link NotSupportedException} class.
-   */
-  public readonly code: number = 14;
-
-  //#endregion
 }

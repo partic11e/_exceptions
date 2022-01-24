@@ -1,6 +1,14 @@
-import { Exception } from "./Exception.ts";
-import { TExceptionInit } from "./types.ts";
+/**
+ * Contains the class and types for creating a {@link ParseException}.
+ *
+ * @copyright 2021-2022 IntegerEleven. All rights reserved. MIT license.
+ */
+
 import type { ParserType } from "../deps.ts";
+
+import { TExceptionInit } from "./types.ts";
+
+import { Exception } from "./Exception.ts";
 
 /**
  * The default {@link ParseException} message.
@@ -40,7 +48,10 @@ export type ParseExceptionInit = TExceptionInit<{
 export class ParseException<
   T extends ParseExceptionInit = ParseExceptionInit,
 > extends Exception<T> {
-  //#region Constructors
+  /**
+   * The exception code for the {@link ParseException} class.
+   */
+  public readonly code: number = 18;
 
   /**
    * Creates a new {@link ParseException} with the default message,
@@ -64,13 +75,10 @@ export class ParseException<
    * @param init The {@link ParseExceptionInit} properties.
    */
   constructor(message: string, init?: T);
-  //  implementation
   constructor(msgOrInit: string | T = DEFAULT_MSG, maybeInit?: T) {
-    //  (message: string, init?: T)
     let message: string = msgOrInit as string;
     let init: T | undefined = maybeInit;
 
-    //  (init: T)
     if (typeof msgOrInit !== "string") {
       init = msgOrInit;
       message = msgFromInit(init);
@@ -78,14 +86,4 @@ export class ParseException<
 
     super(message, init);
   }
-
-  //#endregion
-  //#region Public properties
-
-  /**
-   * The exception code for the {@link ParseException} class.
-   */
-  public readonly code: number = 18;
-
-  //#endregion
 }

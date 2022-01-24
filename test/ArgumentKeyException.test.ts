@@ -1,17 +1,21 @@
 /**
+ * Tests the features of the {@link ArgumentKeyException}.
+ *
  * The majority of the functionality for Exception is tested in the Exception
  * tests. This test only test feature differences caused by the the differing
  * code, messaging, and `ExceptionInit` properties.
+ *
+ * @copyright 2021-2022 IntegerEleven. All rights reserved. MIT license.
  */
+
 import { assertEquals } from "../dev_deps.ts";
-import {
-  ExceptionSerializationData as esd,
-  I11N_EXC_KB,
-} from "../src/_constants.ts";
 
 import { ArgumentKeyException, ArgumentKeyExceptionInit } from "../mod.ts";
 
-//#region Test Data
+import {
+  ExceptionSerializationData as esd,
+  P11_EXC_KB,
+} from "../src/_constants.ts";
 
 const exCode = 13;
 const exName = "ArgumentKeyException";
@@ -19,15 +23,12 @@ const argumentName = "exampleArgument";
 const key = "test";
 const validKeys = ["hello", "world", "greet"];
 
-//#endregion
-//#region Test constructors
-
 Deno.test("ArgumentKeyException()", () => {
   const exMsg =
     "Unable to locate a property key on an object or record argument.";
   const ex = new ArgumentKeyException();
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }`;
 
@@ -46,7 +47,7 @@ Deno.test("ArgumentKeyException({argumentName})", () => {
   const dataEncoded = encodeURIComponent(JSON.stringify(data));
   const ex = new ArgumentKeyException(data);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }&${esd.data}=${dataEncoded}`;
 
@@ -65,7 +66,7 @@ Deno.test("ArgumentKeyException({key})", () => {
   const dataEncoded = encodeURIComponent(JSON.stringify(data));
   const ex = new ArgumentKeyException(data);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }&${esd.data}=${dataEncoded}`;
 
@@ -86,7 +87,7 @@ Deno.test("ArgumentKeyException({validKeys})", () => {
   const dataEncoded = encodeURIComponent(JSON.stringify(data));
   const ex = new ArgumentKeyException(data);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }&${esd.data}=${dataEncoded}`;
 
@@ -105,7 +106,7 @@ Deno.test("ArgumentKeyException({argumentName, key})", () => {
   const dataEncoded = encodeURIComponent(JSON.stringify(data));
   const ex = new ArgumentKeyException(data);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }&${esd.data}=${dataEncoded}`;
 
@@ -126,7 +127,7 @@ Deno.test("ArgumentKeyException({argumentName, validKeys})", () => {
   const dataEncoded = encodeURIComponent(JSON.stringify(data));
   const ex = new ArgumentKeyException(data);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }&${esd.data}=${dataEncoded}`;
 
@@ -147,7 +148,7 @@ Deno.test("ArgumentKeyException({key, validKeys})", () => {
   const dataEncoded = encodeURIComponent(JSON.stringify(data));
   const ex = new ArgumentKeyException(data);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }&${esd.data}=${dataEncoded}`;
 
@@ -168,7 +169,7 @@ Deno.test("ArgumentKeyException({argumentName, key, validKeys})", () => {
   const dataEncoded = encodeURIComponent(JSON.stringify(data));
   const ex = new ArgumentKeyException(data);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }&${esd.data}=${dataEncoded}`;
 
@@ -185,7 +186,7 @@ Deno.test("ArgumentKeyException(message)", () => {
     "The provided key is not found on the object or record argument.";
   const ex = new ArgumentKeyException(exMsg);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }`;
 
@@ -200,13 +201,11 @@ Deno.test("ArgumentKeyException(message)", () => {
 Deno.test("ArgumentKeyException(message, {argumentName, key, validKeys})", () => {
   const exMsg =
     "The provided key is not found on the object or record argument.";
-
   const data: ArgumentKeyExceptionInit = { argumentName, key, validKeys };
   const dataEncoded = encodeURIComponent(JSON.stringify(data));
-
   const ex = new ArgumentKeyException(exMsg, data);
   const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${I11N_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
     encodeURIComponent(exMsg)
   }&${esd.data}=${dataEncoded}`;
 
@@ -217,5 +216,3 @@ Deno.test("ArgumentKeyException(message, {argumentName, key, validKeys})", () =>
   assertEquals(ex.toString(), ex2String);
   assertEquals(ex.helpUrl, exHelpUrl);
 });
-
-//#endregion

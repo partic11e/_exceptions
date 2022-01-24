@@ -1,3 +1,9 @@
+/**
+ * Contains the class and types for creating an {@link IndexException}.
+ *
+ * @copyright 2021-2022 IntegerEleven. All rights reserved. MIT license.
+ */
+
 import { Exception, ExceptionInit } from "./Exception.ts";
 import { ValueException } from "./ValueException.ts";
 
@@ -91,11 +97,6 @@ const msgFromInit = (init: IndexExceptionInit): string => {
  */
 export interface IndexExceptionInit extends ExceptionInit {
   /**
-   * The name of the symbol representing the array.
-   */
-  valueName?: string;
-
-  /**
    * The index that is outside the bounds of the array.
    */
   index?: number;
@@ -109,6 +110,11 @@ export interface IndexExceptionInit extends ExceptionInit {
    * The upper bound of the array. Can be any integer higher `lowerBound`.
    */
   upperBound?: number;
+  /**
+   * The name of the symbol representing the array.
+   */
+
+  valueName?: string;
 }
 
 /**
@@ -118,7 +124,10 @@ export interface IndexExceptionInit extends ExceptionInit {
 export class IndexException<
   T extends IndexExceptionInit = IndexExceptionInit,
 > extends Exception<T> {
-  //#region Constructors
+  /**
+   * The exception code for the {@link IndexException} class.
+   */
+  public readonly code: number = 6;
 
   /**
    * Creates a new {@link IndexException} with the default message,
@@ -143,13 +152,10 @@ export class IndexException<
    * @param init The {@link IndexExceptionInit} properties.
    */
   constructor(message: string, init?: T);
-  //  implementation
   constructor(msgOrInit: string | T = DEFAULT_MSG, maybeInit?: T) {
-    //  (message: string, init?: T)
     let message: string = msgOrInit as string;
     let init: T | undefined = maybeInit;
 
-    //  (init: T)
     if (typeof msgOrInit !== "string") {
       init = msgOrInit;
       message = msgFromInit(init);
@@ -157,14 +163,4 @@ export class IndexException<
 
     super(message, init);
   }
-
-  //#endregion
-  //#region Public properties
-
-  /**
-   * The exception code for the {@link IndexException} class.
-   */
-  public readonly code: number = 6;
-
-  //#endregion
 }

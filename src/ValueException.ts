@@ -1,3 +1,9 @@
+/**
+ * Contains the class and types for creating a {@link ValueException}.
+ *
+ * @copyright 2021-2022 IntegerEleven. All rights reserved. MIT license.
+ */
+
 import { Exception, ExceptionInit } from "./Exception.ts";
 
 /**
@@ -35,14 +41,14 @@ const msgFromInit = (init: ValueExceptionInit): string => {
  */
 export interface ValueExceptionInit extends ExceptionInit {
   /**
-   * The name of the symbol that has an invalid value.
-   */
-  valueName?: string;
-
-  /**
    * The constraints of the value.
    */
   valueConstraints?: string[];
+
+  /**
+   * The name of the symbol that has an invalid value.
+   */
+  valueName?: string;
 }
 
 /**
@@ -52,7 +58,10 @@ export interface ValueExceptionInit extends ExceptionInit {
 export class ValueException<
   T extends ValueExceptionInit = ValueExceptionInit,
 > extends Exception<T> {
-  //#region Constructors
+  /**
+   * The exception code for the {@link ValueException} class.
+   */
+  public readonly code: number = 5;
 
   /**
    * Creates a new {@link ValueException} with the default message,
@@ -77,13 +86,10 @@ export class ValueException<
    * @param init The {@link ValueExceptionInit} properties.
    */
   constructor(message: string, init?: T);
-  //  implementation
   constructor(msgOrInit: string | T = DEFAULT_MSG, maybeInit?: T) {
-    //  (message: string, init?: T)
     let message: string = msgOrInit as string;
     let init: T | undefined = maybeInit;
 
-    //  (init: T)
     if (typeof msgOrInit !== "string") {
       init = msgOrInit;
       message = msgFromInit(init);
@@ -91,14 +97,4 @@ export class ValueException<
 
     super(message, init);
   }
-
-  //#endregion
-  //#region Public properties
-
-  /**
-   * The exception code for the {@link ValueException} class.
-   */
-  public readonly code: number = 5;
-
-  //#endregion
 }

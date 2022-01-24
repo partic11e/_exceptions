@@ -1,3 +1,9 @@
+/**
+ * Contains the class and types for creating a {@link RecursionException}.
+ *
+ * @copyright 2021-2022 IntegerEleven. All rights reserved. MIT license.
+ */
+
 import { Exception, ExceptionInit } from "./Exception.ts";
 
 /**
@@ -46,6 +52,11 @@ const msgFromInit = (init: RecursionExceptionInit): string => {
  */
 export interface RecursionExceptionInit extends ExceptionInit {
   /**
+   * The values that were recursed consecutively.
+   */
+  consecutiveRepeatingValues?: boolean;
+
+  /**
    * The name of the operation that exceeded the recursion limit.
    */
   operationName?: string;
@@ -54,11 +65,6 @@ export interface RecursionExceptionInit extends ExceptionInit {
    * The recursion limit exceeded.
    */
   recursionLimit?: number;
-
-  /**
-   * The values that were recursed consecutively.
-   */
-  consecutiveRepeatingValues?: boolean;
 }
 
 /**
@@ -68,7 +74,10 @@ export interface RecursionExceptionInit extends ExceptionInit {
 export class RecursionException<
   T extends RecursionExceptionInit = RecursionExceptionInit,
 > extends Exception<T> {
-  //#region Constructors
+  /**
+   * The exception code for the {@link RecursionException} class.
+   */
+  public readonly code: number = 4;
 
   /**
    * Creates a new {@link RecursionException} with the default message,
@@ -93,13 +102,10 @@ export class RecursionException<
    * @param init The {@link RecursionExceptionInit} properties.
    */
   constructor(message: string, init?: T);
-  //  implementation
   constructor(msgOrInit: string | T = DEFAULT_MSG, maybeInit?: T) {
-    //  (message: string, init?: T)
     let message: string = msgOrInit as string;
     let init: T | undefined = maybeInit;
 
-    //  (init: T)
     if (typeof msgOrInit !== "string") {
       init = msgOrInit;
       message = msgFromInit(init);
@@ -107,14 +113,4 @@ export class RecursionException<
 
     super(message, init);
   }
-
-  //#endregion
-  //#region Public properties
-
-  /**
-   * The exception code for the {@link RecursionException} class.
-   */
-  public readonly code: number = 4;
-
-  //#endregion
 }

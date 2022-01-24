@@ -1,3 +1,9 @@
+/**
+ * Contains the class and types for creating an {@link ArgumentKeyException}.
+ *
+ * @copyright 2021-2022 IntegerEleven. All rights reserved. MIT license.
+ */
+
 import { Exception, ExceptionInit } from "./Exception.ts";
 
 /**
@@ -43,11 +49,6 @@ const msgFromInit = (init: ArgumentKeyExceptionInit): string => {
  */
 export interface ArgumentKeyExceptionInit extends ExceptionInit {
   /**
-   * The name of the symbol representing the object or record.
-   */
-  valueName?: string;
-
-  /**
    * The key that is not a valid key.
    */
   key?: string;
@@ -56,6 +57,11 @@ export interface ArgumentKeyExceptionInit extends ExceptionInit {
    * The list of valid keys.
    */
   validKeys?: string[];
+
+  /**
+   * The name of the symbol representing the object or record.
+   */
+  valueName?: string;
 }
 
 /**
@@ -65,7 +71,10 @@ export interface ArgumentKeyExceptionInit extends ExceptionInit {
 export class ArgumentKeyException<
   T extends ArgumentKeyExceptionInit = ArgumentKeyExceptionInit,
 > extends Exception<T> {
-  //#region Constructors
+  /**
+   * The exception code for the {@link ArgumentKeyException} class.
+   */
+  public readonly code: number = 13;
 
   /**
    * Creates a new {@link ArgumentKeyException} with the default message,
@@ -90,13 +99,10 @@ export class ArgumentKeyException<
    * @param init The {@link ArgumentKeyExceptionInit} properties.
    */
   constructor(message: string, init?: T);
-  //  implementation
   constructor(msgOrInit: string | T = DEFAULT_MSG, maybeInit?: T) {
-    //  (message: string, init?: T)
     let message: string = msgOrInit as string;
     let init: T | undefined = maybeInit;
 
-    //  (init: T)
     if (typeof msgOrInit !== "string") {
       init = msgOrInit;
       message = msgFromInit(init);
@@ -104,14 +110,4 @@ export class ArgumentKeyException<
 
     super(message, init);
   }
-
-  //#endregion
-  //#region Public properties
-
-  /**
-   * The exception code for the {@link ArgumentKeyException} class.
-   */
-  public readonly code: number = 13;
-
-  //#endregion
 }
