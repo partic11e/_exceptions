@@ -8,9 +8,7 @@
  * @copyright 2021-2022 IntegerEleven. All rights reserved. MIT license.
  */
 
-import { DecoratorType } from "../deps.ts";
-
-import { assertEquals, Decorator } from "../dev_deps.ts";
+import { assertEquals, Testing } from "../dev_deps.ts";
 
 import { DecoratorException, DecoratorExceptionInit } from "../mod.ts";
 
@@ -19,57 +17,41 @@ import {
   P11_EXC_KB,
 } from "../src/_constants.ts";
 
-const exCode = 10;
-const exName = "DecoratorException";
-const decoratorName = "ExampleDecorator";
-const decoratorTypes: DecoratorType[] = [
-  Decorator.Class,
-  Decorator.Method,
-  Decorator.Accessor,
-  Decorator.Property,
-  Decorator.Parameter,
-];
+import { TrackFailedCase } from "./_util.ts";
 
-Deno.test("DecoratorException()", () => {
-  const exMsg = "A decorator failed to apply.";
-  const ex = new DecoratorException();
-  const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
-    encodeURIComponent(exMsg)
-  }`;
+const { TestSuite, TestCase, Test } = Testing.decorators;
 
-  assertEquals(ex.name, exName);
-  assertEquals(ex.code, exCode);
-  assertEquals(ex.data, undefined);
-  assertEquals(ex.message, exMsg);
-  assertEquals(ex.toString(), ex2String);
-  assertEquals(ex.helpUrl, exHelpUrl);
-});
+import {
+  allCases,
+  exCode,
+  exName,
+  initCases,
+  messageCases,
+} from "./DecoratorException.cases.ts";
 
-Deno.test("DecoratorException({decoratorName})", () => {
-  const exMsg = `The decorator "${decoratorName}" failed to apply.`;
-  const data: DecoratorExceptionInit = { decoratorName };
-  const dataEncoded = encodeURIComponent(JSON.stringify(data));
-  const ex = new DecoratorException(data);
-  const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
-    encodeURIComponent(exMsg)
-  }&${esd.data}=${dataEncoded}`;
+@TestSuite("DecoratorException")
+class DecoratorExceptionTest {
+  @Test("()")
+  public testWithNoArgs() {
+    const exMsg = "A decorator failed to apply.";
+    const ex = new DecoratorException();
+    const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
+    const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+      encodeURIComponent(exMsg)
+    }`;
 
-  assertEquals(ex.name, exName);
-  assertEquals(ex.code, exCode);
-  assertEquals(ex.data, data);
-  assertEquals(ex.message, exMsg);
-  assertEquals(ex.toString(), ex2String);
-  assertEquals(ex.helpUrl, exHelpUrl);
-});
+    assertEquals(ex.name, exName);
+    assertEquals(ex.code, exCode);
+    assertEquals(ex.data, undefined);
+    assertEquals(ex.message, exMsg);
+    assertEquals(ex.toString(), ex2String);
+    assertEquals(ex.helpUrl, exHelpUrl);
+  }
 
-Deno.test("DecoratorException({decoratorType})", () => {
-  decoratorTypes.forEach((decoratorType) => {
-    const exMsg = `${
-      "aeiou".includes(decoratorType.charAt(0)) ? "An" : "A"
-    } ${decoratorType} decorator failed to apply.`;
-    const data: DecoratorExceptionInit = { decoratorType };
+  @Test("(init)")
+  @TestCase(...initCases)
+  @TrackFailedCase
+  public testWithInit([data, exMsg]: [DecoratorExceptionInit, string]) {
     const dataEncoded = encodeURIComponent(JSON.stringify(data));
     const ex = new DecoratorException(data);
     const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
@@ -83,50 +65,29 @@ Deno.test("DecoratorException({decoratorType})", () => {
     assertEquals(ex.message, exMsg);
     assertEquals(ex.toString(), ex2String);
     assertEquals(ex.helpUrl, exHelpUrl);
-  });
-});
+  }
 
-Deno.test("DecoratorException({decoratorName, decoratorType})", () => {
-  decoratorTypes.forEach((decoratorType) => {
-    const exMsg =
-      `The ${decoratorType} decorator "${decoratorName}" failed to apply.`;
-    const data: DecoratorExceptionInit = { decoratorName, decoratorType };
-    const dataEncoded = encodeURIComponent(JSON.stringify(data));
-    const ex = new DecoratorException(data);
+  @Test("(message)")
+  @TestCase(...messageCases)
+  @TrackFailedCase
+  public testWithMessage([exMsg]: [string]) {
+    const ex = new DecoratorException(exMsg);
     const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
     const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
       encodeURIComponent(exMsg)
-    }&${esd.data}=${dataEncoded}`;
+    }`;
 
     assertEquals(ex.name, exName);
     assertEquals(ex.code, exCode);
-    assertEquals(ex.data, data);
+    assertEquals(ex.data, undefined);
     assertEquals(ex.message, exMsg);
     assertEquals(ex.toString(), ex2String);
     assertEquals(ex.helpUrl, exHelpUrl);
-  });
-});
+  }
 
-Deno.test("DecoratorException(message)", () => {
-  const exMsg = "A decorator did not apply correctly.";
-  const ex = new DecoratorException(exMsg);
-  const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
-    encodeURIComponent(exMsg)
-  }`;
-
-  assertEquals(ex.name, exName);
-  assertEquals(ex.code, exCode);
-  assertEquals(ex.data, undefined);
-  assertEquals(ex.message, exMsg);
-  assertEquals(ex.toString(), ex2String);
-  assertEquals(ex.helpUrl, exHelpUrl);
-});
-
-Deno.test("DecoratorException(message, {decoratorName, decoratorType})", () => {
-  const exMsg = "A decorator did not apply correctly.";
-  decoratorTypes.forEach((decoratorType) => {
-    const data: DecoratorExceptionInit = { decoratorName, decoratorType };
+  @Test("(message, init)")
+  @TestCase(...allCases)
+  public testAll([data, exMsg]: [DecoratorExceptionInit, string]) {
     const dataEncoded = encodeURIComponent(JSON.stringify(data));
     const ex = new DecoratorException(exMsg, data);
     const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
@@ -140,5 +101,7 @@ Deno.test("DecoratorException(message, {decoratorName, decoratorType})", () => {
     assertEquals(ex.message, exMsg);
     assertEquals(ex.toString(), ex2String);
     assertEquals(ex.helpUrl, exHelpUrl);
-  });
-});
+  }
+}
+
+Testing(DecoratorExceptionTest);

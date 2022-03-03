@@ -19,3 +19,5 @@ export {
   Parser,
   Resource,
 } from "https://denopkg.com/partic11e/common@dev/mod.ts";
+
+export { Testing } from "https://denopkg.com/partic11e/test-suite@dev/mod.ts";

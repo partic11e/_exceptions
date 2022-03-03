@@ -8,7 +8,7 @@
  * @copyright 2021-2022 IntegerEleven. All rights reserved. MIT license.
  */
 
-import { assertEquals, assertThrows } from "../dev_deps.ts";
+import { assertEquals, assertThrows, Testing } from "../dev_deps.ts";
 
 import {
   ArgumentIndexException,
@@ -21,354 +21,106 @@ import {
   P11_EXC_KB,
 } from "../src/_constants.ts";
 
-const exCode = 12;
-const exName = "ArgumentIndexException";
-const argumentName = "exampleArgument";
-const index = 2;
-const lowerBound = 1;
-const upperBound = 4;
+import {
+  allCases,
+  badLowerUpperBoundCases,
+  exCode,
+  exName,
+  initCases,
+  messageCases,
+} from "./ArgumentIndexException.cases.ts";
 
-Deno.test("ArgumentIndexException()", () => {
-  const exMsg = "An index is outside the bounds of an array argument.";
-  const ex = new ArgumentIndexException();
-  const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
-    encodeURIComponent(exMsg)
-  }`;
+import { TrackFailedCase } from "./_util.ts";
 
-  assertEquals(ex.name, exName);
-  assertEquals(ex.code, exCode);
-  assertEquals(ex.data, undefined);
-  assertEquals(ex.message, exMsg);
-  assertEquals(ex.toString(), ex2String);
-  assertEquals(ex.helpUrl, exHelpUrl);
-});
+const { TestSuite, TestCase, Test } = Testing.decorators;
 
-Deno.test("ArgumentIndexException({argumentName})", () => {
-  const exMsg =
-    `An index is outside the bounds of the array argument "${argumentName}".`;
-  const data: ArgumentIndexExceptionInit = { argumentName };
-  const dataEncoded = encodeURIComponent(JSON.stringify(data));
-  const ex = new ArgumentIndexException(data);
-  const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
-    encodeURIComponent(exMsg)
-  }&${esd.data}=${dataEncoded}`;
+@TestSuite("ArgumentIndexException")
+class ArgumentIndexExceptionTest {
+  @Test("()")
+  public testWithNoArgs() {
+    const exMsg = "An index is outside the bounds of an array argument.";
+    const ex = new ArgumentIndexException();
+    const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
+    const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+      encodeURIComponent(exMsg)
+    }`;
 
-  assertEquals(ex.name, exName);
-  assertEquals(ex.code, exCode);
-  assertEquals(ex.data, data);
-  assertEquals(ex.message, exMsg);
-  assertEquals(ex.toString(), ex2String);
-  assertEquals(ex.helpUrl, exHelpUrl);
-});
+    assertEquals(ex.name, exName);
+    assertEquals(ex.code, exCode);
+    assertEquals(ex.data, undefined);
+    assertEquals(ex.message, exMsg);
+    assertEquals(ex.toString(), ex2String);
+    assertEquals(ex.helpUrl, exHelpUrl);
+  }
 
-Deno.test("ArgumentIndexException({index})", () => {
-  const exMsg =
-    `The index ${index} is outside the bounds of an array argument.`;
-  const data: ArgumentIndexExceptionInit = { index };
-  const dataEncoded = encodeURIComponent(JSON.stringify(data));
-  const ex = new ArgumentIndexException(data);
-  const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
-    encodeURIComponent(exMsg)
-  }&${esd.data}=${dataEncoded}`;
+  @Test("(init)")
+  @TestCase(...initCases)
+  @TrackFailedCase
+  public testWithInit([data, exMsg]: [ArgumentIndexExceptionInit, string]) {
+    const dataEncoded = encodeURIComponent(JSON.stringify(data));
+    const ex = new ArgumentIndexException(data);
+    const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
+    const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+      encodeURIComponent(exMsg)
+    }&${esd.data}=${dataEncoded}`;
 
-  assertEquals(ex.name, exName);
-  assertEquals(ex.code, exCode);
-  assertEquals(ex.data, data);
-  assertEquals(ex.message, exMsg);
-  assertEquals(ex.toString(), ex2String);
-  assertEquals(ex.helpUrl, exHelpUrl);
-});
+    assertEquals(ex.name, exName);
+    assertEquals(ex.code, exCode);
+    assertEquals(ex.data, data);
+    assertEquals(ex.message, exMsg);
+    assertEquals(ex.toString(), ex2String);
+    assertEquals(ex.helpUrl, exHelpUrl);
+  }
 
-Deno.test("ArgumentIndexException({lowerBound})", () => {
-  const exMsg =
-    `An index is outside the bounds of an array argument. The index must be ${lowerBound} or greater.`;
-  const data: ArgumentIndexExceptionInit = { lowerBound };
-  const dataEncoded = encodeURIComponent(JSON.stringify(data));
-  const ex = new ArgumentIndexException(data);
-  const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
-    encodeURIComponent(exMsg)
-  }&${esd.data}=${dataEncoded}`;
+  @Test("(message)")
+  @TestCase(...messageCases)
+  @TrackFailedCase
+  public testWithMessage([exMsg]: [string]) {
+    const ex = new ArgumentIndexException(exMsg);
+    const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
+    const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+      encodeURIComponent(exMsg)
+    }`;
 
-  assertEquals(ex.name, exName);
-  assertEquals(ex.code, exCode);
-  assertEquals(ex.data, data);
-  assertEquals(ex.message, exMsg);
-  assertEquals(ex.toString(), ex2String);
-  assertEquals(ex.helpUrl, exHelpUrl);
-});
+    assertEquals(ex.name, exName);
+    assertEquals(ex.code, exCode);
+    assertEquals(ex.data, undefined);
+    assertEquals(ex.message, exMsg);
+    assertEquals(ex.toString(), ex2String);
+    assertEquals(ex.helpUrl, exHelpUrl);
+  }
 
-Deno.test("ArgumentIndexException({upperBound})", () => {
-  const exMsg =
-    `An index is outside the bounds of an array argument. The index must be 0 or ${upperBound}, or between them.`;
-  const data: ArgumentIndexExceptionInit = { upperBound };
-  const dataEncoded = encodeURIComponent(JSON.stringify(data));
-  const ex = new ArgumentIndexException(data);
-  const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
-    encodeURIComponent(exMsg)
-  }&${esd.data}=${dataEncoded}`;
+  @Test("(message, init)")
+  @TestCase(...allCases)
+  @TrackFailedCase
+  public testAll([data, exMsg]: [ArgumentIndexExceptionInit, string]) {
+    const dataEncoded = encodeURIComponent(JSON.stringify(data));
+    const ex = new ArgumentIndexException(exMsg, data);
+    const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
+    const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+      encodeURIComponent(exMsg)
+    }&${esd.data}=${dataEncoded}`;
 
-  assertEquals(ex.name, exName);
-  assertEquals(ex.code, exCode);
-  assertEquals(ex.data, data);
-  assertEquals(ex.message, exMsg);
-  assertEquals(ex.toString(), ex2String);
-  assertEquals(ex.helpUrl, exHelpUrl);
-});
+    assertEquals(ex.name, exName);
+    assertEquals(ex.code, exCode);
+    assertEquals(ex.data, data);
+    assertEquals(ex.message, exMsg);
+    assertEquals(ex.toString(), ex2String);
+    assertEquals(ex.helpUrl, exHelpUrl);
+  }
 
-Deno.test("ArgumentIndexException({valueName, index})", () => {
-  const exMsg =
-    `The index ${index} is outside the bounds of the array argument "${argumentName}".`;
-  const data: ArgumentIndexExceptionInit = { argumentName, index };
-  const dataEncoded = encodeURIComponent(JSON.stringify(data));
-  const ex = new ArgumentIndexException(data);
-  const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
-    encodeURIComponent(exMsg)
-  }&${esd.data}=${dataEncoded}`;
+  @Test("({lowerBound, upperBound}): upperBound <= lowerBound")
+  @TestCase(...badLowerUpperBoundCases)
+  @TrackFailedCase
+  public testWhenUpperBoundLteLowerBound(
+    [data, exMsg]: [ArgumentIndexExceptionInit, string],
+  ) {
+    assertThrows(
+      () => new ArgumentIndexException(data),
+      ValueException,
+      exMsg,
+    );
+  }
+}
 
-  assertEquals(ex.name, exName);
-  assertEquals(ex.code, exCode);
-  assertEquals(ex.data, data);
-  assertEquals(ex.message, exMsg);
-  assertEquals(ex.toString(), ex2String);
-  assertEquals(ex.helpUrl, exHelpUrl);
-});
-
-Deno.test("ArgumentIndexException({valueName, lowerBound})", () => {
-  const exMsg =
-    `An index is outside the bounds of the array argument "${argumentName}". The index must be ${lowerBound} or greater.`;
-  const data: ArgumentIndexExceptionInit = { argumentName, lowerBound };
-  const dataEncoded = encodeURIComponent(JSON.stringify(data));
-  const ex = new ArgumentIndexException(data);
-  const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
-    encodeURIComponent(exMsg)
-  }&${esd.data}=${dataEncoded}`;
-
-  assertEquals(ex.name, exName);
-  assertEquals(ex.code, exCode);
-  assertEquals(ex.data, data);
-  assertEquals(ex.message, exMsg);
-  assertEquals(ex.toString(), ex2String);
-  assertEquals(ex.helpUrl, exHelpUrl);
-});
-
-Deno.test("ArgumentIndexException({argumentName, upperBound})", () => {
-  const exMsg =
-    `An index is outside the bounds of the array argument "${argumentName}". The index must be 0 or ${upperBound}, or between them.`;
-  const data: ArgumentIndexExceptionInit = { argumentName, upperBound };
-  const dataEncoded = encodeURIComponent(JSON.stringify(data));
-  const ex = new ArgumentIndexException(data);
-  const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
-    encodeURIComponent(exMsg)
-  }&${esd.data}=${dataEncoded}`;
-
-  assertEquals(ex.name, exName);
-  assertEquals(ex.code, exCode);
-  assertEquals(ex.data, data);
-  assertEquals(ex.message, exMsg);
-  assertEquals(ex.toString(), ex2String);
-  assertEquals(ex.helpUrl, exHelpUrl);
-});
-
-Deno.test("ArgumentIndexException({index, lowerBound})", () => {
-  const exMsg =
-    `The index ${index} is outside the bounds of an array argument. The index must be ${lowerBound} or greater.`;
-  const data: ArgumentIndexExceptionInit = { index, lowerBound };
-  const dataEncoded = encodeURIComponent(JSON.stringify(data));
-  const ex = new ArgumentIndexException(data);
-  const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
-    encodeURIComponent(exMsg)
-  }&${esd.data}=${dataEncoded}`;
-
-  assertEquals(ex.name, exName);
-  assertEquals(ex.code, exCode);
-  assertEquals(ex.data, data);
-  assertEquals(ex.message, exMsg);
-  assertEquals(ex.toString(), ex2String);
-  assertEquals(ex.helpUrl, exHelpUrl);
-});
-
-Deno.test("ArgumentIndexException({index, upperBound})", () => {
-  const exMsg =
-    `The index ${index} is outside the bounds of an array argument. The index must be 0 or ${upperBound}, or between them.`;
-  const data: ArgumentIndexExceptionInit = { index, upperBound };
-  const dataEncoded = encodeURIComponent(JSON.stringify(data));
-  const ex = new ArgumentIndexException(data);
-  const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
-    encodeURIComponent(exMsg)
-  }&${esd.data}=${dataEncoded}`;
-
-  assertEquals(ex.name, exName);
-  assertEquals(ex.code, exCode);
-  assertEquals(ex.data, data);
-  assertEquals(ex.message, exMsg);
-  assertEquals(ex.toString(), ex2String);
-  assertEquals(ex.helpUrl, exHelpUrl);
-});
-
-Deno.test("ArgumentIndexException({lowerBound, upperBound})", () => {
-  const exMsg =
-    `An index is outside the bounds of an array argument. The index must be ${lowerBound} or ${upperBound}, or between them.`;
-  const data: ArgumentIndexExceptionInit = { lowerBound, upperBound };
-  const dataEncoded = encodeURIComponent(JSON.stringify(data));
-  const ex = new ArgumentIndexException(data);
-  const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
-    encodeURIComponent(exMsg)
-  }&${esd.data}=${dataEncoded}`;
-
-  assertEquals(ex.name, exName);
-  assertEquals(ex.code, exCode);
-  assertEquals(ex.data, data);
-  assertEquals(ex.message, exMsg);
-  assertEquals(ex.toString(), ex2String);
-  assertEquals(ex.helpUrl, exHelpUrl);
-});
-
-Deno.test("ArgumentIndexException({argumentName, index, lowerBound})", () => {
-  const exMsg =
-    `The index ${index} is outside the bounds of the array argument "${argumentName}". The index must be ${lowerBound} or greater.`;
-  const data: ArgumentIndexExceptionInit = { argumentName, index, lowerBound };
-  const dataEncoded = encodeURIComponent(JSON.stringify(data));
-  const ex = new ArgumentIndexException(data);
-  const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
-    encodeURIComponent(exMsg)
-  }&${esd.data}=${dataEncoded}`;
-
-  assertEquals(ex.name, exName);
-  assertEquals(ex.code, exCode);
-  assertEquals(ex.data, data);
-  assertEquals(ex.message, exMsg);
-  assertEquals(ex.toString(), ex2String);
-  assertEquals(ex.helpUrl, exHelpUrl);
-});
-
-Deno.test("ArgumentIndexException({argumentName, index, upperBound})", () => {
-  const exMsg =
-    `The index ${index} is outside the bounds of the array argument "${argumentName}". The index must be 0 or ${upperBound}, or between them.`;
-  const data: ArgumentIndexExceptionInit = { argumentName, index, upperBound };
-  const dataEncoded = encodeURIComponent(JSON.stringify(data));
-  const ex = new ArgumentIndexException(data);
-  const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
-    encodeURIComponent(exMsg)
-  }&${esd.data}=${dataEncoded}`;
-
-  assertEquals(ex.name, exName);
-  assertEquals(ex.code, exCode);
-  assertEquals(ex.data, data);
-  assertEquals(ex.message, exMsg);
-  assertEquals(ex.toString(), ex2String);
-  assertEquals(ex.helpUrl, exHelpUrl);
-});
-
-Deno.test("ArgumentIndexException({argumentName, lowerBound, upperBound})", () => {
-  const exMsg =
-    `An index is outside the bounds of the array argument "${argumentName}". The index must be ${lowerBound} or ${upperBound}, or between them.`;
-  const data: ArgumentIndexExceptionInit = {
-    argumentName,
-    lowerBound,
-    upperBound,
-  };
-  const dataEncoded = encodeURIComponent(JSON.stringify(data));
-  const ex = new ArgumentIndexException(data);
-  const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
-    encodeURIComponent(exMsg)
-  }&${esd.data}=${dataEncoded}`;
-
-  assertEquals(ex.name, exName);
-  assertEquals(ex.code, exCode);
-  assertEquals(ex.data, data);
-  assertEquals(ex.message, exMsg);
-  assertEquals(ex.toString(), ex2String);
-  assertEquals(ex.helpUrl, exHelpUrl);
-});
-
-Deno.test("ArgumentIndexException({argumentName, index, lowerBound, upperBound})", () => {
-  const exMsg =
-    `The index ${index} is outside the bounds of the array argument "${argumentName}". The index must be ${lowerBound} or ${upperBound}, or between them.`;
-  const data: ArgumentIndexExceptionInit = {
-    argumentName,
-    index,
-    lowerBound,
-    upperBound,
-  };
-  const dataEncoded = encodeURIComponent(JSON.stringify(data));
-  const ex = new ArgumentIndexException(data);
-  const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
-    encodeURIComponent(exMsg)
-  }&${esd.data}=${dataEncoded}`;
-
-  assertEquals(ex.name, exName);
-  assertEquals(ex.code, exCode);
-  assertEquals(ex.data, data);
-  assertEquals(ex.message, exMsg);
-  assertEquals(ex.toString(), ex2String);
-  assertEquals(ex.helpUrl, exHelpUrl);
-});
-
-Deno.test("ArgumentIndexException(message)", () => {
-  const exMsg =
-    "The provided index is outside the range of the array argument.";
-  const ex = new ArgumentIndexException(exMsg);
-  const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
-    encodeURIComponent(exMsg)
-  }`;
-
-  assertEquals(ex.name, exName);
-  assertEquals(ex.code, exCode);
-  assertEquals(ex.data, undefined);
-  assertEquals(ex.message, exMsg);
-  assertEquals(ex.toString(), ex2String);
-  assertEquals(ex.helpUrl, exHelpUrl);
-});
-
-Deno.test("ArgumentIndexException(message, {argumentName, index, lowerBound, upperBound})", () => {
-  const exMsg =
-    "The provided index is outside the range of the array argument.";
-  const data: ArgumentIndexExceptionInit = {
-    argumentName,
-    index,
-    lowerBound,
-    upperBound,
-  };
-  const dataEncoded = encodeURIComponent(JSON.stringify(data));
-  const ex = new ArgumentIndexException(exMsg, data);
-  const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
-    encodeURIComponent(exMsg)
-  }&${esd.data}=${dataEncoded}`;
-
-  assertEquals(ex.name, exName);
-  assertEquals(ex.code, exCode);
-  assertEquals(ex.data, data);
-  assertEquals(ex.message, exMsg);
-  assertEquals(ex.toString(), ex2String);
-  assertEquals(ex.helpUrl, exHelpUrl);
-});
-
-Deno.test("ArgumentIndexException({lowerBound, upperBound}) - upperBound <= lowerBound", () => {
-  assertThrows(
-    () => new ArgumentIndexException({ lowerBound: 5, upperBound: 4 }),
-    ValueException,
-    `The symbol "init.upperBound" has the correct type, but an invalid value. It has the following constraints: positive integer, greater than init.lowerBound.`,
-  );
-  assertThrows(
-    () => new ArgumentIndexException({ lowerBound: 5, upperBound: 5 }),
-    ValueException,
-    `The symbol "init.upperBound" has the correct type, but an invalid value. It has the following constraints: positive integer, greater than init.lowerBound.`,
-  );
-});
+Testing(ArgumentIndexExceptionTest);

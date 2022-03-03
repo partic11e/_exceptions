@@ -8,7 +8,7 @@
  * @copyright 2021-2022 IntegerEleven. All rights reserved. MIT license.
  */
 
-import { assertEquals } from "../dev_deps.ts";
+import { assertEquals, Testing } from "../dev_deps.ts";
 
 import { ParseException, ParseExceptionInit } from "../mod.ts";
 
@@ -17,74 +17,91 @@ import {
   P11_EXC_KB,
 } from "../src/_constants.ts";
 
-const exCode = 18;
-const exName = "ParseException";
-const parser = "JSON";
+import {
+  allCases,
+  exCode,
+  exName,
+  initCases,
+  messageCases,
+} from "./ParseException.cases.ts";
 
-Deno.test("ParseException()", () => {
-  const exMsg = "A parser was unable to parse content.";
-  const ex = new ParseException();
-  const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
-    encodeURIComponent(exMsg)
-  }`;
+import { TrackFailedCase } from "./_util.ts";
 
-  assertEquals(ex.name, exName);
-  assertEquals(ex.code, exCode);
-  assertEquals(ex.data, undefined);
-  assertEquals(ex.message, exMsg);
-  assertEquals(ex.toString(), ex2String);
-  assertEquals(ex.helpUrl, exHelpUrl);
-});
+const { TestSuite, TestCase, Test } = Testing.decorators;
 
-Deno.test("ParseException({parser})", () => {
-  const exMsg = `The parser "${parser}" was unable to parser content.`;
-  const data: ParseExceptionInit = { parser };
-  const dataEncoded = encodeURIComponent(JSON.stringify(data));
-  const ex = new ParseException(data);
-  const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
-    encodeURIComponent(exMsg)
-  }&${esd.data}=${dataEncoded}`;
+@TestSuite("ParseException")
+class ParseExceptionTest {
+  @Test("()")
+  public testWithNoArgs() {
+    const exMsg = "A parser was unable to parse content.";
+    const ex = new ParseException();
+    const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
+    const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+      encodeURIComponent(exMsg)
+    }`;
 
-  assertEquals(ex.name, exName);
-  assertEquals(ex.code, exCode);
-  assertEquals(ex.data, data);
-  assertEquals(ex.message, exMsg);
-  assertEquals(ex.toString(), ex2String);
-  assertEquals(ex.helpUrl, exHelpUrl);
-});
+    assertEquals(ex.name, exName);
+    assertEquals(ex.code, exCode);
+    assertEquals(ex.data, undefined);
+    assertEquals(ex.message, exMsg);
+    assertEquals(ex.toString(), ex2String);
+    assertEquals(ex.helpUrl, exHelpUrl);
+  }
 
-Deno.test("ParseException(message)", () => {
-  const exMsg = "Content for a parser is invalid.";
-  const ex = new ParseException(exMsg);
-  const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
-    encodeURIComponent(exMsg)
-  }`;
+  @Test("(init)")
+  @TestCase(...initCases)
+  @TrackFailedCase
+  public testWithInit([data, exMsg]: [ParseExceptionInit, string]) {
+    const dataEncoded = encodeURIComponent(JSON.stringify(data));
+    const ex = new ParseException(data);
+    const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
+    const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+      encodeURIComponent(exMsg)
+    }&${esd.data}=${dataEncoded}`;
 
-  assertEquals(ex.name, exName);
-  assertEquals(ex.code, exCode);
-  assertEquals(ex.data, undefined);
-  assertEquals(ex.message, exMsg);
-  assertEquals(ex.toString(), ex2String);
-  assertEquals(ex.helpUrl, exHelpUrl);
-});
+    assertEquals(ex.name, exName);
+    assertEquals(ex.code, exCode);
+    assertEquals(ex.data, data);
+    assertEquals(ex.message, exMsg);
+    assertEquals(ex.toString(), ex2String);
+    assertEquals(ex.helpUrl, exHelpUrl);
+  }
 
-Deno.test("ParseException(message, {parser})", () => {
-  const exMsg = "Content for a parser is invalid.";
-  const data: ParseExceptionInit = { parser };
-  const dataEncoded = encodeURIComponent(JSON.stringify(data));
-  const ex = new ParseException(exMsg, data);
-  const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
-  const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
-    encodeURIComponent(exMsg)
-  }&${esd.data}=${dataEncoded}`;
+  @Test("(message)")
+  @TestCase(...messageCases)
+  @TrackFailedCase
+  public testWithMessage([exMsg]: [string]) {
+    const ex = new ParseException(exMsg);
+    const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
+    const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+      encodeURIComponent(exMsg)
+    }`;
 
-  assertEquals(ex.name, exName);
-  assertEquals(ex.code, exCode);
-  assertEquals(ex.data, data);
-  assertEquals(ex.message, exMsg);
-  assertEquals(ex.toString(), ex2String);
-  assertEquals(ex.helpUrl, exHelpUrl);
-});
+    assertEquals(ex.name, exName);
+    assertEquals(ex.code, exCode);
+    assertEquals(ex.data, undefined);
+    assertEquals(ex.message, exMsg);
+    assertEquals(ex.toString(), ex2String);
+    assertEquals(ex.helpUrl, exHelpUrl);
+  }
+
+  @Test("(message, init)")
+  @TestCase(...allCases)
+  public testAll([data, exMsg]: [ParseExceptionInit, string]) {
+    const dataEncoded = encodeURIComponent(JSON.stringify(data));
+    const ex = new ParseException(exMsg, data);
+    const ex2String = `${exName} [0x${exCode.toString(16)}]: ${exMsg}`;
+    const exHelpUrl = `${P11_EXC_KB}/0x${exCode.toString(16)}?${esd.message}=${
+      encodeURIComponent(exMsg)
+    }&${esd.data}=${dataEncoded}`;
+
+    assertEquals(ex.name, exName);
+    assertEquals(ex.code, exCode);
+    assertEquals(ex.data, data);
+    assertEquals(ex.message, exMsg);
+    assertEquals(ex.toString(), ex2String);
+    assertEquals(ex.helpUrl, exHelpUrl);
+  }
+}
+
+Testing(ParseExceptionTest);

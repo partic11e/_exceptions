@@ -6,7 +6,7 @@
  * @copyright 2021-2022 IntegerEleven. All rights reserved. MIT license.
  */
 
-import { assertEquals } from "../dev_deps.ts";
+import { assertEquals, Testing } from "../dev_deps.ts";
 import {
   AbortedException,
   ArgumentException,
@@ -27,6 +27,8 @@ import {
   TimeoutException,
   ValueException,
 } from "../mod.ts";
+
+const { TestSuite, Test } = Testing.decorators;
 
 const exceptions = [
   AbortedException,
@@ -51,20 +53,26 @@ const exceptions = [
 
 const codes = exceptions.map((exCtor) => (new exCtor("Test")).code);
 
-Deno.test("Exception codes unique", () => {
-  assertEquals(exceptions.length, codes.length);
+@TestSuite("Exception code")
+class ExceptionCodesTest {
+  @Test("unique codes")
+  public testunique() {
+    assertEquals(exceptions.length, codes.length);
 
-  for (let i = 0; i < exceptions.length; i++) {
-    const code = codes[i];
-    const firstIndex = codes.indexOf(code);
-    const lastIndex = codes.lastIndexOf(code);
+    for (let i = 0; i < exceptions.length; i++) {
+      const code = codes[i];
+      const firstIndex = codes.indexOf(code);
+      const lastIndex = codes.lastIndexOf(code);
 
-    assertEquals(
-      firstIndex,
-      lastIndex,
-      `Exception code 0x${code.toString(16)} is used with ${
-        exceptions[firstIndex].name
-      } and ${exceptions[lastIndex].name}.`,
-    );
+      assertEquals(
+        firstIndex,
+        lastIndex,
+        `Exception code 0x${code.toString(16)} is used with ${
+          exceptions[firstIndex].name
+        } and ${exceptions[lastIndex].name}.`,
+      );
+    }
   }
-});
+}
+
+Testing(ExceptionCodesTest);
