@@ -1,14 +1,10 @@
 /**
- * Source dependencies.
+ * Dependencies for the partic11e library exception module.
  *
- * @copyright 2021-2022 IntegerEleven. All rights reserved. MIT license.
+ * @copyright 2022 IntegerEleven. All rights reserved. MIT license.
  */
 
-export {
-  getDocsUrl,
-  getExceptionsHelpUrl,
-} from "https://denopkg.com/partic11e/common@dev/mod.ts";
-
+//  #region export-types
 export type {
   CodeBaseType,
   DecoratorType,
@@ -16,4 +12,15 @@ export type {
   OperationType,
   ParserType,
   ResourceType,
-} from "https://denopkg.com/partic11e/common@dev/mod.ts";
+} from "https://denopkg.com/partic11e/common@v0.1.0-alpha/mod.ts";
+//  #endregion
+
+//  #region export-constants
+//  #endregion
+
+//  #region export-features
+export {
+  getDocsUrl,
+  getExceptionsHelpUrl,
+} from "https://denopkg.com/partic11e/common@v0.1.0-alpha/mod.ts";
+//  #endregion

@@ -1,5 +1,5 @@
 /**
- * Module-level exports of the public API for the partic11e library exception module.
+ * Internal features for use with the partic11e library exception module.
  *
  * @copyright 2022 IntegerEleven. All rights reserved. MIT license.
  */
@@ -8,8 +8,9 @@
 //  #endregion
 
 //  #region export-constants
+export * from "./_constants.ts";
 //  #endregion
 
 //  #region export-features
-export * from "./src/mod.ts";
+export * from "./_utils.ts";
 //  #endregion
