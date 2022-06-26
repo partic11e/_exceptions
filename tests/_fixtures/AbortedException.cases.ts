@@ -1,14 +1,14 @@
 /**
  * Test cases for the {@link AbortedException} exception.
  *
- * @copyright 2022 IntegerEleven. All rights reserved. MIT license.
+ * @copyright 2022 integer11. All rights reserved. MIT license.
  */
+
+import { OperationEnum } from "../../deps.ts";
 
 import type { OperationType } from "../../deps.ts";
 
-import { Operation } from "../../dev_deps.ts";
-
-import { AbortedExceptionInit } from "../../mod.ts";
+import type { AbortedExceptionInit } from "../../mod.ts";
 
 export const exCode = 9;
 
@@ -24,12 +24,12 @@ const operationNames = [
 ];
 
 const operationTypes: OperationType[] = [
-  Operation.Action,
-  Operation.Build,
-  Operation.Operation,
-  Operation.Process,
-  Operation.Thread,
-  Operation.Workflow,
+  OperationEnum.Action,
+  OperationEnum.Build,
+  OperationEnum.Operation,
+  OperationEnum.Process,
+  OperationEnum.Thread,
+  OperationEnum.Workflow,
 ];
 
 const messages = [

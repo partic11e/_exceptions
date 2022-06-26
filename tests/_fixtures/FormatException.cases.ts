@@ -1,16 +1,20 @@
 /**
  * Test cases for the {@link FormatException} exception.
  *
- * @copyright 2022 IntegerEleven. All rights reserved. MIT license.
+ * @copyright 2022 integer11. All rights reserved. MIT license.
  */
 
-import { FormatExceptionInit } from "../../mod.ts";
+import type { FormatterType } from "../../deps.ts";
+
+import type { FormatExceptionInit } from "../../mod.ts";
 
 export const exCode = 17;
 
 export const exName = "FormatException";
 
-const formatters = [1, 2, 3, 4, 5].map((n) => `formatter${n}`);
+const formatters = [1, 2, 3, 4, 5].map((n) =>
+  `formatter${n}`
+) as FormatterType[];
 
 const formatExpressions = [1, 2, 3, 4, 5].map((n) => `${n}.${n ** 4}:${n * 2}`);
 

@@ -1,10 +1,10 @@
 /**
  * Test cases for the {@link KeyException} exception.
  *
- * @copyright 2022 IntegerEleven. All rights reserved. MIT license.
+ * @copyright 2022 integer11. All rights reserved. MIT license.
  */
 
-import { KeyExceptionInit } from "../../mod.ts";
+import type { KeyExceptionInit } from "../../mod.ts";
 
 export const exCode = 7;
 

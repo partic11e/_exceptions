@@ -1,15 +1,27 @@
 /**
- * Contains the class and types for creating an {@link AbortedException}.
+ * Contains the AbortedException class and associated types.
  *
- * @copyright 2021-2022 IntegerEleven. All rights reserved. MIT license.
+ * @copyright 2022 integer11. All rights reserved. MIT license.
  */
 
+//  #region feature-import-remote
+//  #endregion
+
+//  #region feature-import-local
+import { Exception } from "./Exception.ts";
+//  #endregion
+
+//  #region type-import-remote
 import type { OperationType } from "../../deps.ts";
+//  #endregion
 
-import { Exception, ExceptionInit } from "./Exception.ts";
+//  #region type-import-local
+import type { ExceptionInit } from "./Exception.ts";
+//  #endregion
 
+//  #region constants-local
 /**
- * The default {@link AbortedException} message.
+ * The default {@link AbortedException} message;
  */
 const DEFAULT_MSG = "An operation was aborted prematurely.";
 
@@ -37,7 +49,9 @@ const msgFromInit = (init: AbortedExceptionInit): string => {
       return DEFAULT_MSG;
   }
 };
+//  #endregion
 
+//  #region type-export-file
 /**
  * An interface describing the `init` properties for the
  * {@link AbortedException} class.
@@ -53,22 +67,26 @@ export interface AbortedExceptionInit extends ExceptionInit {
    */
   operationType?: OperationType;
 }
+//  #endregion
 
+// #region feature-export-file
 /**
- * A class representing exceptions that occur when an operation has been
- * prematurely aborted.
+ * An exception that is thrown when an operation is aborted.
  */
 export class AbortedException<
   T extends AbortedExceptionInit = AbortedExceptionInit,
 > extends Exception<T> {
-  /**
-   * The exception code for the {@link AbortedException} class.
-   */
-  public readonly code: number = 9;
+  //  #region static-properties
+  //  #endregion
 
+  //  #region static-methods
+  //  #endregion
+
+  //  #region constructors
   /**
    * Creates a new {@link AbortedException} with the default message,
-   * "An operation was aborted prematurely.", and no exception init data.
+   * "An", and no
+   * exception init data.
    */
   constructor();
   /**
@@ -99,4 +117,56 @@ export class AbortedException<
 
     super(message, init);
   }
+  //  #endregion
+
+  //  #region properties
+  /**
+   * The exception code for the {@link AbortedException} class.
+   */
+  public readonly code: number = 9;
+
+  //  #endregion
+
+  //  #region interface-implementations
+  //  #endregion
+
+  //  #region abstract-methods
+  //  #endregion
+
+  //  #region method-overrides
+  //  #endregion
+
+  //  #region native-overrides
+  //  #endregion
+
+  //  #region methods
+  //  #endregion
+
+  //  #region _static-properties
+  //  #endregion
+
+  //  #region _static-methods
+  //  #endregion
+
+  //  #region _properties
+  //  #endregion
+
+  //  #region _method-overrides
+  //  #endregion
+
+  //  #region _methods
+  //  #endregion
+
+  //  #region #static-methods
+  //  #endregion
+
+  //  #region #static-properties
+  //  #endregion
+
+  //  #region #methods
+  //  #endregion
+
+  //  #region #properties
+  //  #endregion
 }
+//  #endregion

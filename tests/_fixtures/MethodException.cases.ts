@@ -1,10 +1,10 @@
 /**
  * Test cases for the {@link MethodException} exception.
  *
- * @copyright 2022 IntegerEleven. All rights reserved. MIT license.
+ * @copyright 2022 integer11. All rights reserved. MIT license.
  */
 
-import { MethodExceptionInit } from "../../mod.ts";
+import type { MethodExceptionInit } from "../../mod.ts";
 
 export const exCode = 8;
 

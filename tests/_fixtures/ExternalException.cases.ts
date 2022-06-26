@@ -1,14 +1,14 @@
 /**
  * Test cases for the {@link ExternalException} exception.
  *
- * @copyright 2022 IntegerEleven. All rights reserved. MIT license.
+ * @copyright 2022 integer11. All rights reserved. MIT license.
  */
 
-import { CodeBaseType } from "../../deps.ts";
+import { CodeBaseEnum } from "../../deps.ts";
 
-import { CodeBase } from "../../dev_deps.ts";
+import type { CodeBaseType } from "../../deps.ts";
 
-import { ExternalExceptionInit } from "../../mod.ts";
+import type { ExternalExceptionInit } from "../../mod.ts";
 
 export const exCode = 1;
 
@@ -17,16 +17,16 @@ export const exName = "ExternalException";
 const externalNames = [1, 2, 3, 4, 5].map((n) => `ExampleLib-${n}`);
 
 const externalTypes: CodeBaseType[] = [
-  CodeBase.Module,
-  CodeBase.Library,
-  CodeBase.Framework,
-  CodeBase.Extension,
-  CodeBase.Plugin,
-  CodeBase.Adapter,
-  CodeBase.Toolkit,
-  CodeBase.Sdk,
-  CodeBase.Api,
-  CodeBase.Platform,
+  CodeBaseEnum.Module,
+  CodeBaseEnum.Library,
+  CodeBaseEnum.Framework,
+  CodeBaseEnum.Extension,
+  CodeBaseEnum.Plugin,
+  CodeBaseEnum.Adapter,
+  CodeBaseEnum.Toolkit,
+  CodeBaseEnum.Sdk,
+  CodeBaseEnum.Api,
+  CodeBaseEnum.Platform,
 ];
 
 const messages = [

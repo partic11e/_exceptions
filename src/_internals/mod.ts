@@ -1,7 +1,7 @@
 /**
  * Internal features for use with the partic11e library exception module.
  *
- * @copyright 2022 IntegerEleven. All rights reserved. MIT license.
+ * @copyright 2022 integer11. All rights reserved. MIT license.
  */
 
 //  #region export-types
@@ -12,5 +12,4 @@ export * from "./_constants.ts";
 //  #endregion
 
 //  #region export-features
-export * from "./_utils.ts";
 //  #endregion

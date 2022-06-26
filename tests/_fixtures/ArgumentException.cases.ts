@@ -1,10 +1,10 @@
 /**
  * Test cases for the {@link ArgumentException} exception.
  *
- * @copyright 2022 IntegerEleven. All rights reserved. MIT license.
+ * @copyright 2022 integer11. All rights reserved. MIT license.
  */
 
-import { ArgumentExceptionInit } from "../../mod.ts";
+import type { ArgumentExceptionInit } from "../../mod.ts";
 
 export const exCode = 11;
 

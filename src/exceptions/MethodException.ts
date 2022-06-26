@@ -1,13 +1,26 @@
 /**
- * Contains the class and types for creating a {@link MethodException}.
+ * Contains the MethodException class and associated types.
  *
- * @copyright 2021-2022 IntegerEleven. All rights reserved. MIT license.
+ * @copyright 2022 integer11. All rights reserved. MIT license.
  */
 
-import { Exception, ExceptionInit } from "./Exception.ts";
+//  #region feature-import-remote
+//  #endregion
 
+//  #region feature-import-local
+import { Exception } from "./Exception.ts";
+//  #endregion
+
+//  #region type-import-remote
+//  #endregion
+
+//  #region type-import-local
+import type { ExceptionInit } from "./Exception.ts";
+//  #endregion
+
+//  #region constants-local
 /**
- * The default {@link MethodException} message.
+ * The default {@link MethodException} message;
  */
 const DEFAULT_MSG = "Unable to locate a method on an object.";
 
@@ -42,7 +55,9 @@ const msgFromInit = (init: MethodExceptionInit): string => {
       return DEFAULT_MSG;
   }
 };
+//  #endregion
 
+//  #region type-export-file
 /**
  * An interface describing the `init` properties for the
  * {@link MethodException} class.
@@ -63,22 +78,26 @@ export interface MethodExceptionInit extends ExceptionInit {
    */
   valueName?: string;
 }
+//  #endregion
 
+//  #region feature-export-file
 /**
- * A class representing exceptions that occur when a method doesn't exist on an
- * object.
+ * An exception that occurs when a method is not found on an object.
  */
 export class MethodException<
   T extends MethodExceptionInit = MethodExceptionInit,
 > extends Exception<T> {
-  /**
-   * The exception code for the {@link MethodException} class.
-   */
-  public readonly code: number = 8;
+  //  #region static-properties
+  //  #endregion
 
+  //  #region static-methods
+  //  #endregion
+
+  //  #region constructors
   /**
    * Creates a new {@link MethodException} with the default message,
-   * "Unable to locate a method on an object.", and no exception init data.
+   * "An unexpected error occurred", and no
+   * exception init data.
    */
   constructor();
   /**
@@ -109,4 +128,56 @@ export class MethodException<
 
     super(message, init);
   }
+  //  #endregion
+
+  //  #region properties
+  /**
+   * The exception code for the {@link MethodException} class.
+   */
+  public readonly code: number = 8;
+
+  //  #endregion
+
+  //  #region interface-implementations
+  //  #endregion
+
+  //  #region abstract-methods
+  //  #endregion
+
+  //  #region method-overrides
+  //  #endregion
+
+  //  #region native-overrides
+  //  #endregion
+
+  //  #region methods
+  //  #endregion
+
+  //  #region _static-properties
+  //  #endregion
+
+  //  #region _static-methods
+  //  #endregion
+
+  //  #region _properties
+  //  #endregion
+
+  //  #region _method-overrides
+  //  #endregion
+
+  //  #region _methods
+  //  #endregion
+
+  //  #region #static-methods
+  //  #endregion
+
+  //  #region #static-properties
+  //  #endregion
+
+  //  #region #methods
+  //  #endregion
+
+  //  #region #properties
+  //  #endregion
 }
+//  #endregion

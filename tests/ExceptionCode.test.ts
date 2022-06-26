@@ -3,7 +3,7 @@
  * a unique `code` property. This is important as the `code` property is used
  * in the Ex^2 (Exception Explain) application.
  *
- * @copyright 2022 IntegerEleven. All rights reserved. MIT license.
+ * @copyright 2022 integer11. All rights reserved. MIT license.
  */
 
 //  #region feature-import-remote

@@ -1,17 +1,27 @@
 /**
- * Contains the class and types for creating a {@link FormatException}.
+ * Contains the FormatException class and associated types.
  *
- * @copyright 2021-2022 IntegerEleven. All rights reserved. MIT license.
+ * @copyright 2022 integer11. All rights reserved. MIT license.
  */
 
-import { TExceptionInit } from "../types/mod.ts";
+//  #region feature-import-remote
+//  #endregion
 
-import type { FormatterType } from "../../deps.ts";
-
+//  #region feature-import-local
 import { Exception } from "./Exception.ts";
+//  #endregion
 
+//  #region type-import-remote
+import type { FormatterType } from "../../deps.ts";
+//  #endregion
+
+//  #region type-import-local
+import type { ExceptionInit } from "./Exception.ts";
+//  #endregion
+
+//  #region constants-local
 /**
- * The default {@link FormatException} message.
+ * The default {@link FormatException} message;
  */
 const DEFAULT_MSG = "An expression for a formatter is invalid.";
 
@@ -36,12 +46,14 @@ const msgFromInit = (init: FormatExceptionInit): string => {
       return DEFAULT_MSG;
   }
 };
+//  #endregion
 
+//  #region type-export-file
 /**
  * An interface describing the `init` properties for the
  * {@link FormatException} class.
  */
-export type FormatExceptionInit = TExceptionInit<{
+export interface FormatExceptionInit extends ExceptionInit {
   /**
    * The format expression that is invalid.
    */
@@ -51,23 +63,27 @@ export type FormatExceptionInit = TExceptionInit<{
    * The type of formatter.
    */
   formatter?: FormatterType;
-}>;
+}
+//  #endregion
 
+// #region feature-export-file
 /**
- * A class representing exceptions that occur when a format expression is
- * invalid for a formatter.
+ * An exception that occurs when a format expression is invalid for a formatter.
  */
 export class FormatException<
   T extends FormatExceptionInit = FormatExceptionInit,
 > extends Exception<T> {
-  /**
-   * The exception code for the {@link FormatException} class.
-   */
-  public readonly code: number = 17;
+  //  #region static-properties
+  //  #endregion
 
+  //  #region static-methods
+  //  #endregion
+
+  //  #region constructors
   /**
    * Creates a new {@link FormatException} with the default message,
-   * "An expression for a formatter is invalid..", and no exception init data.
+   * "An unexpected error occurred", and no
+   * exception init data.
    */
   constructor();
   /**
@@ -98,4 +114,56 @@ export class FormatException<
 
     super(message, init);
   }
+  //  #endregion
+
+  //  #region properties
+  /**
+   * The exception code for the {@link FormatException} class.
+   */
+  public readonly code: number = 17;
+
+  //  #endregion
+
+  //  #region interface-implementations
+  //  #endregion
+
+  //  #region abstract-methods
+  //  #endregion
+
+  //  #region method-overrides
+  //  #endregion
+
+  //  #region native-overrides
+  //  #endregion
+
+  //  #region methods
+  //  #endregion
+
+  //  #region _static-properties
+  //  #endregion
+
+  //  #region _static-methods
+  //  #endregion
+
+  //  #region _properties
+  //  #endregion
+
+  //  #region _method-overrides
+  //  #endregion
+
+  //  #region _methods
+  //  #endregion
+
+  //  #region #static-methods
+  //  #endregion
+
+  //  #region #static-properties
+  //  #endregion
+
+  //  #region #methods
+  //  #endregion
+
+  //  #region #properties
+  //  #endregion
 }
+//  #endregion

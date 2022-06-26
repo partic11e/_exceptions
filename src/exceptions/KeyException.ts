@@ -1,13 +1,26 @@
 /**
- * Contains the class and types for creating a {@link KeyException}.
+ * Contains the KeyException class and associated types.
  *
- * @copyright 2021-2022 IntegerEleven. All rights reserved. MIT license.
+ * @copyright 2022 integer11. All rights reserved. MIT license.
  */
 
-import { Exception, ExceptionInit } from "./Exception.ts";
+//  #region feature-import-remote
+//  #endregion
 
+//  #region feature-import-local
+import { Exception } from "./Exception.ts";
+//  #endregion
+
+//  #region type-import-remote
+//  #endregion
+
+//  #region type-import-local
+import type { ExceptionInit } from "./Exception.ts";
+//  #endregion
+
+//  #region constants-local
 /**
- * The default {@link KeyException} message.
+ * The default {@link KeyException} message;
  */
 const DEFAULT_MSG = "Unable to locate a property key on an object or record.";
 
@@ -41,7 +54,9 @@ const msgFromInit = (init: KeyExceptionInit): string => {
       return DEFAULT_MSG;
   }
 };
+//  #endregion
 
+//  #region type-export-file
 /**
  * An interface describing the `init` properties for the
  * {@link KeyException} class.
@@ -62,22 +77,25 @@ export interface KeyExceptionInit extends ExceptionInit {
    */
   valueName?: string;
 }
+//  #endregion
 
+//  #region feature-export-file
 /**
- * A class representing exceptions that occur when a property key doesn't exist
- * on an object or record.
+ * An exception that occurs when a property key doesn't exist on an object or record.
  */
 export class KeyException<
   T extends KeyExceptionInit = KeyExceptionInit,
 > extends Exception<T> {
-  /**
-   * The exception code for the {@link KeyException} class.
-   */
-  public readonly code: number = 7;
+  //  #region static-properties
+  //  #endregion
 
+  //  #region static-methods
+  //  #endregion
+
+  //  #region constructors
   /**
    * Creates a new {@link KeyException} with the default message,
-   * "Unable to locate a property key on an object or record.", and no
+   * "An unexpected error occurred", and no
    * exception init data.
    */
   constructor();
@@ -109,4 +127,56 @@ export class KeyException<
 
     super(message, init);
   }
+  //  #endregion
+
+  //  #region properties
+  /**
+   * The exception code for the {@link KeyException} class.
+   */
+  public readonly code: number = 7;
+
+  //  #endregion
+
+  //  #region interface-implementations
+  //  #endregion
+
+  //  #region abstract-methods
+  //  #endregion
+
+  //  #region method-overrides
+  //  #endregion
+
+  //  #region native-overrides
+  //  #endregion
+
+  //  #region methods
+  //  #endregion
+
+  //  #region _static-properties
+  //  #endregion
+
+  //  #region _static-methods
+  //  #endregion
+
+  //  #region _properties
+  //  #endregion
+
+  //  #region _method-overrides
+  //  #endregion
+
+  //  #region _methods
+  //  #endregion
+
+  //  #region #static-methods
+  //  #endregion
+
+  //  #region #static-properties
+  //  #endregion
+
+  //  #region #methods
+  //  #endregion
+
+  //  #region #properties
+  //  #endregion
 }
+//  #endregion
