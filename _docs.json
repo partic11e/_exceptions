@@ -1,0 +1,6473 @@
+[
+  {
+    "kind": "typeAlias",
+    "name": "TExceptionInit",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/types/types.ts",
+      "line": 32,
+      "col": 0
+    },
+    "declarationKind": "export",
+    "jsDoc": {
+      "doc": "A generic interface describing additional `init` properties available to a\nspecific derived {@link Exception} unified with the common properties\navailable to all {@link Exception} classes."
+    },
+    "typeAliasDef": {
+      "tsType": {
+        "repr": "",
+        "kind": "intersection",
+        "intersection": [
+          {
+            "repr": "IExceptionInit",
+            "kind": "typeRef",
+            "typeRef": {
+              "typeParams": null,
+              "typeName": "IExceptionInit"
+            }
+          },
+          {
+            "repr": "T",
+            "kind": "typeRef",
+            "typeRef": {
+              "typeParams": null,
+              "typeName": "T"
+            }
+          }
+        ]
+      },
+      "typeParams": [
+        {
+          "name": "T",
+          "constraint": {
+            "repr": "Record",
+            "kind": "typeRef",
+            "typeRef": {
+              "typeParams": [
+                {
+                  "repr": "string",
+                  "kind": "keyword",
+                  "keyword": "string"
+                },
+                {
+                  "repr": "unknown",
+                  "kind": "keyword",
+                  "keyword": "unknown"
+                }
+              ],
+              "typeName": "Record"
+            }
+          },
+          "default": {
+            "repr": "Record",
+            "kind": "typeRef",
+            "typeRef": {
+              "typeParams": [
+                {
+                  "repr": "string",
+                  "kind": "keyword",
+                  "keyword": "string"
+                },
+                {
+                  "repr": "unknown",
+                  "kind": "keyword",
+                  "keyword": "unknown"
+                }
+              ],
+              "typeName": "Record"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "kind": "import",
+    "name": "IExceptionInit",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/types/types.ts",
+      "line": 17,
+      "col": 0
+    },
+    "declarationKind": "private",
+    "jsDoc": {
+      "doc": "The global shared types for the partic11e library exception module.\n",
+      "tags": [
+        {
+          "kind": "unsupported",
+          "value": "@copyright 2022 integer11. All rights reserved. MIT license."
+        }
+      ]
+    },
+    "importDef": {
+      "src": "file:///C:/source/partic11e/exceptions/src/types/interfaces.ts",
+      "imported": "IExceptionInit"
+    }
+  },
+  {
+    "kind": "interface",
+    "name": "IExceptionInit",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/types/interfaces.ts",
+      "line": 31,
+      "col": 0
+    },
+    "declarationKind": "export",
+    "jsDoc": {
+      "doc": "An interface describing the base `init` properties that all\n{@link Exception} classes can utilize."
+    },
+    "interfaceDef": {
+      "extends": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "cause",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/types/interfaces.ts",
+            "line": 32,
+            "col": 2
+          },
+          "params": [],
+          "computed": false,
+          "optional": true,
+          "tsType": {
+            "repr": "",
+            "kind": "union",
+            "union": [
+              {
+                "repr": "Error",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "Error"
+                }
+              },
+              {
+                "repr": "Exception",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "Exception"
+                }
+              }
+            ]
+          },
+          "typeParams": []
+        }
+      ],
+      "callSignatures": [],
+      "indexSignatures": [],
+      "typeParams": []
+    }
+  },
+  {
+    "kind": "import",
+    "name": "Exception",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/types/interfaces.ts",
+      "line": 17,
+      "col": 0
+    },
+    "declarationKind": "private",
+    "jsDoc": {
+      "doc": "The global shared interfaces for the partic11e library exception module.\n",
+      "tags": [
+        {
+          "kind": "unsupported",
+          "value": "@copyright 2022 integer11. All rights reserved. MIT license."
+        }
+      ]
+    },
+    "importDef": {
+      "src": "file:///C:/source/partic11e/exceptions/src/exceptions/Exception.ts",
+      "imported": "Exception"
+    }
+  },
+  {
+    "kind": "variable",
+    "name": "VERSION",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/version.ts",
+      "line": 11,
+      "col": 0
+    },
+    "declarationKind": "export",
+    "jsDoc": {
+      "doc": "The version of the partic11e library exception module."
+    },
+    "variableDef": {
+      "tsType": {
+        "repr": "1.0.0-alpha.0",
+        "kind": "literal",
+        "literal": {
+          "kind": "string",
+          "string": "1.0.0-alpha.0"
+        }
+      },
+      "kind": "const"
+    }
+  },
+  {
+    "kind": "interface",
+    "name": "ExternalExceptionInit",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ExternalException.ts",
+      "line": 56,
+      "col": 0
+    },
+    "declarationKind": "export",
+    "jsDoc": {
+      "doc": "An interface describing the `init` properties for the\n{@link ExternalException} class."
+    },
+    "interfaceDef": {
+      "extends": [
+        {
+          "repr": "ExceptionInit",
+          "kind": "typeRef",
+          "typeRef": {
+            "typeParams": null,
+            "typeName": "ExceptionInit"
+          }
+        }
+      ],
+      "methods": [],
+      "properties": [
+        {
+          "name": "externalName",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ExternalException.ts",
+            "line": 60,
+            "col": 2
+          },
+          "jsDoc": {
+            "doc": "The name of the external codebase that caused the underlying exception."
+          },
+          "params": [],
+          "computed": false,
+          "optional": true,
+          "tsType": {
+            "repr": "string",
+            "kind": "keyword",
+            "keyword": "string"
+          },
+          "typeParams": []
+        },
+        {
+          "name": "externalType",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ExternalException.ts",
+            "line": 64,
+            "col": 2
+          },
+          "jsDoc": {
+            "doc": "The type of codebase that caused the underlying exception."
+          },
+          "params": [],
+          "computed": false,
+          "optional": true,
+          "tsType": {
+            "repr": "CodeBaseType",
+            "kind": "typeRef",
+            "typeRef": {
+              "typeParams": null,
+              "typeName": "CodeBaseType"
+            }
+          },
+          "typeParams": []
+        }
+      ],
+      "callSignatures": [],
+      "indexSignatures": [],
+      "typeParams": []
+    }
+  },
+  {
+    "kind": "class",
+    "name": "ExternalException",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ExternalException.ts",
+      "line": 72,
+      "col": 0
+    },
+    "declarationKind": "export",
+    "jsDoc": {
+      "doc": "An exception that occurs when non-user defined code throws an exception."
+    },
+    "classDef": {
+      "isAbstract": false,
+      "constructors": [
+        {
+          "jsDoc": {
+            "doc": "Creates a new {@link ExternalException} with the default message,\n\"An unexpected error occurred\", and no\nexception init data."
+          },
+          "accessibility": null,
+          "name": "constructor",
+          "params": [],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ExternalException.ts",
+            "line": 87,
+            "col": 2
+          }
+        },
+        {
+          "jsDoc": {
+            "doc": "Creates a new {@link ExternalException} with a message created based on\n{@link ExternalExceptionInit} properties.\n",
+            "tags": [
+              {
+                "kind": "param",
+                "name": "init",
+                "doc": "The {@link ExternalExceptionInit} properties."
+              }
+            ]
+          },
+          "accessibility": null,
+          "name": "constructor",
+          "params": [
+            {
+              "kind": "identifier",
+              "name": "init",
+              "optional": false,
+              "tsType": {
+                "repr": "T",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "T"
+                }
+              }
+            }
+          ],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ExternalException.ts",
+            "line": 94,
+            "col": 2
+          }
+        },
+        {
+          "jsDoc": {
+            "doc": "Creates a new {@link ExternalException} with the supplied `message`,\noptionally with additional {@link ExternalExceptionInit} properties.\n\n***NOTE: `message` is not altered by the `init` properties.***\n",
+            "tags": [
+              {
+                "kind": "param",
+                "name": "message",
+                "doc": "A message describing the exception."
+              },
+              {
+                "kind": "param",
+                "name": "init",
+                "doc": "The {@link ExternalExceptionInit} properties."
+              }
+            ]
+          },
+          "accessibility": null,
+          "name": "constructor",
+          "params": [
+            {
+              "kind": "identifier",
+              "name": "message",
+              "optional": false,
+              "tsType": {
+                "repr": "string",
+                "kind": "keyword",
+                "keyword": "string"
+              }
+            },
+            {
+              "kind": "identifier",
+              "name": "init",
+              "optional": true,
+              "tsType": {
+                "repr": "T",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "T"
+                }
+              }
+            }
+          ],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ExternalException.ts",
+            "line": 104,
+            "col": 2
+          }
+        },
+        {
+          "accessibility": null,
+          "name": "constructor",
+          "params": [
+            {
+              "kind": "assign",
+              "left": {
+                "kind": "identifier",
+                "name": "msgOrInit",
+                "optional": false,
+                "tsType": {
+                  "repr": "",
+                  "kind": "union",
+                  "union": [
+                    {
+                      "repr": "string",
+                      "kind": "keyword",
+                      "keyword": "string"
+                    },
+                    {
+                      "repr": "T",
+                      "kind": "typeRef",
+                      "typeRef": {
+                        "typeParams": null,
+                        "typeName": "T"
+                      }
+                    }
+                  ]
+                }
+              },
+              "right": "[UNSUPPORTED]",
+              "tsType": null
+            },
+            {
+              "kind": "identifier",
+              "name": "maybeInit",
+              "optional": true,
+              "tsType": {
+                "repr": "T",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "T"
+                }
+              }
+            }
+          ],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ExternalException.ts",
+            "line": 105,
+            "col": 2
+          }
+        }
+      ],
+      "properties": [
+        {
+          "jsDoc": {
+            "doc": "The exception code for the {@link ExternalException} class."
+          },
+          "tsType": {
+            "repr": "number",
+            "kind": "keyword",
+            "keyword": "number"
+          },
+          "readonly": true,
+          "accessibility": "public",
+          "optional": false,
+          "isAbstract": false,
+          "isStatic": false,
+          "name": "code",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ExternalException.ts",
+            "line": 122,
+            "col": 2
+          }
+        }
+      ],
+      "indexSignatures": [],
+      "methods": [],
+      "extends": "Exception",
+      "implements": [],
+      "typeParams": [
+        {
+          "name": "T",
+          "constraint": {
+            "repr": "ExternalExceptionInit",
+            "kind": "typeRef",
+            "typeRef": {
+              "typeParams": null,
+              "typeName": "ExternalExceptionInit"
+            }
+          },
+          "default": {
+            "repr": "ExternalExceptionInit",
+            "kind": "typeRef",
+            "typeRef": {
+              "typeParams": null,
+              "typeName": "ExternalExceptionInit"
+            }
+          }
+        }
+      ],
+      "superTypeParams": [
+        {
+          "repr": "T",
+          "kind": "typeRef",
+          "typeRef": {
+            "typeParams": null,
+            "typeName": "T"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "kind": "import",
+    "name": "Exception",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ExternalException.ts",
+      "line": 11,
+      "col": 0
+    },
+    "declarationKind": "private",
+    "jsDoc": {
+      "doc": "Contains the ExternalException class and associated types.\n",
+      "tags": [
+        {
+          "kind": "unsupported",
+          "value": "@copyright 2022 integer11. All rights reserved. MIT license."
+        }
+      ]
+    },
+    "importDef": {
+      "src": "file:///C:/source/partic11e/exceptions/src/exceptions/Exception.ts",
+      "imported": "Exception"
+    }
+  },
+  {
+    "kind": "import",
+    "name": "CodeBaseType",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ExternalException.ts",
+      "line": 15,
+      "col": 0
+    },
+    "declarationKind": "private",
+    "importDef": {
+      "src": "file:///C:/source/partic11e/exceptions/deps.ts",
+      "imported": "CodeBaseType"
+    }
+  },
+  {
+    "kind": "import",
+    "name": "ExceptionInit",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ExternalException.ts",
+      "line": 19,
+      "col": 0
+    },
+    "declarationKind": "private",
+    "importDef": {
+      "src": "file:///C:/source/partic11e/exceptions/src/exceptions/Exception.ts",
+      "imported": "ExceptionInit"
+    }
+  },
+  {
+    "kind": "interface",
+    "name": "RecursionExceptionInit",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/RecursionException.ts",
+      "line": 68,
+      "col": 0
+    },
+    "declarationKind": "export",
+    "jsDoc": {
+      "doc": "An interface describing the `init` properties for the\n{@link RecursionException} class."
+    },
+    "interfaceDef": {
+      "extends": [
+        {
+          "repr": "ExceptionInit",
+          "kind": "typeRef",
+          "typeRef": {
+            "typeParams": null,
+            "typeName": "ExceptionInit"
+          }
+        }
+      ],
+      "methods": [],
+      "properties": [
+        {
+          "name": "consecutiveRepeatingValues",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/RecursionException.ts",
+            "line": 72,
+            "col": 2
+          },
+          "jsDoc": {
+            "doc": "The values that were recursed consecutively."
+          },
+          "params": [],
+          "computed": false,
+          "optional": true,
+          "tsType": {
+            "repr": "boolean",
+            "kind": "keyword",
+            "keyword": "boolean"
+          },
+          "typeParams": []
+        },
+        {
+          "name": "operationName",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/RecursionException.ts",
+            "line": 77,
+            "col": 2
+          },
+          "jsDoc": {
+            "doc": "The name of the operation that exceeded the recursion limit."
+          },
+          "params": [],
+          "computed": false,
+          "optional": true,
+          "tsType": {
+            "repr": "string",
+            "kind": "keyword",
+            "keyword": "string"
+          },
+          "typeParams": []
+        },
+        {
+          "name": "recursionLimit",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/RecursionException.ts",
+            "line": 82,
+            "col": 2
+          },
+          "jsDoc": {
+            "doc": "The recursion limit exceeded."
+          },
+          "params": [],
+          "computed": false,
+          "optional": true,
+          "tsType": {
+            "repr": "number",
+            "kind": "keyword",
+            "keyword": "number"
+          },
+          "typeParams": []
+        }
+      ],
+      "callSignatures": [],
+      "indexSignatures": [],
+      "typeParams": []
+    }
+  },
+  {
+    "kind": "class",
+    "name": "RecursionException",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/RecursionException.ts",
+      "line": 90,
+      "col": 0
+    },
+    "declarationKind": "export",
+    "jsDoc": {
+      "doc": "An exception that occurs when an operation exceeds the maximum recursion depth."
+    },
+    "classDef": {
+      "isAbstract": false,
+      "constructors": [
+        {
+          "jsDoc": {
+            "doc": "Creates a new {@link RecursionException} with the default message,\n\"An unexpected error occurred\", and no\nexception init data."
+          },
+          "accessibility": null,
+          "name": "constructor",
+          "params": [],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/RecursionException.ts",
+            "line": 105,
+            "col": 2
+          }
+        },
+        {
+          "jsDoc": {
+            "doc": "Creates a new {@link RecursionException} with a message created based on\n{@link RecursionExceptionInit} properties.\n",
+            "tags": [
+              {
+                "kind": "param",
+                "name": "init",
+                "doc": "The {@link RecursionExceptionInit} properties."
+              }
+            ]
+          },
+          "accessibility": null,
+          "name": "constructor",
+          "params": [
+            {
+              "kind": "identifier",
+              "name": "init",
+              "optional": false,
+              "tsType": {
+                "repr": "T",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "T"
+                }
+              }
+            }
+          ],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/RecursionException.ts",
+            "line": 112,
+            "col": 2
+          }
+        },
+        {
+          "jsDoc": {
+            "doc": "Creates a new {@link RecursionException} with the supplied `message`,\noptionally with additional {@link RecursionExceptionInit} properties.\n\n***NOTE: `message` is not altered by the `init` properties.***\n",
+            "tags": [
+              {
+                "kind": "param",
+                "name": "message",
+                "doc": "A message describing the exception."
+              },
+              {
+                "kind": "param",
+                "name": "init",
+                "doc": "The {@link RecursionExceptionInit} properties."
+              }
+            ]
+          },
+          "accessibility": null,
+          "name": "constructor",
+          "params": [
+            {
+              "kind": "identifier",
+              "name": "message",
+              "optional": false,
+              "tsType": {
+                "repr": "string",
+                "kind": "keyword",
+                "keyword": "string"
+              }
+            },
+            {
+              "kind": "identifier",
+              "name": "init",
+              "optional": true,
+              "tsType": {
+                "repr": "T",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "T"
+                }
+              }
+            }
+          ],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/RecursionException.ts",
+            "line": 122,
+            "col": 2
+          }
+        },
+        {
+          "accessibility": null,
+          "name": "constructor",
+          "params": [
+            {
+              "kind": "assign",
+              "left": {
+                "kind": "identifier",
+                "name": "msgOrInit",
+                "optional": false,
+                "tsType": {
+                  "repr": "",
+                  "kind": "union",
+                  "union": [
+                    {
+                      "repr": "string",
+                      "kind": "keyword",
+                      "keyword": "string"
+                    },
+                    {
+                      "repr": "T",
+                      "kind": "typeRef",
+                      "typeRef": {
+                        "typeParams": null,
+                        "typeName": "T"
+                      }
+                    }
+                  ]
+                }
+              },
+              "right": "[UNSUPPORTED]",
+              "tsType": null
+            },
+            {
+              "kind": "identifier",
+              "name": "maybeInit",
+              "optional": true,
+              "tsType": {
+                "repr": "T",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "T"
+                }
+              }
+            }
+          ],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/RecursionException.ts",
+            "line": 123,
+            "col": 2
+          }
+        }
+      ],
+      "properties": [
+        {
+          "jsDoc": {
+            "doc": "The exception code for the {@link RecursionException} class."
+          },
+          "tsType": {
+            "repr": "number",
+            "kind": "keyword",
+            "keyword": "number"
+          },
+          "readonly": true,
+          "accessibility": "public",
+          "optional": false,
+          "isAbstract": false,
+          "isStatic": false,
+          "name": "code",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/RecursionException.ts",
+            "line": 140,
+            "col": 2
+          }
+        }
+      ],
+      "indexSignatures": [],
+      "methods": [],
+      "extends": "Exception",
+      "implements": [],
+      "typeParams": [
+        {
+          "name": "T",
+          "constraint": {
+            "repr": "RecursionExceptionInit",
+            "kind": "typeRef",
+            "typeRef": {
+              "typeParams": null,
+              "typeName": "RecursionExceptionInit"
+            }
+          },
+          "default": {
+            "repr": "RecursionExceptionInit",
+            "kind": "typeRef",
+            "typeRef": {
+              "typeParams": null,
+              "typeName": "RecursionExceptionInit"
+            }
+          }
+        }
+      ],
+      "superTypeParams": [
+        {
+          "repr": "T",
+          "kind": "typeRef",
+          "typeRef": {
+            "typeParams": null,
+            "typeName": "T"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "kind": "import",
+    "name": "Exception",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/RecursionException.ts",
+      "line": 11,
+      "col": 0
+    },
+    "declarationKind": "private",
+    "jsDoc": {
+      "doc": "Contains the RecursionException class and associated types.\n",
+      "tags": [
+        {
+          "kind": "unsupported",
+          "value": "@copyright 2022 integer11. All rights reserved. MIT license."
+        }
+      ]
+    },
+    "importDef": {
+      "src": "file:///C:/source/partic11e/exceptions/src/exceptions/Exception.ts",
+      "imported": "Exception"
+    }
+  },
+  {
+    "kind": "import",
+    "name": "ExceptionInit",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/RecursionException.ts",
+      "line": 18,
+      "col": 0
+    },
+    "declarationKind": "private",
+    "importDef": {
+      "src": "file:///C:/source/partic11e/exceptions/src/exceptions/Exception.ts",
+      "imported": "ExceptionInit"
+    }
+  },
+  {
+    "kind": "interface",
+    "name": "NotImplementedExceptionInit",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/NotImplementedException.ts",
+      "line": 48,
+      "col": 0
+    },
+    "declarationKind": "export",
+    "jsDoc": {
+      "doc": "An interface describing the `init` properties for the\n{@link NotImplementedException} class."
+    },
+    "interfaceDef": {
+      "extends": [
+        {
+          "repr": "ExceptionInit",
+          "kind": "typeRef",
+          "typeRef": {
+            "typeParams": null,
+            "typeName": "ExceptionInit"
+          }
+        }
+      ],
+      "methods": [],
+      "properties": [
+        {
+          "name": "methodName",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/NotImplementedException.ts",
+            "line": 52,
+            "col": 2
+          },
+          "jsDoc": {
+            "doc": "The name of the method that is not implemented."
+          },
+          "params": [],
+          "computed": false,
+          "optional": true,
+          "tsType": {
+            "repr": "string",
+            "kind": "keyword",
+            "keyword": "string"
+          },
+          "typeParams": []
+        }
+      ],
+      "callSignatures": [],
+      "indexSignatures": [],
+      "typeParams": []
+    }
+  },
+  {
+    "kind": "class",
+    "name": "NotImplementedException",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/NotImplementedException.ts",
+      "line": 60,
+      "col": 0
+    },
+    "declarationKind": "export",
+    "jsDoc": {
+      "doc": "An exception that occurs when a method is not implemented."
+    },
+    "classDef": {
+      "isAbstract": false,
+      "constructors": [
+        {
+          "jsDoc": {
+            "doc": "Creates a new {@link NotImplementedException} with the default message,\n\"An unexpected error occurred\", and no\nexception init data."
+          },
+          "accessibility": null,
+          "name": "constructor",
+          "params": [],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/NotImplementedException.ts",
+            "line": 75,
+            "col": 2
+          }
+        },
+        {
+          "jsDoc": {
+            "doc": "Creates a new {@link NotImplementedException} with a message created based on\n{@link NotImplementedExceptionInit} properties.\n",
+            "tags": [
+              {
+                "kind": "param",
+                "name": "init",
+                "doc": "The {@link NotImplementedExceptionInit} properties."
+              }
+            ]
+          },
+          "accessibility": null,
+          "name": "constructor",
+          "params": [
+            {
+              "kind": "identifier",
+              "name": "init",
+              "optional": false,
+              "tsType": {
+                "repr": "T",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "T"
+                }
+              }
+            }
+          ],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/NotImplementedException.ts",
+            "line": 82,
+            "col": 2
+          }
+        },
+        {
+          "jsDoc": {
+            "doc": "Creates a new {@link NotImplementedException} with the supplied `message`,\noptionally with additional {@link NotImplementedExceptionInit} properties.\n\n***NOTE: `message` is not altered by the `init` properties.***\n",
+            "tags": [
+              {
+                "kind": "param",
+                "name": "message",
+                "doc": "A message describing the exception."
+              },
+              {
+                "kind": "param",
+                "name": "init",
+                "doc": "The {@link NotImplementedExceptionInit} properties."
+              }
+            ]
+          },
+          "accessibility": null,
+          "name": "constructor",
+          "params": [
+            {
+              "kind": "identifier",
+              "name": "message",
+              "optional": false,
+              "tsType": {
+                "repr": "string",
+                "kind": "keyword",
+                "keyword": "string"
+              }
+            },
+            {
+              "kind": "identifier",
+              "name": "init",
+              "optional": true,
+              "tsType": {
+                "repr": "T",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "T"
+                }
+              }
+            }
+          ],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/NotImplementedException.ts",
+            "line": 92,
+            "col": 2
+          }
+        },
+        {
+          "accessibility": null,
+          "name": "constructor",
+          "params": [
+            {
+              "kind": "assign",
+              "left": {
+                "kind": "identifier",
+                "name": "msgOrInit",
+                "optional": false,
+                "tsType": {
+                  "repr": "",
+                  "kind": "union",
+                  "union": [
+                    {
+                      "repr": "string",
+                      "kind": "keyword",
+                      "keyword": "string"
+                    },
+                    {
+                      "repr": "T",
+                      "kind": "typeRef",
+                      "typeRef": {
+                        "typeParams": null,
+                        "typeName": "T"
+                      }
+                    }
+                  ]
+                }
+              },
+              "right": "[UNSUPPORTED]",
+              "tsType": null
+            },
+            {
+              "kind": "identifier",
+              "name": "maybeInit",
+              "optional": true,
+              "tsType": {
+                "repr": "T",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "T"
+                }
+              }
+            }
+          ],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/NotImplementedException.ts",
+            "line": 93,
+            "col": 2
+          }
+        }
+      ],
+      "properties": [
+        {
+          "jsDoc": {
+            "doc": "The exception code for the {@link NotImplementedException} class."
+          },
+          "tsType": {
+            "repr": "number",
+            "kind": "keyword",
+            "keyword": "number"
+          },
+          "readonly": true,
+          "accessibility": "public",
+          "optional": false,
+          "isAbstract": false,
+          "isStatic": false,
+          "name": "code",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/NotImplementedException.ts",
+            "line": 110,
+            "col": 2
+          }
+        }
+      ],
+      "indexSignatures": [],
+      "methods": [],
+      "extends": "Exception",
+      "implements": [],
+      "typeParams": [
+        {
+          "name": "T",
+          "constraint": {
+            "repr": "NotImplementedExceptionInit",
+            "kind": "typeRef",
+            "typeRef": {
+              "typeParams": null,
+              "typeName": "NotImplementedExceptionInit"
+            }
+          },
+          "default": {
+            "repr": "NotImplementedExceptionInit",
+            "kind": "typeRef",
+            "typeRef": {
+              "typeParams": null,
+              "typeName": "NotImplementedExceptionInit"
+            }
+          }
+        }
+      ],
+      "superTypeParams": [
+        {
+          "repr": "T",
+          "kind": "typeRef",
+          "typeRef": {
+            "typeParams": null,
+            "typeName": "T"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "kind": "import",
+    "name": "Exception",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/NotImplementedException.ts",
+      "line": 11,
+      "col": 0
+    },
+    "declarationKind": "private",
+    "jsDoc": {
+      "doc": "Contains the NotImplementedException class and associated types.\n",
+      "tags": [
+        {
+          "kind": "unsupported",
+          "value": "@copyright 2022 integer11. All rights reserved. MIT license."
+        }
+      ]
+    },
+    "importDef": {
+      "src": "file:///C:/source/partic11e/exceptions/src/exceptions/Exception.ts",
+      "imported": "Exception"
+    }
+  },
+  {
+    "kind": "import",
+    "name": "ExceptionInit",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/NotImplementedException.ts",
+      "line": 18,
+      "col": 0
+    },
+    "declarationKind": "private",
+    "importDef": {
+      "src": "file:///C:/source/partic11e/exceptions/src/exceptions/Exception.ts",
+      "imported": "ExceptionInit"
+    }
+  },
+  {
+    "kind": "typeAlias",
+    "name": "AssertionExceptionInit",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/AssertionException.ts",
+      "line": 29,
+      "col": 0
+    },
+    "declarationKind": "export",
+    "jsDoc": {
+      "doc": "An interface describing the `init` properties for the\n{@link AssertionException} class."
+    },
+    "typeAliasDef": {
+      "tsType": {
+        "repr": "TExceptionInit",
+        "kind": "typeRef",
+        "typeRef": {
+          "typeParams": [
+            {
+              "repr": "Record",
+              "kind": "typeRef",
+              "typeRef": {
+                "typeParams": [
+                  {
+                    "repr": "string",
+                    "kind": "keyword",
+                    "keyword": "string"
+                  },
+                  {
+                    "repr": "unknown",
+                    "kind": "keyword",
+                    "keyword": "unknown"
+                  }
+                ],
+                "typeName": "Record"
+              }
+            }
+          ],
+          "typeName": "TExceptionInit"
+        }
+      },
+      "typeParams": []
+    }
+  },
+  {
+    "kind": "class",
+    "name": "AssertionException",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/AssertionException.ts",
+      "line": 35,
+      "col": 0
+    },
+    "declarationKind": "export",
+    "jsDoc": {
+      "doc": "An exception that occurs when an assertion fails."
+    },
+    "classDef": {
+      "isAbstract": false,
+      "constructors": [
+        {
+          "jsDoc": {
+            "doc": "Creates a new {@link AssertionException} with the supplied `message`,\noptionally with additional {@link AssertionExceptionInit} properties.\n\n***NOTE: `message` is not altered by the `init` properties.***\n",
+            "tags": [
+              {
+                "kind": "param",
+                "name": "message",
+                "doc": "A message describing the exception."
+              },
+              {
+                "kind": "param",
+                "name": "init",
+                "doc": "The {@link AssertionExceptionInit} properties."
+              }
+            ]
+          },
+          "accessibility": null,
+          "name": "constructor",
+          "params": [
+            {
+              "kind": "identifier",
+              "name": "message",
+              "optional": false,
+              "tsType": {
+                "repr": "string",
+                "kind": "keyword",
+                "keyword": "string"
+              }
+            },
+            {
+              "kind": "identifier",
+              "name": "init",
+              "optional": true,
+              "tsType": {
+                "repr": "T",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "T"
+                }
+              }
+            }
+          ],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/AssertionException.ts",
+            "line": 54,
+            "col": 2
+          }
+        }
+      ],
+      "properties": [
+        {
+          "jsDoc": {
+            "doc": "The exception code for the {@link AssertionException} class."
+          },
+          "tsType": {
+            "repr": "number",
+            "kind": "keyword",
+            "keyword": "number"
+          },
+          "readonly": true,
+          "accessibility": "public",
+          "optional": false,
+          "isAbstract": false,
+          "isStatic": false,
+          "name": "code",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/AssertionException.ts",
+            "line": 63,
+            "col": 2
+          }
+        }
+      ],
+      "indexSignatures": [],
+      "methods": [],
+      "extends": "Exception",
+      "implements": [],
+      "typeParams": [
+        {
+          "name": "T",
+          "constraint": {
+            "repr": "AssertionExceptionInit",
+            "kind": "typeRef",
+            "typeRef": {
+              "typeParams": null,
+              "typeName": "AssertionExceptionInit"
+            }
+          },
+          "default": {
+            "repr": "AssertionExceptionInit",
+            "kind": "typeRef",
+            "typeRef": {
+              "typeParams": null,
+              "typeName": "AssertionExceptionInit"
+            }
+          }
+        }
+      ],
+      "superTypeParams": [
+        {
+          "repr": "T",
+          "kind": "typeRef",
+          "typeRef": {
+            "typeParams": null,
+            "typeName": "T"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "kind": "import",
+    "name": "Exception",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/AssertionException.ts",
+      "line": 11,
+      "col": 0
+    },
+    "declarationKind": "private",
+    "jsDoc": {
+      "doc": "Contains the AssertionException class and associated types.\n",
+      "tags": [
+        {
+          "kind": "unsupported",
+          "value": "@copyright 2022 integer11. All rights reserved. MIT license."
+        }
+      ]
+    },
+    "importDef": {
+      "src": "file:///C:/source/partic11e/exceptions/src/exceptions/Exception.ts",
+      "imported": "Exception"
+    }
+  },
+  {
+    "kind": "import",
+    "name": "TExceptionInit",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/AssertionException.ts",
+      "line": 18,
+      "col": 0
+    },
+    "declarationKind": "private",
+    "importDef": {
+      "src": "file:///C:/source/partic11e/exceptions/src/types/mod.ts",
+      "imported": "TExceptionInit"
+    }
+  },
+  {
+    "kind": "interface",
+    "name": "ArgumentExceptionInit",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ArgumentException.ts",
+      "line": 57,
+      "col": 0
+    },
+    "declarationKind": "export",
+    "jsDoc": {
+      "doc": "An interface describing the `init` properties for the\n{@link ArgumentException} class."
+    },
+    "interfaceDef": {
+      "extends": [
+        {
+          "repr": "ExceptionInit",
+          "kind": "typeRef",
+          "typeRef": {
+            "typeParams": null,
+            "typeName": "ExceptionInit"
+          }
+        }
+      ],
+      "methods": [],
+      "properties": [
+        {
+          "name": "argumentConstraints",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ArgumentException.ts",
+            "line": 61,
+            "col": 2
+          },
+          "jsDoc": {
+            "doc": "The constraints of the argument."
+          },
+          "params": [],
+          "computed": false,
+          "optional": true,
+          "tsType": {
+            "repr": "",
+            "kind": "array",
+            "array": {
+              "repr": "string",
+              "kind": "keyword",
+              "keyword": "string"
+            }
+          },
+          "typeParams": []
+        },
+        {
+          "name": "argumentName",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ArgumentException.ts",
+            "line": 66,
+            "col": 2
+          },
+          "jsDoc": {
+            "doc": "The name of the argument that has an invalid value."
+          },
+          "params": [],
+          "computed": false,
+          "optional": true,
+          "tsType": {
+            "repr": "string",
+            "kind": "keyword",
+            "keyword": "string"
+          },
+          "typeParams": []
+        }
+      ],
+      "callSignatures": [],
+      "indexSignatures": [],
+      "typeParams": []
+    }
+  },
+  {
+    "kind": "class",
+    "name": "ArgumentException",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ArgumentException.ts",
+      "line": 74,
+      "col": 0
+    },
+    "declarationKind": "export",
+    "jsDoc": {
+      "doc": "An exception that occurs when an argument has the correct type, but an invalid value."
+    },
+    "classDef": {
+      "isAbstract": false,
+      "constructors": [
+        {
+          "jsDoc": {
+            "doc": "Creates a new {@link ArgumentException} with the default message,\n\"An argument has the correct type, but an invalid value.\", and no\nexception init data."
+          },
+          "accessibility": null,
+          "name": "constructor",
+          "params": [],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ArgumentException.ts",
+            "line": 89,
+            "col": 2
+          }
+        },
+        {
+          "jsDoc": {
+            "doc": "Creates a new {@link ArgumentException} with a message created based on\n{@link ArgumentExceptionInit} properties.\n",
+            "tags": [
+              {
+                "kind": "param",
+                "name": "init",
+                "doc": "The {@link ArgumentExceptionInit} properties."
+              }
+            ]
+          },
+          "accessibility": null,
+          "name": "constructor",
+          "params": [
+            {
+              "kind": "identifier",
+              "name": "init",
+              "optional": false,
+              "tsType": {
+                "repr": "T",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "T"
+                }
+              }
+            }
+          ],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ArgumentException.ts",
+            "line": 96,
+            "col": 2
+          }
+        },
+        {
+          "jsDoc": {
+            "doc": "Creates a new {@link ArgumentException} with the supplied `message`,\noptionally with additional {@link ArgumentExceptionInit} properties.\n\n***NOTE: `message` is not altered by the `init` properties.***\n",
+            "tags": [
+              {
+                "kind": "param",
+                "name": "message",
+                "doc": "A message describing the exception."
+              },
+              {
+                "kind": "param",
+                "name": "init",
+                "doc": "The {@link ArgumentExceptionInit} properties."
+              }
+            ]
+          },
+          "accessibility": null,
+          "name": "constructor",
+          "params": [
+            {
+              "kind": "identifier",
+              "name": "message",
+              "optional": false,
+              "tsType": {
+                "repr": "string",
+                "kind": "keyword",
+                "keyword": "string"
+              }
+            },
+            {
+              "kind": "identifier",
+              "name": "init",
+              "optional": true,
+              "tsType": {
+                "repr": "T",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "T"
+                }
+              }
+            }
+          ],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ArgumentException.ts",
+            "line": 106,
+            "col": 2
+          }
+        },
+        {
+          "accessibility": null,
+          "name": "constructor",
+          "params": [
+            {
+              "kind": "assign",
+              "left": {
+                "kind": "identifier",
+                "name": "msgOrInit",
+                "optional": false,
+                "tsType": {
+                  "repr": "",
+                  "kind": "union",
+                  "union": [
+                    {
+                      "repr": "string",
+                      "kind": "keyword",
+                      "keyword": "string"
+                    },
+                    {
+                      "repr": "T",
+                      "kind": "typeRef",
+                      "typeRef": {
+                        "typeParams": null,
+                        "typeName": "T"
+                      }
+                    }
+                  ]
+                }
+              },
+              "right": "[UNSUPPORTED]",
+              "tsType": null
+            },
+            {
+              "kind": "identifier",
+              "name": "maybeInit",
+              "optional": true,
+              "tsType": {
+                "repr": "T",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "T"
+                }
+              }
+            }
+          ],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ArgumentException.ts",
+            "line": 107,
+            "col": 2
+          }
+        }
+      ],
+      "properties": [
+        {
+          "jsDoc": {
+            "doc": "The exception code for the {@link ArgumentException} class."
+          },
+          "tsType": {
+            "repr": "number",
+            "kind": "keyword",
+            "keyword": "number"
+          },
+          "readonly": true,
+          "accessibility": "public",
+          "optional": false,
+          "isAbstract": false,
+          "isStatic": false,
+          "name": "code",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ArgumentException.ts",
+            "line": 124,
+            "col": 2
+          }
+        }
+      ],
+      "indexSignatures": [],
+      "methods": [],
+      "extends": "Exception",
+      "implements": [],
+      "typeParams": [
+        {
+          "name": "T",
+          "constraint": {
+            "repr": "ArgumentExceptionInit",
+            "kind": "typeRef",
+            "typeRef": {
+              "typeParams": null,
+              "typeName": "ArgumentExceptionInit"
+            }
+          },
+          "default": {
+            "repr": "ArgumentExceptionInit",
+            "kind": "typeRef",
+            "typeRef": {
+              "typeParams": null,
+              "typeName": "ArgumentExceptionInit"
+            }
+          }
+        }
+      ],
+      "superTypeParams": [
+        {
+          "repr": "T",
+          "kind": "typeRef",
+          "typeRef": {
+            "typeParams": null,
+            "typeName": "T"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "kind": "import",
+    "name": "Exception",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ArgumentException.ts",
+      "line": 11,
+      "col": 0
+    },
+    "declarationKind": "private",
+    "jsDoc": {
+      "doc": "Contains the ArgumentException class and associated types.\n",
+      "tags": [
+        {
+          "kind": "unsupported",
+          "value": "@copyright 2022 integer11. All rights reserved. MIT license."
+        }
+      ]
+    },
+    "importDef": {
+      "src": "file:///C:/source/partic11e/exceptions/src/exceptions/Exception.ts",
+      "imported": "Exception"
+    }
+  },
+  {
+    "kind": "import",
+    "name": "ExceptionInit",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ArgumentException.ts",
+      "line": 18,
+      "col": 0
+    },
+    "declarationKind": "private",
+    "importDef": {
+      "src": "file:///C:/source/partic11e/exceptions/src/exceptions/Exception.ts",
+      "imported": "ExceptionInit"
+    }
+  },
+  {
+    "kind": "interface",
+    "name": "KeyExceptionInit",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/KeyException.ts",
+      "line": 64,
+      "col": 0
+    },
+    "declarationKind": "export",
+    "jsDoc": {
+      "doc": "An interface describing the `init` properties for the\n{@link KeyException} class."
+    },
+    "interfaceDef": {
+      "extends": [
+        {
+          "repr": "ExceptionInit",
+          "kind": "typeRef",
+          "typeRef": {
+            "typeParams": null,
+            "typeName": "ExceptionInit"
+          }
+        }
+      ],
+      "methods": [],
+      "properties": [
+        {
+          "name": "key",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/KeyException.ts",
+            "line": 68,
+            "col": 2
+          },
+          "jsDoc": {
+            "doc": "The key that is not a valid key."
+          },
+          "params": [],
+          "computed": false,
+          "optional": true,
+          "tsType": {
+            "repr": "string",
+            "kind": "keyword",
+            "keyword": "string"
+          },
+          "typeParams": []
+        },
+        {
+          "name": "validKeys",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/KeyException.ts",
+            "line": 73,
+            "col": 2
+          },
+          "jsDoc": {
+            "doc": "The list of valid keys."
+          },
+          "params": [],
+          "computed": false,
+          "optional": true,
+          "tsType": {
+            "repr": "",
+            "kind": "array",
+            "array": {
+              "repr": "string",
+              "kind": "keyword",
+              "keyword": "string"
+            }
+          },
+          "typeParams": []
+        },
+        {
+          "name": "valueName",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/KeyException.ts",
+            "line": 78,
+            "col": 2
+          },
+          "jsDoc": {
+            "doc": "The name of the symbol representing the object or record."
+          },
+          "params": [],
+          "computed": false,
+          "optional": true,
+          "tsType": {
+            "repr": "string",
+            "kind": "keyword",
+            "keyword": "string"
+          },
+          "typeParams": []
+        }
+      ],
+      "callSignatures": [],
+      "indexSignatures": [],
+      "typeParams": []
+    }
+  },
+  {
+    "kind": "class",
+    "name": "KeyException",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/KeyException.ts",
+      "line": 86,
+      "col": 0
+    },
+    "declarationKind": "export",
+    "jsDoc": {
+      "doc": "An exception that occurs when a property key doesn't exist on an object or record."
+    },
+    "classDef": {
+      "isAbstract": false,
+      "constructors": [
+        {
+          "jsDoc": {
+            "doc": "Creates a new {@link KeyException} with the default message,\n\"An unexpected error occurred\", and no\nexception init data."
+          },
+          "accessibility": null,
+          "name": "constructor",
+          "params": [],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/KeyException.ts",
+            "line": 101,
+            "col": 2
+          }
+        },
+        {
+          "jsDoc": {
+            "doc": "Creates a new {@link KeyException} with a message created based on\n{@link KeyExceptionInit} properties.\n",
+            "tags": [
+              {
+                "kind": "param",
+                "name": "init",
+                "doc": "The {@link KeyExceptionInit} properties."
+              }
+            ]
+          },
+          "accessibility": null,
+          "name": "constructor",
+          "params": [
+            {
+              "kind": "identifier",
+              "name": "init",
+              "optional": false,
+              "tsType": {
+                "repr": "T",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "T"
+                }
+              }
+            }
+          ],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/KeyException.ts",
+            "line": 108,
+            "col": 2
+          }
+        },
+        {
+          "jsDoc": {
+            "doc": "Creates a new {@link KeyException} with the supplied `message`,\noptionally with additional {@link KeyExceptionInit} properties.\n\n***NOTE: `message` is not altered by the `init` properties.***\n",
+            "tags": [
+              {
+                "kind": "param",
+                "name": "message",
+                "doc": "A message describing the exception."
+              },
+              {
+                "kind": "param",
+                "name": "init",
+                "doc": "The {@link KeyExceptionInit} properties."
+              }
+            ]
+          },
+          "accessibility": null,
+          "name": "constructor",
+          "params": [
+            {
+              "kind": "identifier",
+              "name": "message",
+              "optional": false,
+              "tsType": {
+                "repr": "string",
+                "kind": "keyword",
+                "keyword": "string"
+              }
+            },
+            {
+              "kind": "identifier",
+              "name": "init",
+              "optional": true,
+              "tsType": {
+                "repr": "T",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "T"
+                }
+              }
+            }
+          ],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/KeyException.ts",
+            "line": 118,
+            "col": 2
+          }
+        },
+        {
+          "accessibility": null,
+          "name": "constructor",
+          "params": [
+            {
+              "kind": "assign",
+              "left": {
+                "kind": "identifier",
+                "name": "msgOrInit",
+                "optional": false,
+                "tsType": {
+                  "repr": "",
+                  "kind": "union",
+                  "union": [
+                    {
+                      "repr": "string",
+                      "kind": "keyword",
+                      "keyword": "string"
+                    },
+                    {
+                      "repr": "T",
+                      "kind": "typeRef",
+                      "typeRef": {
+                        "typeParams": null,
+                        "typeName": "T"
+                      }
+                    }
+                  ]
+                }
+              },
+              "right": "[UNSUPPORTED]",
+              "tsType": null
+            },
+            {
+              "kind": "identifier",
+              "name": "maybeInit",
+              "optional": true,
+              "tsType": {
+                "repr": "T",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "T"
+                }
+              }
+            }
+          ],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/KeyException.ts",
+            "line": 119,
+            "col": 2
+          }
+        }
+      ],
+      "properties": [
+        {
+          "jsDoc": {
+            "doc": "The exception code for the {@link KeyException} class."
+          },
+          "tsType": {
+            "repr": "number",
+            "kind": "keyword",
+            "keyword": "number"
+          },
+          "readonly": true,
+          "accessibility": "public",
+          "optional": false,
+          "isAbstract": false,
+          "isStatic": false,
+          "name": "code",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/KeyException.ts",
+            "line": 136,
+            "col": 2
+          }
+        }
+      ],
+      "indexSignatures": [],
+      "methods": [],
+      "extends": "Exception",
+      "implements": [],
+      "typeParams": [
+        {
+          "name": "T",
+          "constraint": {
+            "repr": "KeyExceptionInit",
+            "kind": "typeRef",
+            "typeRef": {
+              "typeParams": null,
+              "typeName": "KeyExceptionInit"
+            }
+          },
+          "default": {
+            "repr": "KeyExceptionInit",
+            "kind": "typeRef",
+            "typeRef": {
+              "typeParams": null,
+              "typeName": "KeyExceptionInit"
+            }
+          }
+        }
+      ],
+      "superTypeParams": [
+        {
+          "repr": "T",
+          "kind": "typeRef",
+          "typeRef": {
+            "typeParams": null,
+            "typeName": "T"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "kind": "import",
+    "name": "Exception",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/KeyException.ts",
+      "line": 11,
+      "col": 0
+    },
+    "declarationKind": "private",
+    "jsDoc": {
+      "doc": "Contains the KeyException class and associated types.\n",
+      "tags": [
+        {
+          "kind": "unsupported",
+          "value": "@copyright 2022 integer11. All rights reserved. MIT license."
+        }
+      ]
+    },
+    "importDef": {
+      "src": "file:///C:/source/partic11e/exceptions/src/exceptions/Exception.ts",
+      "imported": "Exception"
+    }
+  },
+  {
+    "kind": "import",
+    "name": "ExceptionInit",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/KeyException.ts",
+      "line": 18,
+      "col": 0
+    },
+    "declarationKind": "private",
+    "importDef": {
+      "src": "file:///C:/source/partic11e/exceptions/src/exceptions/Exception.ts",
+      "imported": "ExceptionInit"
+    }
+  },
+  {
+    "kind": "interface",
+    "name": "MethodExceptionInit",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/MethodException.ts",
+      "line": 65,
+      "col": 0
+    },
+    "declarationKind": "export",
+    "jsDoc": {
+      "doc": "An interface describing the `init` properties for the\n{@link MethodException} class."
+    },
+    "interfaceDef": {
+      "extends": [
+        {
+          "repr": "ExceptionInit",
+          "kind": "typeRef",
+          "typeRef": {
+            "typeParams": null,
+            "typeName": "ExceptionInit"
+          }
+        }
+      ],
+      "methods": [],
+      "properties": [
+        {
+          "name": "methodName",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/MethodException.ts",
+            "line": 69,
+            "col": 2
+          },
+          "jsDoc": {
+            "doc": "The method name that is not a valid method."
+          },
+          "params": [],
+          "computed": false,
+          "optional": true,
+          "tsType": {
+            "repr": "string",
+            "kind": "keyword",
+            "keyword": "string"
+          },
+          "typeParams": []
+        },
+        {
+          "name": "validMethods",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/MethodException.ts",
+            "line": 74,
+            "col": 2
+          },
+          "jsDoc": {
+            "doc": "The list of valid method names."
+          },
+          "params": [],
+          "computed": false,
+          "optional": true,
+          "tsType": {
+            "repr": "",
+            "kind": "array",
+            "array": {
+              "repr": "string",
+              "kind": "keyword",
+              "keyword": "string"
+            }
+          },
+          "typeParams": []
+        },
+        {
+          "name": "valueName",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/MethodException.ts",
+            "line": 79,
+            "col": 2
+          },
+          "jsDoc": {
+            "doc": "The name of the symbol representing the object."
+          },
+          "params": [],
+          "computed": false,
+          "optional": true,
+          "tsType": {
+            "repr": "string",
+            "kind": "keyword",
+            "keyword": "string"
+          },
+          "typeParams": []
+        }
+      ],
+      "callSignatures": [],
+      "indexSignatures": [],
+      "typeParams": []
+    }
+  },
+  {
+    "kind": "class",
+    "name": "MethodException",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/MethodException.ts",
+      "line": 87,
+      "col": 0
+    },
+    "declarationKind": "export",
+    "jsDoc": {
+      "doc": "An exception that occurs when a method is not found on an object."
+    },
+    "classDef": {
+      "isAbstract": false,
+      "constructors": [
+        {
+          "jsDoc": {
+            "doc": "Creates a new {@link MethodException} with the default message,\n\"An unexpected error occurred\", and no\nexception init data."
+          },
+          "accessibility": null,
+          "name": "constructor",
+          "params": [],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/MethodException.ts",
+            "line": 102,
+            "col": 2
+          }
+        },
+        {
+          "jsDoc": {
+            "doc": "Creates a new {@link MethodException} with a message created based on\n{@link MethodExceptionInit} properties.\n",
+            "tags": [
+              {
+                "kind": "param",
+                "name": "init",
+                "doc": "The {@link MethodExceptionInit} properties."
+              }
+            ]
+          },
+          "accessibility": null,
+          "name": "constructor",
+          "params": [
+            {
+              "kind": "identifier",
+              "name": "init",
+              "optional": false,
+              "tsType": {
+                "repr": "T",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "T"
+                }
+              }
+            }
+          ],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/MethodException.ts",
+            "line": 109,
+            "col": 2
+          }
+        },
+        {
+          "jsDoc": {
+            "doc": "Creates a new {@link MethodException} with the supplied `message`,\noptionally with additional {@link MethodExceptionInit} properties.\n\n***NOTE: `message` is not altered by the `init` properties.***\n",
+            "tags": [
+              {
+                "kind": "param",
+                "name": "message",
+                "doc": "A message describing the exception."
+              },
+              {
+                "kind": "param",
+                "name": "init",
+                "doc": "The {@link MethodExceptionInit} properties."
+              }
+            ]
+          },
+          "accessibility": null,
+          "name": "constructor",
+          "params": [
+            {
+              "kind": "identifier",
+              "name": "message",
+              "optional": false,
+              "tsType": {
+                "repr": "string",
+                "kind": "keyword",
+                "keyword": "string"
+              }
+            },
+            {
+              "kind": "identifier",
+              "name": "init",
+              "optional": true,
+              "tsType": {
+                "repr": "T",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "T"
+                }
+              }
+            }
+          ],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/MethodException.ts",
+            "line": 119,
+            "col": 2
+          }
+        },
+        {
+          "accessibility": null,
+          "name": "constructor",
+          "params": [
+            {
+              "kind": "assign",
+              "left": {
+                "kind": "identifier",
+                "name": "msgOrInit",
+                "optional": false,
+                "tsType": {
+                  "repr": "",
+                  "kind": "union",
+                  "union": [
+                    {
+                      "repr": "string",
+                      "kind": "keyword",
+                      "keyword": "string"
+                    },
+                    {
+                      "repr": "T",
+                      "kind": "typeRef",
+                      "typeRef": {
+                        "typeParams": null,
+                        "typeName": "T"
+                      }
+                    }
+                  ]
+                }
+              },
+              "right": "[UNSUPPORTED]",
+              "tsType": null
+            },
+            {
+              "kind": "identifier",
+              "name": "maybeInit",
+              "optional": true,
+              "tsType": {
+                "repr": "T",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "T"
+                }
+              }
+            }
+          ],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/MethodException.ts",
+            "line": 120,
+            "col": 2
+          }
+        }
+      ],
+      "properties": [
+        {
+          "jsDoc": {
+            "doc": "The exception code for the {@link MethodException} class."
+          },
+          "tsType": {
+            "repr": "number",
+            "kind": "keyword",
+            "keyword": "number"
+          },
+          "readonly": true,
+          "accessibility": "public",
+          "optional": false,
+          "isAbstract": false,
+          "isStatic": false,
+          "name": "code",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/MethodException.ts",
+            "line": 137,
+            "col": 2
+          }
+        }
+      ],
+      "indexSignatures": [],
+      "methods": [],
+      "extends": "Exception",
+      "implements": [],
+      "typeParams": [
+        {
+          "name": "T",
+          "constraint": {
+            "repr": "MethodExceptionInit",
+            "kind": "typeRef",
+            "typeRef": {
+              "typeParams": null,
+              "typeName": "MethodExceptionInit"
+            }
+          },
+          "default": {
+            "repr": "MethodExceptionInit",
+            "kind": "typeRef",
+            "typeRef": {
+              "typeParams": null,
+              "typeName": "MethodExceptionInit"
+            }
+          }
+        }
+      ],
+      "superTypeParams": [
+        {
+          "repr": "T",
+          "kind": "typeRef",
+          "typeRef": {
+            "typeParams": null,
+            "typeName": "T"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "kind": "import",
+    "name": "Exception",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/MethodException.ts",
+      "line": 11,
+      "col": 0
+    },
+    "declarationKind": "private",
+    "jsDoc": {
+      "doc": "Contains the MethodException class and associated types.\n",
+      "tags": [
+        {
+          "kind": "unsupported",
+          "value": "@copyright 2022 integer11. All rights reserved. MIT license."
+        }
+      ]
+    },
+    "importDef": {
+      "src": "file:///C:/source/partic11e/exceptions/src/exceptions/Exception.ts",
+      "imported": "Exception"
+    }
+  },
+  {
+    "kind": "import",
+    "name": "ExceptionInit",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/MethodException.ts",
+      "line": 18,
+      "col": 0
+    },
+    "declarationKind": "private",
+    "importDef": {
+      "src": "file:///C:/source/partic11e/exceptions/src/exceptions/Exception.ts",
+      "imported": "ExceptionInit"
+    }
+  },
+  {
+    "kind": "interface",
+    "name": "NotSupportedExceptionInit",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/NotSupportedException.ts",
+      "line": 48,
+      "col": 0
+    },
+    "declarationKind": "export",
+    "jsDoc": {
+      "doc": "An interface describing the `init` properties for the\n{@link NotSupportedException} class."
+    },
+    "interfaceDef": {
+      "extends": [
+        {
+          "repr": "ExceptionInit",
+          "kind": "typeRef",
+          "typeRef": {
+            "typeParams": null,
+            "typeName": "ExceptionInit"
+          }
+        }
+      ],
+      "methods": [],
+      "properties": [
+        {
+          "name": "methodName",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/NotSupportedException.ts",
+            "line": 52,
+            "col": 2
+          },
+          "jsDoc": {
+            "doc": "The name of the method that is not supported."
+          },
+          "params": [],
+          "computed": false,
+          "optional": true,
+          "tsType": {
+            "repr": "string",
+            "kind": "keyword",
+            "keyword": "string"
+          },
+          "typeParams": []
+        }
+      ],
+      "callSignatures": [],
+      "indexSignatures": [],
+      "typeParams": []
+    }
+  },
+  {
+    "kind": "class",
+    "name": "NotSupportedException",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/NotSupportedException.ts",
+      "line": 60,
+      "col": 0
+    },
+    "declarationKind": "export",
+    "jsDoc": {
+      "doc": "An exception that occurs when a method is not supported."
+    },
+    "classDef": {
+      "isAbstract": false,
+      "constructors": [
+        {
+          "jsDoc": {
+            "doc": "Creates a new {@link NotSupportedException} with the default message,\n\"An unexpected error occurred\", and no\nexception init data."
+          },
+          "accessibility": null,
+          "name": "constructor",
+          "params": [],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/NotSupportedException.ts",
+            "line": 75,
+            "col": 2
+          }
+        },
+        {
+          "jsDoc": {
+            "doc": "Creates a new {@link NotSupportedException} with a message created based on\n{@link NotSupportedExceptionInit} properties.\n",
+            "tags": [
+              {
+                "kind": "param",
+                "name": "init",
+                "doc": "The {@link NotSupportedExceptionInit} properties."
+              }
+            ]
+          },
+          "accessibility": null,
+          "name": "constructor",
+          "params": [
+            {
+              "kind": "identifier",
+              "name": "init",
+              "optional": false,
+              "tsType": {
+                "repr": "T",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "T"
+                }
+              }
+            }
+          ],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/NotSupportedException.ts",
+            "line": 82,
+            "col": 2
+          }
+        },
+        {
+          "jsDoc": {
+            "doc": "Creates a new {@link NotSupportedException} with the supplied `message`,\noptionally with additional {@link NotSupportedExceptionInit} properties.\n\n***NOTE: `message` is not altered by the `init` properties.***\n",
+            "tags": [
+              {
+                "kind": "param",
+                "name": "message",
+                "doc": "A message describing the exception."
+              },
+              {
+                "kind": "param",
+                "name": "init",
+                "doc": "The {@link NotSupportedExceptionInit} properties."
+              }
+            ]
+          },
+          "accessibility": null,
+          "name": "constructor",
+          "params": [
+            {
+              "kind": "identifier",
+              "name": "message",
+              "optional": false,
+              "tsType": {
+                "repr": "string",
+                "kind": "keyword",
+                "keyword": "string"
+              }
+            },
+            {
+              "kind": "identifier",
+              "name": "init",
+              "optional": true,
+              "tsType": {
+                "repr": "T",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "T"
+                }
+              }
+            }
+          ],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/NotSupportedException.ts",
+            "line": 92,
+            "col": 2
+          }
+        },
+        {
+          "accessibility": null,
+          "name": "constructor",
+          "params": [
+            {
+              "kind": "assign",
+              "left": {
+                "kind": "identifier",
+                "name": "msgOrInit",
+                "optional": false,
+                "tsType": {
+                  "repr": "",
+                  "kind": "union",
+                  "union": [
+                    {
+                      "repr": "string",
+                      "kind": "keyword",
+                      "keyword": "string"
+                    },
+                    {
+                      "repr": "T",
+                      "kind": "typeRef",
+                      "typeRef": {
+                        "typeParams": null,
+                        "typeName": "T"
+                      }
+                    }
+                  ]
+                }
+              },
+              "right": "[UNSUPPORTED]",
+              "tsType": null
+            },
+            {
+              "kind": "identifier",
+              "name": "maybeInit",
+              "optional": true,
+              "tsType": {
+                "repr": "T",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "T"
+                }
+              }
+            }
+          ],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/NotSupportedException.ts",
+            "line": 93,
+            "col": 2
+          }
+        }
+      ],
+      "properties": [
+        {
+          "jsDoc": {
+            "doc": "The exception code for the {@link NotSupportedException} class."
+          },
+          "tsType": {
+            "repr": "number",
+            "kind": "keyword",
+            "keyword": "number"
+          },
+          "readonly": true,
+          "accessibility": "public",
+          "optional": false,
+          "isAbstract": false,
+          "isStatic": false,
+          "name": "code",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/NotSupportedException.ts",
+            "line": 110,
+            "col": 2
+          }
+        }
+      ],
+      "indexSignatures": [],
+      "methods": [],
+      "extends": "Exception",
+      "implements": [],
+      "typeParams": [
+        {
+          "name": "T",
+          "constraint": {
+            "repr": "NotSupportedExceptionInit",
+            "kind": "typeRef",
+            "typeRef": {
+              "typeParams": null,
+              "typeName": "NotSupportedExceptionInit"
+            }
+          },
+          "default": {
+            "repr": "NotSupportedExceptionInit",
+            "kind": "typeRef",
+            "typeRef": {
+              "typeParams": null,
+              "typeName": "NotSupportedExceptionInit"
+            }
+          }
+        }
+      ],
+      "superTypeParams": [
+        {
+          "repr": "T",
+          "kind": "typeRef",
+          "typeRef": {
+            "typeParams": null,
+            "typeName": "T"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "kind": "import",
+    "name": "Exception",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/NotSupportedException.ts",
+      "line": 11,
+      "col": 0
+    },
+    "declarationKind": "private",
+    "jsDoc": {
+      "doc": "Contains the NotSupportedException class and associated types.\n",
+      "tags": [
+        {
+          "kind": "unsupported",
+          "value": "@copyright 2022 integer11. All rights reserved. MIT license."
+        }
+      ]
+    },
+    "importDef": {
+      "src": "file:///C:/source/partic11e/exceptions/src/exceptions/Exception.ts",
+      "imported": "Exception"
+    }
+  },
+  {
+    "kind": "import",
+    "name": "ExceptionInit",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/NotSupportedException.ts",
+      "line": 18,
+      "col": 0
+    },
+    "declarationKind": "private",
+    "importDef": {
+      "src": "file:///C:/source/partic11e/exceptions/src/exceptions/Exception.ts",
+      "imported": "ExceptionInit"
+    }
+  },
+  {
+    "kind": "interface",
+    "name": "ArgumentIndexExceptionInit",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ArgumentIndexException.ts",
+      "line": 123,
+      "col": 0
+    },
+    "declarationKind": "export",
+    "jsDoc": {
+      "doc": "An interface describing the `init` properties for the\n{@link ArgumentIndexException} class."
+    },
+    "interfaceDef": {
+      "extends": [
+        {
+          "repr": "ExceptionInit",
+          "kind": "typeRef",
+          "typeRef": {
+            "typeParams": null,
+            "typeName": "ExceptionInit"
+          }
+        }
+      ],
+      "methods": [],
+      "properties": [
+        {
+          "name": "argumentName",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ArgumentIndexException.ts",
+            "line": 127,
+            "col": 2
+          },
+          "jsDoc": {
+            "doc": "The name of the argument representing the array."
+          },
+          "params": [],
+          "computed": false,
+          "optional": true,
+          "tsType": {
+            "repr": "string",
+            "kind": "keyword",
+            "keyword": "string"
+          },
+          "typeParams": []
+        },
+        {
+          "name": "index",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ArgumentIndexException.ts",
+            "line": 132,
+            "col": 2
+          },
+          "jsDoc": {
+            "doc": "The index that is outside the bounds of the array argument."
+          },
+          "params": [],
+          "computed": false,
+          "optional": true,
+          "tsType": {
+            "repr": "number",
+            "kind": "keyword",
+            "keyword": "number"
+          },
+          "typeParams": []
+        },
+        {
+          "name": "lowerBound",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ArgumentIndexException.ts",
+            "line": 137,
+            "col": 2
+          },
+          "jsDoc": {
+            "doc": "The lower bound of the array argument. Usually `0`, but can be any integer lower than the `upperBound`."
+          },
+          "params": [],
+          "computed": false,
+          "optional": true,
+          "tsType": {
+            "repr": "number",
+            "kind": "keyword",
+            "keyword": "number"
+          },
+          "typeParams": []
+        },
+        {
+          "name": "upperBound",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ArgumentIndexException.ts",
+            "line": 142,
+            "col": 2
+          },
+          "jsDoc": {
+            "doc": "The upper bound of the array argument. Can be any integer higher `lowerBound`."
+          },
+          "params": [],
+          "computed": false,
+          "optional": true,
+          "tsType": {
+            "repr": "number",
+            "kind": "keyword",
+            "keyword": "number"
+          },
+          "typeParams": []
+        }
+      ],
+      "callSignatures": [],
+      "indexSignatures": [],
+      "typeParams": []
+    }
+  },
+  {
+    "kind": "class",
+    "name": "ArgumentIndexException",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ArgumentIndexException.ts",
+      "line": 150,
+      "col": 0
+    },
+    "declarationKind": "export",
+    "jsDoc": {
+      "doc": "An exception that occurs when an index is outside the bounds of an array argument."
+    },
+    "classDef": {
+      "isAbstract": false,
+      "constructors": [
+        {
+          "jsDoc": {
+            "doc": "Creates a new {@link ArgumentIndexException} with the default message,\n\"An unexpected error occurred\", and no\nexception init data."
+          },
+          "accessibility": null,
+          "name": "constructor",
+          "params": [],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ArgumentIndexException.ts",
+            "line": 165,
+            "col": 2
+          }
+        },
+        {
+          "jsDoc": {
+            "doc": "Creates a new {@link ArgumentIndexException} with a message created based on\n{@link ArgumentIndexExceptionInit} properties.\n",
+            "tags": [
+              {
+                "kind": "param",
+                "name": "init",
+                "doc": "The {@link ArgumentIndexExceptionInit} properties."
+              }
+            ]
+          },
+          "accessibility": null,
+          "name": "constructor",
+          "params": [
+            {
+              "kind": "identifier",
+              "name": "init",
+              "optional": false,
+              "tsType": {
+                "repr": "T",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "T"
+                }
+              }
+            }
+          ],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ArgumentIndexException.ts",
+            "line": 172,
+            "col": 2
+          }
+        },
+        {
+          "jsDoc": {
+            "doc": "Creates a new {@link ArgumentIndexException} with the supplied `message`,\noptionally with additional {@link ArgumentIndexExceptionInit} properties.\n\n***NOTE: `message` is not altered by the `init` properties.***\n",
+            "tags": [
+              {
+                "kind": "param",
+                "name": "message",
+                "doc": "A message describing the exception."
+              },
+              {
+                "kind": "param",
+                "name": "init",
+                "doc": "The {@link ArgumentIndexExceptionInit} properties."
+              }
+            ]
+          },
+          "accessibility": null,
+          "name": "constructor",
+          "params": [
+            {
+              "kind": "identifier",
+              "name": "message",
+              "optional": false,
+              "tsType": {
+                "repr": "string",
+                "kind": "keyword",
+                "keyword": "string"
+              }
+            },
+            {
+              "kind": "identifier",
+              "name": "init",
+              "optional": true,
+              "tsType": {
+                "repr": "T",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "T"
+                }
+              }
+            }
+          ],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ArgumentIndexException.ts",
+            "line": 182,
+            "col": 2
+          }
+        },
+        {
+          "accessibility": null,
+          "name": "constructor",
+          "params": [
+            {
+              "kind": "assign",
+              "left": {
+                "kind": "identifier",
+                "name": "msgOrInit",
+                "optional": false,
+                "tsType": {
+                  "repr": "",
+                  "kind": "union",
+                  "union": [
+                    {
+                      "repr": "string",
+                      "kind": "keyword",
+                      "keyword": "string"
+                    },
+                    {
+                      "repr": "T",
+                      "kind": "typeRef",
+                      "typeRef": {
+                        "typeParams": null,
+                        "typeName": "T"
+                      }
+                    }
+                  ]
+                }
+              },
+              "right": "[UNSUPPORTED]",
+              "tsType": null
+            },
+            {
+              "kind": "identifier",
+              "name": "maybeInit",
+              "optional": true,
+              "tsType": {
+                "repr": "T",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "T"
+                }
+              }
+            }
+          ],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ArgumentIndexException.ts",
+            "line": 183,
+            "col": 2
+          }
+        }
+      ],
+      "properties": [
+        {
+          "jsDoc": {
+            "doc": "The exception code for the {@link ArgumentIndexException} class."
+          },
+          "tsType": {
+            "repr": "number",
+            "kind": "keyword",
+            "keyword": "number"
+          },
+          "readonly": true,
+          "accessibility": "public",
+          "optional": false,
+          "isAbstract": false,
+          "isStatic": false,
+          "name": "code",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ArgumentIndexException.ts",
+            "line": 200,
+            "col": 2
+          }
+        }
+      ],
+      "indexSignatures": [],
+      "methods": [],
+      "extends": "Exception",
+      "implements": [],
+      "typeParams": [
+        {
+          "name": "T",
+          "constraint": {
+            "repr": "ArgumentIndexExceptionInit",
+            "kind": "typeRef",
+            "typeRef": {
+              "typeParams": null,
+              "typeName": "ArgumentIndexExceptionInit"
+            }
+          },
+          "default": {
+            "repr": "ArgumentIndexExceptionInit",
+            "kind": "typeRef",
+            "typeRef": {
+              "typeParams": null,
+              "typeName": "ArgumentIndexExceptionInit"
+            }
+          }
+        }
+      ],
+      "superTypeParams": [
+        {
+          "repr": "T",
+          "kind": "typeRef",
+          "typeRef": {
+            "typeParams": null,
+            "typeName": "T"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "kind": "import",
+    "name": "Exception",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ArgumentIndexException.ts",
+      "line": 11,
+      "col": 0
+    },
+    "declarationKind": "private",
+    "jsDoc": {
+      "doc": "Contains the ArgumentIndexException class and associated types.\n",
+      "tags": [
+        {
+          "kind": "unsupported",
+          "value": "@copyright 2022 integer11. All rights reserved. MIT license."
+        }
+      ]
+    },
+    "importDef": {
+      "src": "file:///C:/source/partic11e/exceptions/src/exceptions/Exception.ts",
+      "imported": "Exception"
+    }
+  },
+  {
+    "kind": "import",
+    "name": "ValueException",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ArgumentIndexException.ts",
+      "line": 12,
+      "col": 0
+    },
+    "declarationKind": "private",
+    "importDef": {
+      "src": "file:///C:/source/partic11e/exceptions/src/exceptions/ValueException.ts",
+      "imported": "ValueException"
+    }
+  },
+  {
+    "kind": "import",
+    "name": "ExceptionInit",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ArgumentIndexException.ts",
+      "line": 19,
+      "col": 0
+    },
+    "declarationKind": "private",
+    "importDef": {
+      "src": "file:///C:/source/partic11e/exceptions/src/exceptions/Exception.ts",
+      "imported": "ExceptionInit"
+    }
+  },
+  {
+    "kind": "interface",
+    "name": "ArgumentKeyExceptionInit",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ArgumentKeyException.ts",
+      "line": 65,
+      "col": 0
+    },
+    "declarationKind": "export",
+    "jsDoc": {
+      "doc": "An interface describing the `init` properties for the\n{@link ArgumentKeyException} class."
+    },
+    "interfaceDef": {
+      "extends": [
+        {
+          "repr": "ExceptionInit",
+          "kind": "typeRef",
+          "typeRef": {
+            "typeParams": null,
+            "typeName": "ExceptionInit"
+          }
+        }
+      ],
+      "methods": [],
+      "properties": [
+        {
+          "name": "key",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ArgumentKeyException.ts",
+            "line": 69,
+            "col": 2
+          },
+          "jsDoc": {
+            "doc": "The key that is not a valid key."
+          },
+          "params": [],
+          "computed": false,
+          "optional": true,
+          "tsType": {
+            "repr": "string",
+            "kind": "keyword",
+            "keyword": "string"
+          },
+          "typeParams": []
+        },
+        {
+          "name": "validKeys",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ArgumentKeyException.ts",
+            "line": 74,
+            "col": 2
+          },
+          "jsDoc": {
+            "doc": "The list of valid keys."
+          },
+          "params": [],
+          "computed": false,
+          "optional": true,
+          "tsType": {
+            "repr": "",
+            "kind": "array",
+            "array": {
+              "repr": "string",
+              "kind": "keyword",
+              "keyword": "string"
+            }
+          },
+          "typeParams": []
+        },
+        {
+          "name": "argumentName",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ArgumentKeyException.ts",
+            "line": 79,
+            "col": 2
+          },
+          "jsDoc": {
+            "doc": "The name of the symbol representing the object or record."
+          },
+          "params": [],
+          "computed": false,
+          "optional": true,
+          "tsType": {
+            "repr": "string",
+            "kind": "keyword",
+            "keyword": "string"
+          },
+          "typeParams": []
+        }
+      ],
+      "callSignatures": [],
+      "indexSignatures": [],
+      "typeParams": []
+    }
+  },
+  {
+    "kind": "class",
+    "name": "ArgumentKeyException",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ArgumentKeyException.ts",
+      "line": 87,
+      "col": 0
+    },
+    "declarationKind": "export",
+    "jsDoc": {
+      "doc": "An exception that occurs when a property key doesn't exist on an object or record argument."
+    },
+    "classDef": {
+      "isAbstract": false,
+      "constructors": [
+        {
+          "jsDoc": {
+            "doc": "Creates a new {@link ArgumentKeyException} with the default message,\n\"An unexpected error occurred\", and no\nexception init data."
+          },
+          "accessibility": null,
+          "name": "constructor",
+          "params": [],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ArgumentKeyException.ts",
+            "line": 102,
+            "col": 2
+          }
+        },
+        {
+          "jsDoc": {
+            "doc": "Creates a new {@link ArgumentKeyException} with a message created based on\n{@link ArgumentKeyExceptionInit} properties.\n",
+            "tags": [
+              {
+                "kind": "param",
+                "name": "init",
+                "doc": "The {@link ArgumentKeyExceptionInit} properties."
+              }
+            ]
+          },
+          "accessibility": null,
+          "name": "constructor",
+          "params": [
+            {
+              "kind": "identifier",
+              "name": "init",
+              "optional": false,
+              "tsType": {
+                "repr": "T",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "T"
+                }
+              }
+            }
+          ],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ArgumentKeyException.ts",
+            "line": 109,
+            "col": 2
+          }
+        },
+        {
+          "jsDoc": {
+            "doc": "Creates a new {@link ArgumentKeyException} with the supplied `message`,\noptionally with additional {@link ArgumentKeyExceptionInit} properties.\n\n***NOTE: `message` is not altered by the `init` properties.***\n",
+            "tags": [
+              {
+                "kind": "param",
+                "name": "message",
+                "doc": "A message describing the exception."
+              },
+              {
+                "kind": "param",
+                "name": "init",
+                "doc": "The {@link ArgumentKeyExceptionInit} properties."
+              }
+            ]
+          },
+          "accessibility": null,
+          "name": "constructor",
+          "params": [
+            {
+              "kind": "identifier",
+              "name": "message",
+              "optional": false,
+              "tsType": {
+                "repr": "string",
+                "kind": "keyword",
+                "keyword": "string"
+              }
+            },
+            {
+              "kind": "identifier",
+              "name": "init",
+              "optional": true,
+              "tsType": {
+                "repr": "T",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "T"
+                }
+              }
+            }
+          ],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ArgumentKeyException.ts",
+            "line": 119,
+            "col": 2
+          }
+        },
+        {
+          "accessibility": null,
+          "name": "constructor",
+          "params": [
+            {
+              "kind": "assign",
+              "left": {
+                "kind": "identifier",
+                "name": "msgOrInit",
+                "optional": false,
+                "tsType": {
+                  "repr": "",
+                  "kind": "union",
+                  "union": [
+                    {
+                      "repr": "string",
+                      "kind": "keyword",
+                      "keyword": "string"
+                    },
+                    {
+                      "repr": "T",
+                      "kind": "typeRef",
+                      "typeRef": {
+                        "typeParams": null,
+                        "typeName": "T"
+                      }
+                    }
+                  ]
+                }
+              },
+              "right": "[UNSUPPORTED]",
+              "tsType": null
+            },
+            {
+              "kind": "identifier",
+              "name": "maybeInit",
+              "optional": true,
+              "tsType": {
+                "repr": "T",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "T"
+                }
+              }
+            }
+          ],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ArgumentKeyException.ts",
+            "line": 120,
+            "col": 2
+          }
+        }
+      ],
+      "properties": [
+        {
+          "jsDoc": {
+            "doc": "The exception code for the {@link ArgumentKeyException} class."
+          },
+          "tsType": {
+            "repr": "number",
+            "kind": "keyword",
+            "keyword": "number"
+          },
+          "readonly": true,
+          "accessibility": "public",
+          "optional": false,
+          "isAbstract": false,
+          "isStatic": false,
+          "name": "code",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ArgumentKeyException.ts",
+            "line": 137,
+            "col": 2
+          }
+        }
+      ],
+      "indexSignatures": [],
+      "methods": [],
+      "extends": "Exception",
+      "implements": [],
+      "typeParams": [
+        {
+          "name": "T",
+          "constraint": {
+            "repr": "ArgumentKeyExceptionInit",
+            "kind": "typeRef",
+            "typeRef": {
+              "typeParams": null,
+              "typeName": "ArgumentKeyExceptionInit"
+            }
+          },
+          "default": {
+            "repr": "ArgumentKeyExceptionInit",
+            "kind": "typeRef",
+            "typeRef": {
+              "typeParams": null,
+              "typeName": "ArgumentKeyExceptionInit"
+            }
+          }
+        }
+      ],
+      "superTypeParams": [
+        {
+          "repr": "T",
+          "kind": "typeRef",
+          "typeRef": {
+            "typeParams": null,
+            "typeName": "T"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "kind": "import",
+    "name": "Exception",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ArgumentKeyException.ts",
+      "line": 11,
+      "col": 0
+    },
+    "declarationKind": "private",
+    "jsDoc": {
+      "doc": "Contains the ArgumentKeyException class and associated types.\n",
+      "tags": [
+        {
+          "kind": "unsupported",
+          "value": "@copyright 2022 integer11. All rights reserved. MIT license."
+        }
+      ]
+    },
+    "importDef": {
+      "src": "file:///C:/source/partic11e/exceptions/src/exceptions/Exception.ts",
+      "imported": "Exception"
+    }
+  },
+  {
+    "kind": "import",
+    "name": "ExceptionInit",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ArgumentKeyException.ts",
+      "line": 18,
+      "col": 0
+    },
+    "declarationKind": "private",
+    "importDef": {
+      "src": "file:///C:/source/partic11e/exceptions/src/exceptions/Exception.ts",
+      "imported": "ExceptionInit"
+    }
+  },
+  {
+    "kind": "typeAlias",
+    "name": "ExceptionInit",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/Exception.ts",
+      "line": 32,
+      "col": 0
+    },
+    "declarationKind": "export",
+    "jsDoc": {
+      "doc": "An interface describing the `init` properties for the\n{@link Exception} class."
+    },
+    "typeAliasDef": {
+      "tsType": {
+        "repr": "TExceptionInit",
+        "kind": "typeRef",
+        "typeRef": {
+          "typeParams": null,
+          "typeName": "TExceptionInit"
+        }
+      },
+      "typeParams": []
+    }
+  },
+  {
+    "kind": "class",
+    "name": "Exception",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/Exception.ts",
+      "line": 42,
+      "col": 0
+    },
+    "declarationKind": "export",
+    "jsDoc": {
+      "doc": "A class representing exceptions that occur during the execution of an\napplication.\n\nAll particle11 exception classes derive from this class."
+    },
+    "classDef": {
+      "isAbstract": false,
+      "constructors": [
+        {
+          "jsDoc": {
+            "doc": "Creates a new {@link Exception} instance with a message describing the\nexception, optionally with additional exception information.\n",
+            "tags": [
+              {
+                "kind": "param",
+                "name": "message",
+                "doc": "A message describing the exception."
+              },
+              {
+                "kind": "param",
+                "name": "init",
+                "doc": "Additional exception information."
+              }
+            ]
+          },
+          "accessibility": null,
+          "name": "constructor",
+          "params": [
+            {
+              "kind": "identifier",
+              "name": "message",
+              "optional": false,
+              "tsType": {
+                "repr": "string",
+                "kind": "keyword",
+                "keyword": "string"
+              }
+            },
+            {
+              "kind": "identifier",
+              "name": "init",
+              "optional": true,
+              "tsType": {
+                "repr": "T",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "T"
+                }
+              }
+            }
+          ],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/Exception.ts",
+            "line": 57,
+            "col": 2
+          }
+        }
+      ],
+      "properties": [
+        {
+          "jsDoc": {
+            "doc": "The exception code for the {@link Exception} class."
+          },
+          "tsType": {
+            "repr": "number",
+            "kind": "keyword",
+            "keyword": "number"
+          },
+          "readonly": true,
+          "accessibility": "public",
+          "optional": false,
+          "isAbstract": false,
+          "isStatic": false,
+          "name": "code",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/Exception.ts",
+            "line": 79,
+            "col": 2
+          }
+        },
+        {
+          "jsDoc": {
+            "doc": "The friendly name of the {@link Exception}."
+          },
+          "tsType": null,
+          "readonly": true,
+          "accessibility": "public",
+          "optional": false,
+          "isAbstract": false,
+          "isStatic": false,
+          "name": "name",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/Exception.ts",
+            "line": 117,
+            "col": 2
+          }
+        }
+      ],
+      "indexSignatures": [],
+      "methods": [
+        {
+          "jsDoc": {
+            "doc": "The underlying, or specific cause, of the exception.\n\nThis is typically available when catching and re-throwing an exception or\nerror. Its value is passed in the {@link ExceptionInit} `cause` property,\nduring the creation of the {@link Exception} instance."
+          },
+          "accessibility": "public",
+          "optional": false,
+          "isAbstract": false,
+          "isStatic": false,
+          "name": "cause",
+          "kind": "getter",
+          "functionDef": {
+            "params": [],
+            "returnType": {
+              "repr": "",
+              "kind": "union",
+              "union": [
+                {
+                  "repr": "Error",
+                  "kind": "typeRef",
+                  "typeRef": {
+                    "typeParams": null,
+                    "typeName": "Error"
+                  }
+                },
+                {
+                  "repr": "Exception",
+                  "kind": "typeRef",
+                  "typeRef": {
+                    "typeParams": null,
+                    "typeName": "Exception"
+                  }
+                },
+                {
+                  "repr": "undefined",
+                  "kind": "keyword",
+                  "keyword": "undefined"
+                }
+              ]
+            },
+            "isAsync": false,
+            "isGenerator": false,
+            "typeParams": []
+          },
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/Exception.ts",
+            "line": 70,
+            "col": 2
+          }
+        },
+        {
+          "jsDoc": {
+            "doc": "The additional data excluding `cause` from the {@link ExceptionInit}.\n\nThis data is used to more specifically identify the cause of an exception.\nThis data differs between exceptions, relating to the specifics of each\nexception."
+          },
+          "accessibility": "public",
+          "optional": false,
+          "isAbstract": false,
+          "isStatic": false,
+          "name": "data",
+          "kind": "getter",
+          "functionDef": {
+            "params": [],
+            "returnType": {
+              "repr": "",
+              "kind": "union",
+              "union": [
+                {
+                  "repr": "Omit",
+                  "kind": "typeRef",
+                  "typeRef": {
+                    "typeParams": [
+                      {
+                        "repr": "T",
+                        "kind": "typeRef",
+                        "typeRef": {
+                          "typeParams": null,
+                          "typeName": "T"
+                        }
+                      },
+                      {
+                        "repr": "cause",
+                        "kind": "literal",
+                        "literal": {
+                          "kind": "string",
+                          "string": "cause"
+                        }
+                      }
+                    ],
+                    "typeName": "Omit"
+                  }
+                },
+                {
+                  "repr": "undefined",
+                  "kind": "keyword",
+                  "keyword": "undefined"
+                }
+              ]
+            },
+            "isAsync": false,
+            "isGenerator": false,
+            "typeParams": []
+          },
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/Exception.ts",
+            "line": 88,
+            "col": 2
+          }
+        },
+        {
+          "jsDoc": {
+            "doc": "The URL referencing a resource to assist with this {@link Exception}."
+          },
+          "accessibility": "public",
+          "optional": false,
+          "isAbstract": false,
+          "isStatic": false,
+          "name": "helpUrl",
+          "kind": "getter",
+          "functionDef": {
+            "params": [],
+            "returnType": {
+              "repr": "string",
+              "kind": "keyword",
+              "keyword": "string"
+            },
+            "isAsync": false,
+            "isGenerator": false,
+            "typeParams": []
+          },
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/Exception.ts",
+            "line": 103,
+            "col": 2
+          }
+        },
+        {
+          "jsDoc": {
+            "doc": "Returns a string representation of the {@link Exception}.\n\nThis representation includes the {@link Exception} `name`, `code`, and\n`message` properties formatted to be easily readable.\n",
+            "tags": [
+              {
+                "kind": "return",
+                "doc": "A string representation of the {@link Exception}."
+              }
+            ]
+          },
+          "accessibility": "public",
+          "optional": false,
+          "isAbstract": false,
+          "isStatic": false,
+          "name": "toString",
+          "kind": "method",
+          "functionDef": {
+            "params": [],
+            "returnType": {
+              "repr": "string",
+              "kind": "keyword",
+              "keyword": "string"
+            },
+            "isAsync": false,
+            "isGenerator": false,
+            "typeParams": []
+          },
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/Exception.ts",
+            "line": 138,
+            "col": 2
+          }
+        },
+        {
+          "jsDoc": {
+            "doc": "Returns the primitive value of the {@link Excpetion}.\n\nThis primitive value is the {@link Exception} `code` property.\n",
+            "tags": [
+              {
+                "kind": "return",
+                "doc": "The {@link Exception} `code` property."
+              }
+            ]
+          },
+          "accessibility": "public",
+          "optional": false,
+          "isAbstract": false,
+          "isStatic": false,
+          "name": "valueOf",
+          "kind": "method",
+          "functionDef": {
+            "params": [],
+            "returnType": {
+              "repr": "number",
+              "kind": "keyword",
+              "keyword": "number"
+            },
+            "isAsync": false,
+            "isGenerator": false,
+            "typeParams": []
+          },
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/Exception.ts",
+            "line": 151,
+            "col": 2
+          }
+        },
+        {
+          "jsDoc": {
+            "doc": "Returns a querystring parameter containing the {@link cause} tree in a\nURL-encoded JSON string; or if no {@link cause}, an empty string.\n\nUsed to construct a portion of {@link helpUrl}.\n",
+            "tags": [
+              {
+                "kind": "return",
+                "doc": "A querystring parameter containing the {@link cause} in a\nURL-encoded JSON string, or an empty string."
+              }
+            ]
+          },
+          "accessibility": "protected",
+          "optional": false,
+          "isAbstract": false,
+          "isStatic": false,
+          "name": "_getUrlEncodedCauses",
+          "kind": "method",
+          "functionDef": {
+            "params": [],
+            "returnType": {
+              "repr": "string",
+              "kind": "keyword",
+              "keyword": "string"
+            },
+            "isAsync": false,
+            "isGenerator": false,
+            "typeParams": []
+          },
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/Exception.ts",
+            "line": 183,
+            "col": 2
+          }
+        },
+        {
+          "jsDoc": {
+            "doc": "Returns a querystring parameter containing {@link data} in a URL-encoded\nJSON string; or if no {@link data}, an empty string.\n\nUsed to construct a portion of {@link helpUrl}.\n",
+            "tags": [
+              {
+                "kind": "return",
+                "doc": "A querystring parameter containing {@link data} in a URL-encoded\nJSON string, or an empty string."
+              }
+            ]
+          },
+          "accessibility": "protected",
+          "optional": false,
+          "isAbstract": false,
+          "isStatic": false,
+          "name": "_getUrlEncodedData",
+          "kind": "method",
+          "functionDef": {
+            "params": [],
+            "returnType": {
+              "repr": "string",
+              "kind": "keyword",
+              "keyword": "string"
+            },
+            "isAsync": false,
+            "isGenerator": false,
+            "typeParams": []
+          },
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/Exception.ts",
+            "line": 206,
+            "col": 2
+          }
+        }
+      ],
+      "extends": "Error",
+      "implements": [],
+      "typeParams": [
+        {
+          "name": "T",
+          "constraint": {
+            "repr": "IExceptionInit",
+            "kind": "typeRef",
+            "typeRef": {
+              "typeParams": null,
+              "typeName": "IExceptionInit"
+            }
+          },
+          "default": {
+            "repr": "ExceptionInit",
+            "kind": "typeRef",
+            "typeRef": {
+              "typeParams": null,
+              "typeName": "ExceptionInit"
+            }
+          }
+        }
+      ],
+      "superTypeParams": []
+    }
+  },
+  {
+    "kind": "import",
+    "name": "esd",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/Exception.ts",
+      "line": 11,
+      "col": 0
+    },
+    "declarationKind": "private",
+    "jsDoc": {
+      "doc": "Contains the Exception class and associated types.\n",
+      "tags": [
+        {
+          "kind": "unsupported",
+          "value": "@copyright 2022 integer11. All rights reserved. MIT license."
+        }
+      ]
+    },
+    "importDef": {
+      "src": "file:///C:/source/partic11e/exceptions/src/_internals/mod.ts",
+      "imported": "ExceptionSerializationData"
+    }
+  },
+  {
+    "kind": "import",
+    "name": "P11_EXC_KB",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/Exception.ts",
+      "line": 11,
+      "col": 0
+    },
+    "declarationKind": "private",
+    "jsDoc": {
+      "doc": "Contains the Exception class and associated types.\n",
+      "tags": [
+        {
+          "kind": "unsupported",
+          "value": "@copyright 2022 integer11. All rights reserved. MIT license."
+        }
+      ]
+    },
+    "importDef": {
+      "src": "file:///C:/source/partic11e/exceptions/src/_internals/mod.ts",
+      "imported": "P11_EXC_KB"
+    }
+  },
+  {
+    "kind": "import",
+    "name": "IExceptionInit",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/Exception.ts",
+      "line": 21,
+      "col": 0
+    },
+    "declarationKind": "private",
+    "importDef": {
+      "src": "file:///C:/source/partic11e/exceptions/src/types/mod.ts",
+      "imported": "IExceptionInit"
+    }
+  },
+  {
+    "kind": "import",
+    "name": "TExceptionInit",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/Exception.ts",
+      "line": 21,
+      "col": 0
+    },
+    "declarationKind": "private",
+    "importDef": {
+      "src": "file:///C:/source/partic11e/exceptions/src/types/mod.ts",
+      "imported": "TExceptionInit"
+    }
+  },
+  {
+    "kind": "interface",
+    "name": "FormatExceptionInit",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/FormatException.ts",
+      "line": 56,
+      "col": 0
+    },
+    "declarationKind": "export",
+    "jsDoc": {
+      "doc": "An interface describing the `init` properties for the\n{@link FormatException} class."
+    },
+    "interfaceDef": {
+      "extends": [
+        {
+          "repr": "ExceptionInit",
+          "kind": "typeRef",
+          "typeRef": {
+            "typeParams": null,
+            "typeName": "ExceptionInit"
+          }
+        }
+      ],
+      "methods": [],
+      "properties": [
+        {
+          "name": "formatExpression",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/FormatException.ts",
+            "line": 60,
+            "col": 2
+          },
+          "jsDoc": {
+            "doc": "The format expression that is invalid."
+          },
+          "params": [],
+          "computed": false,
+          "optional": true,
+          "tsType": {
+            "repr": "string",
+            "kind": "keyword",
+            "keyword": "string"
+          },
+          "typeParams": []
+        },
+        {
+          "name": "formatter",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/FormatException.ts",
+            "line": 65,
+            "col": 2
+          },
+          "jsDoc": {
+            "doc": "The type of formatter."
+          },
+          "params": [],
+          "computed": false,
+          "optional": true,
+          "tsType": {
+            "repr": "FormatterType",
+            "kind": "typeRef",
+            "typeRef": {
+              "typeParams": null,
+              "typeName": "FormatterType"
+            }
+          },
+          "typeParams": []
+        }
+      ],
+      "callSignatures": [],
+      "indexSignatures": [],
+      "typeParams": []
+    }
+  },
+  {
+    "kind": "class",
+    "name": "FormatException",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/FormatException.ts",
+      "line": 73,
+      "col": 0
+    },
+    "declarationKind": "export",
+    "jsDoc": {
+      "doc": "An exception that occurs when a format expression is invalid for a formatter."
+    },
+    "classDef": {
+      "isAbstract": false,
+      "constructors": [
+        {
+          "jsDoc": {
+            "doc": "Creates a new {@link FormatException} with the default message,\n\"An unexpected error occurred\", and no\nexception init data."
+          },
+          "accessibility": null,
+          "name": "constructor",
+          "params": [],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/FormatException.ts",
+            "line": 88,
+            "col": 2
+          }
+        },
+        {
+          "jsDoc": {
+            "doc": "Creates a new {@link FormatException} with a message created based on\n{@link FormatExceptionInit} properties.\n",
+            "tags": [
+              {
+                "kind": "param",
+                "name": "init",
+                "doc": "The {@link FormatExceptionInit} properties."
+              }
+            ]
+          },
+          "accessibility": null,
+          "name": "constructor",
+          "params": [
+            {
+              "kind": "identifier",
+              "name": "init",
+              "optional": false,
+              "tsType": {
+                "repr": "T",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "T"
+                }
+              }
+            }
+          ],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/FormatException.ts",
+            "line": 95,
+            "col": 2
+          }
+        },
+        {
+          "jsDoc": {
+            "doc": "Creates a new {@link FormatException} with the supplied `message`,\noptionally with additional {@link FormatExceptionInit} properties.\n\n***NOTE: `message` is not altered by the `init` properties.***\n",
+            "tags": [
+              {
+                "kind": "param",
+                "name": "message",
+                "doc": "A message describing the exception."
+              },
+              {
+                "kind": "param",
+                "name": "init",
+                "doc": "The {@link FormatExceptionInit} properties."
+              }
+            ]
+          },
+          "accessibility": null,
+          "name": "constructor",
+          "params": [
+            {
+              "kind": "identifier",
+              "name": "message",
+              "optional": false,
+              "tsType": {
+                "repr": "string",
+                "kind": "keyword",
+                "keyword": "string"
+              }
+            },
+            {
+              "kind": "identifier",
+              "name": "init",
+              "optional": true,
+              "tsType": {
+                "repr": "T",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "T"
+                }
+              }
+            }
+          ],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/FormatException.ts",
+            "line": 105,
+            "col": 2
+          }
+        },
+        {
+          "accessibility": null,
+          "name": "constructor",
+          "params": [
+            {
+              "kind": "assign",
+              "left": {
+                "kind": "identifier",
+                "name": "msgOrInit",
+                "optional": false,
+                "tsType": {
+                  "repr": "",
+                  "kind": "union",
+                  "union": [
+                    {
+                      "repr": "string",
+                      "kind": "keyword",
+                      "keyword": "string"
+                    },
+                    {
+                      "repr": "T",
+                      "kind": "typeRef",
+                      "typeRef": {
+                        "typeParams": null,
+                        "typeName": "T"
+                      }
+                    }
+                  ]
+                }
+              },
+              "right": "[UNSUPPORTED]",
+              "tsType": null
+            },
+            {
+              "kind": "identifier",
+              "name": "maybeInit",
+              "optional": true,
+              "tsType": {
+                "repr": "T",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "T"
+                }
+              }
+            }
+          ],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/FormatException.ts",
+            "line": 106,
+            "col": 2
+          }
+        }
+      ],
+      "properties": [
+        {
+          "jsDoc": {
+            "doc": "The exception code for the {@link FormatException} class."
+          },
+          "tsType": {
+            "repr": "number",
+            "kind": "keyword",
+            "keyword": "number"
+          },
+          "readonly": true,
+          "accessibility": "public",
+          "optional": false,
+          "isAbstract": false,
+          "isStatic": false,
+          "name": "code",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/FormatException.ts",
+            "line": 123,
+            "col": 2
+          }
+        }
+      ],
+      "indexSignatures": [],
+      "methods": [],
+      "extends": "Exception",
+      "implements": [],
+      "typeParams": [
+        {
+          "name": "T",
+          "constraint": {
+            "repr": "FormatExceptionInit",
+            "kind": "typeRef",
+            "typeRef": {
+              "typeParams": null,
+              "typeName": "FormatExceptionInit"
+            }
+          },
+          "default": {
+            "repr": "FormatExceptionInit",
+            "kind": "typeRef",
+            "typeRef": {
+              "typeParams": null,
+              "typeName": "FormatExceptionInit"
+            }
+          }
+        }
+      ],
+      "superTypeParams": [
+        {
+          "repr": "T",
+          "kind": "typeRef",
+          "typeRef": {
+            "typeParams": null,
+            "typeName": "T"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "kind": "import",
+    "name": "Exception",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/FormatException.ts",
+      "line": 11,
+      "col": 0
+    },
+    "declarationKind": "private",
+    "jsDoc": {
+      "doc": "Contains the FormatException class and associated types.\n",
+      "tags": [
+        {
+          "kind": "unsupported",
+          "value": "@copyright 2022 integer11. All rights reserved. MIT license."
+        }
+      ]
+    },
+    "importDef": {
+      "src": "file:///C:/source/partic11e/exceptions/src/exceptions/Exception.ts",
+      "imported": "Exception"
+    }
+  },
+  {
+    "kind": "import",
+    "name": "FormatterType",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/FormatException.ts",
+      "line": 15,
+      "col": 0
+    },
+    "declarationKind": "private",
+    "importDef": {
+      "src": "file:///C:/source/partic11e/exceptions/deps.ts",
+      "imported": "FormatterType"
+    }
+  },
+  {
+    "kind": "import",
+    "name": "ExceptionInit",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/FormatException.ts",
+      "line": 19,
+      "col": 0
+    },
+    "declarationKind": "private",
+    "importDef": {
+      "src": "file:///C:/source/partic11e/exceptions/src/exceptions/Exception.ts",
+      "imported": "ExceptionInit"
+    }
+  },
+  {
+    "kind": "interface",
+    "name": "DecoratorExceptionInit",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/DecoratorException.ts",
+      "line": 60,
+      "col": 0
+    },
+    "declarationKind": "export",
+    "jsDoc": {
+      "doc": "An interface describing the `init` properties for the\n{@link DecoratorException} class."
+    },
+    "interfaceDef": {
+      "extends": [
+        {
+          "repr": "ExceptionInit",
+          "kind": "typeRef",
+          "typeRef": {
+            "typeParams": null,
+            "typeName": "ExceptionInit"
+          }
+        }
+      ],
+      "methods": [],
+      "properties": [
+        {
+          "name": "decoratorName",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/DecoratorException.ts",
+            "line": 64,
+            "col": 2
+          },
+          "jsDoc": {
+            "doc": "The name of the decorator that failed to apply"
+          },
+          "params": [],
+          "computed": false,
+          "optional": true,
+          "tsType": {
+            "repr": "string",
+            "kind": "keyword",
+            "keyword": "string"
+          },
+          "typeParams": []
+        },
+        {
+          "name": "decoratorType",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/DecoratorException.ts",
+            "line": 69,
+            "col": 2
+          },
+          "jsDoc": {
+            "doc": "The type of decorator that failed to apply."
+          },
+          "params": [],
+          "computed": false,
+          "optional": true,
+          "tsType": {
+            "repr": "DecoratorType",
+            "kind": "typeRef",
+            "typeRef": {
+              "typeParams": null,
+              "typeName": "DecoratorType"
+            }
+          },
+          "typeParams": []
+        }
+      ],
+      "callSignatures": [],
+      "indexSignatures": [],
+      "typeParams": []
+    }
+  },
+  {
+    "kind": "class",
+    "name": "DecoratorException",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/DecoratorException.ts",
+      "line": 77,
+      "col": 0
+    },
+    "declarationKind": "export",
+    "jsDoc": {
+      "doc": "An exception that occurs when a decorator fails to apply."
+    },
+    "classDef": {
+      "isAbstract": false,
+      "constructors": [
+        {
+          "jsDoc": {
+            "doc": "Creates a new {@link DecoratorException} with the default message,\n\"An unexpected error occurred\", and no\nexception init data."
+          },
+          "accessibility": null,
+          "name": "constructor",
+          "params": [],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/DecoratorException.ts",
+            "line": 92,
+            "col": 2
+          }
+        },
+        {
+          "jsDoc": {
+            "doc": "Creates a new {@link DecoratorException} with a message created based on\n{@link DecoratorExceptionInit} properties.\n",
+            "tags": [
+              {
+                "kind": "param",
+                "name": "init",
+                "doc": "The {@link DecoratorExceptionInit} properties."
+              }
+            ]
+          },
+          "accessibility": null,
+          "name": "constructor",
+          "params": [
+            {
+              "kind": "identifier",
+              "name": "init",
+              "optional": false,
+              "tsType": {
+                "repr": "T",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "T"
+                }
+              }
+            }
+          ],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/DecoratorException.ts",
+            "line": 99,
+            "col": 2
+          }
+        },
+        {
+          "jsDoc": {
+            "doc": "Creates a new {@link DecoratorException} with the supplied `message`,\noptionally with additional {@link DecoratorExceptionInit} properties.\n\n***NOTE: `message` is not altered by the `init` properties.***\n",
+            "tags": [
+              {
+                "kind": "param",
+                "name": "message",
+                "doc": "A message describing the exception."
+              },
+              {
+                "kind": "param",
+                "name": "init",
+                "doc": "The {@link DecoratorExceptionInit} properties."
+              }
+            ]
+          },
+          "accessibility": null,
+          "name": "constructor",
+          "params": [
+            {
+              "kind": "identifier",
+              "name": "message",
+              "optional": false,
+              "tsType": {
+                "repr": "string",
+                "kind": "keyword",
+                "keyword": "string"
+              }
+            },
+            {
+              "kind": "identifier",
+              "name": "init",
+              "optional": true,
+              "tsType": {
+                "repr": "T",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "T"
+                }
+              }
+            }
+          ],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/DecoratorException.ts",
+            "line": 109,
+            "col": 2
+          }
+        },
+        {
+          "accessibility": null,
+          "name": "constructor",
+          "params": [
+            {
+              "kind": "assign",
+              "left": {
+                "kind": "identifier",
+                "name": "msgOrInit",
+                "optional": false,
+                "tsType": {
+                  "repr": "",
+                  "kind": "union",
+                  "union": [
+                    {
+                      "repr": "string",
+                      "kind": "keyword",
+                      "keyword": "string"
+                    },
+                    {
+                      "repr": "T",
+                      "kind": "typeRef",
+                      "typeRef": {
+                        "typeParams": null,
+                        "typeName": "T"
+                      }
+                    }
+                  ]
+                }
+              },
+              "right": "[UNSUPPORTED]",
+              "tsType": null
+            },
+            {
+              "kind": "identifier",
+              "name": "maybeInit",
+              "optional": true,
+              "tsType": {
+                "repr": "T",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "T"
+                }
+              }
+            }
+          ],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/DecoratorException.ts",
+            "line": 110,
+            "col": 2
+          }
+        }
+      ],
+      "properties": [
+        {
+          "jsDoc": {
+            "doc": "The exception code for the {@link DecoratorException} class."
+          },
+          "tsType": {
+            "repr": "number",
+            "kind": "keyword",
+            "keyword": "number"
+          },
+          "readonly": true,
+          "accessibility": "public",
+          "optional": false,
+          "isAbstract": false,
+          "isStatic": false,
+          "name": "code",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/DecoratorException.ts",
+            "line": 127,
+            "col": 2
+          }
+        }
+      ],
+      "indexSignatures": [],
+      "methods": [],
+      "extends": "Exception",
+      "implements": [],
+      "typeParams": [
+        {
+          "name": "T",
+          "constraint": {
+            "repr": "DecoratorExceptionInit",
+            "kind": "typeRef",
+            "typeRef": {
+              "typeParams": null,
+              "typeName": "DecoratorExceptionInit"
+            }
+          },
+          "default": {
+            "repr": "DecoratorExceptionInit",
+            "kind": "typeRef",
+            "typeRef": {
+              "typeParams": null,
+              "typeName": "DecoratorExceptionInit"
+            }
+          }
+        }
+      ],
+      "superTypeParams": [
+        {
+          "repr": "T",
+          "kind": "typeRef",
+          "typeRef": {
+            "typeParams": null,
+            "typeName": "T"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "kind": "import",
+    "name": "Exception",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/DecoratorException.ts",
+      "line": 11,
+      "col": 0
+    },
+    "declarationKind": "private",
+    "jsDoc": {
+      "doc": "Contains the DecoratorException class and associated types.\n",
+      "tags": [
+        {
+          "kind": "unsupported",
+          "value": "@copyright 2022 integer11. All rights reserved. MIT license."
+        }
+      ]
+    },
+    "importDef": {
+      "src": "file:///C:/source/partic11e/exceptions/src/exceptions/Exception.ts",
+      "imported": "Exception"
+    }
+  },
+  {
+    "kind": "import",
+    "name": "DecoratorType",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/DecoratorException.ts",
+      "line": 15,
+      "col": 0
+    },
+    "declarationKind": "private",
+    "importDef": {
+      "src": "file:///C:/source/partic11e/exceptions/deps.ts",
+      "imported": "DecoratorType"
+    }
+  },
+  {
+    "kind": "import",
+    "name": "ExceptionInit",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/DecoratorException.ts",
+      "line": 19,
+      "col": 0
+    },
+    "declarationKind": "private",
+    "importDef": {
+      "src": "file:///C:/source/partic11e/exceptions/src/exceptions/Exception.ts",
+      "imported": "ExceptionInit"
+    }
+  },
+  {
+    "kind": "interface",
+    "name": "AbortedExceptionInit",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/AbortedException.ts",
+      "line": 59,
+      "col": 0
+    },
+    "declarationKind": "export",
+    "jsDoc": {
+      "doc": "An interface describing the `init` properties for the\n{@link AbortedException} class."
+    },
+    "interfaceDef": {
+      "extends": [
+        {
+          "repr": "ExceptionInit",
+          "kind": "typeRef",
+          "typeRef": {
+            "typeParams": null,
+            "typeName": "ExceptionInit"
+          }
+        }
+      ],
+      "methods": [],
+      "properties": [
+        {
+          "name": "operationName",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/AbortedException.ts",
+            "line": 63,
+            "col": 2
+          },
+          "jsDoc": {
+            "doc": "The name of the operation that was aborted."
+          },
+          "params": [],
+          "computed": false,
+          "optional": true,
+          "tsType": {
+            "repr": "string",
+            "kind": "keyword",
+            "keyword": "string"
+          },
+          "typeParams": []
+        },
+        {
+          "name": "operationType",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/AbortedException.ts",
+            "line": 68,
+            "col": 2
+          },
+          "jsDoc": {
+            "doc": "The type of operation."
+          },
+          "params": [],
+          "computed": false,
+          "optional": true,
+          "tsType": {
+            "repr": "OperationType",
+            "kind": "typeRef",
+            "typeRef": {
+              "typeParams": null,
+              "typeName": "OperationType"
+            }
+          },
+          "typeParams": []
+        }
+      ],
+      "callSignatures": [],
+      "indexSignatures": [],
+      "typeParams": []
+    }
+  },
+  {
+    "kind": "class",
+    "name": "AbortedException",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/AbortedException.ts",
+      "line": 76,
+      "col": 0
+    },
+    "declarationKind": "export",
+    "jsDoc": {
+      "doc": "An exception that is thrown when an operation is aborted."
+    },
+    "classDef": {
+      "isAbstract": false,
+      "constructors": [
+        {
+          "jsDoc": {
+            "doc": "Creates a new {@link AbortedException} with the default message,\n\"An\", and no\nexception init data."
+          },
+          "accessibility": null,
+          "name": "constructor",
+          "params": [],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/AbortedException.ts",
+            "line": 91,
+            "col": 2
+          }
+        },
+        {
+          "jsDoc": {
+            "doc": "Creates a new {@link AbortedException} with a message created based on\n{@link AbortedExceptionInit} properties.\n",
+            "tags": [
+              {
+                "kind": "param",
+                "name": "init",
+                "doc": "The {@link AbortedExceptionInit} properties."
+              }
+            ]
+          },
+          "accessibility": null,
+          "name": "constructor",
+          "params": [
+            {
+              "kind": "identifier",
+              "name": "init",
+              "optional": false,
+              "tsType": {
+                "repr": "T",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "T"
+                }
+              }
+            }
+          ],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/AbortedException.ts",
+            "line": 98,
+            "col": 2
+          }
+        },
+        {
+          "jsDoc": {
+            "doc": "Creates a new {@link AbortedException} with the supplied `message`,\noptionally with additional {@link AbortedExceptionInit} properties.\n\n***NOTE: `message` is not altered by the `init` properties.***\n",
+            "tags": [
+              {
+                "kind": "param",
+                "name": "message",
+                "doc": "A message describing the exception."
+              },
+              {
+                "kind": "param",
+                "name": "init",
+                "doc": "The {@link AbortedExceptionInit} properties."
+              }
+            ]
+          },
+          "accessibility": null,
+          "name": "constructor",
+          "params": [
+            {
+              "kind": "identifier",
+              "name": "message",
+              "optional": false,
+              "tsType": {
+                "repr": "string",
+                "kind": "keyword",
+                "keyword": "string"
+              }
+            },
+            {
+              "kind": "identifier",
+              "name": "init",
+              "optional": true,
+              "tsType": {
+                "repr": "T",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "T"
+                }
+              }
+            }
+          ],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/AbortedException.ts",
+            "line": 108,
+            "col": 2
+          }
+        },
+        {
+          "accessibility": null,
+          "name": "constructor",
+          "params": [
+            {
+              "kind": "assign",
+              "left": {
+                "kind": "identifier",
+                "name": "msgOrInit",
+                "optional": false,
+                "tsType": {
+                  "repr": "",
+                  "kind": "union",
+                  "union": [
+                    {
+                      "repr": "string",
+                      "kind": "keyword",
+                      "keyword": "string"
+                    },
+                    {
+                      "repr": "T",
+                      "kind": "typeRef",
+                      "typeRef": {
+                        "typeParams": null,
+                        "typeName": "T"
+                      }
+                    }
+                  ]
+                }
+              },
+              "right": "[UNSUPPORTED]",
+              "tsType": null
+            },
+            {
+              "kind": "identifier",
+              "name": "maybeInit",
+              "optional": true,
+              "tsType": {
+                "repr": "T",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "T"
+                }
+              }
+            }
+          ],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/AbortedException.ts",
+            "line": 109,
+            "col": 2
+          }
+        }
+      ],
+      "properties": [
+        {
+          "jsDoc": {
+            "doc": "The exception code for the {@link AbortedException} class."
+          },
+          "tsType": {
+            "repr": "number",
+            "kind": "keyword",
+            "keyword": "number"
+          },
+          "readonly": true,
+          "accessibility": "public",
+          "optional": false,
+          "isAbstract": false,
+          "isStatic": false,
+          "name": "code",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/AbortedException.ts",
+            "line": 126,
+            "col": 2
+          }
+        }
+      ],
+      "indexSignatures": [],
+      "methods": [],
+      "extends": "Exception",
+      "implements": [],
+      "typeParams": [
+        {
+          "name": "T",
+          "constraint": {
+            "repr": "AbortedExceptionInit",
+            "kind": "typeRef",
+            "typeRef": {
+              "typeParams": null,
+              "typeName": "AbortedExceptionInit"
+            }
+          },
+          "default": {
+            "repr": "AbortedExceptionInit",
+            "kind": "typeRef",
+            "typeRef": {
+              "typeParams": null,
+              "typeName": "AbortedExceptionInit"
+            }
+          }
+        }
+      ],
+      "superTypeParams": [
+        {
+          "repr": "T",
+          "kind": "typeRef",
+          "typeRef": {
+            "typeParams": null,
+            "typeName": "T"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "kind": "import",
+    "name": "Exception",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/AbortedException.ts",
+      "line": 11,
+      "col": 0
+    },
+    "declarationKind": "private",
+    "jsDoc": {
+      "doc": "Contains the AbortedException class and associated types.\n",
+      "tags": [
+        {
+          "kind": "unsupported",
+          "value": "@copyright 2022 integer11. All rights reserved. MIT license."
+        }
+      ]
+    },
+    "importDef": {
+      "src": "file:///C:/source/partic11e/exceptions/src/exceptions/Exception.ts",
+      "imported": "Exception"
+    }
+  },
+  {
+    "kind": "import",
+    "name": "OperationType",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/AbortedException.ts",
+      "line": 15,
+      "col": 0
+    },
+    "declarationKind": "private",
+    "importDef": {
+      "src": "file:///C:/source/partic11e/exceptions/deps.ts",
+      "imported": "OperationType"
+    }
+  },
+  {
+    "kind": "import",
+    "name": "ExceptionInit",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/AbortedException.ts",
+      "line": 19,
+      "col": 0
+    },
+    "declarationKind": "private",
+    "importDef": {
+      "src": "file:///C:/source/partic11e/exceptions/src/exceptions/Exception.ts",
+      "imported": "ExceptionInit"
+    }
+  },
+  {
+    "kind": "interface",
+    "name": "ParseExceptionInit",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ParseException.ts",
+      "line": 49,
+      "col": 0
+    },
+    "declarationKind": "export",
+    "jsDoc": {
+      "doc": "An interface describing the `init` properties for the\n{@link ParseException} class."
+    },
+    "interfaceDef": {
+      "extends": [
+        {
+          "repr": "ExceptionInit",
+          "kind": "typeRef",
+          "typeRef": {
+            "typeParams": null,
+            "typeName": "ExceptionInit"
+          }
+        }
+      ],
+      "methods": [],
+      "properties": [
+        {
+          "name": "parser",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ParseException.ts",
+            "line": 53,
+            "col": 2
+          },
+          "jsDoc": {
+            "doc": "The type of parser."
+          },
+          "params": [],
+          "computed": false,
+          "optional": true,
+          "tsType": {
+            "repr": "ParserType",
+            "kind": "typeRef",
+            "typeRef": {
+              "typeParams": null,
+              "typeName": "ParserType"
+            }
+          },
+          "typeParams": []
+        }
+      ],
+      "callSignatures": [],
+      "indexSignatures": [],
+      "typeParams": []
+    }
+  },
+  {
+    "kind": "class",
+    "name": "ParseException",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ParseException.ts",
+      "line": 61,
+      "col": 0
+    },
+    "declarationKind": "export",
+    "jsDoc": {
+      "doc": "An exception that occurs when a parser was unable to parse content."
+    },
+    "classDef": {
+      "isAbstract": false,
+      "constructors": [
+        {
+          "jsDoc": {
+            "doc": "Creates a new {@link ParseException} with the default message,\n\"An unexpected error occurred\", and no\nexception init data."
+          },
+          "accessibility": null,
+          "name": "constructor",
+          "params": [],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ParseException.ts",
+            "line": 76,
+            "col": 2
+          }
+        },
+        {
+          "jsDoc": {
+            "doc": "Creates a new {@link ParseException} with a message created based on\n{@link ParseExceptionInit} properties.\n",
+            "tags": [
+              {
+                "kind": "param",
+                "name": "init",
+                "doc": "The {@link ParseExceptionInit} properties."
+              }
+            ]
+          },
+          "accessibility": null,
+          "name": "constructor",
+          "params": [
+            {
+              "kind": "identifier",
+              "name": "init",
+              "optional": false,
+              "tsType": {
+                "repr": "T",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "T"
+                }
+              }
+            }
+          ],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ParseException.ts",
+            "line": 83,
+            "col": 2
+          }
+        },
+        {
+          "jsDoc": {
+            "doc": "Creates a new {@link ParseException} with the supplied `message`,\noptionally with additional {@link ParseExceptionInit} properties.\n\n***NOTE: `message` is not altered by the `init` properties.***\n",
+            "tags": [
+              {
+                "kind": "param",
+                "name": "message",
+                "doc": "A message describing the exception."
+              },
+              {
+                "kind": "param",
+                "name": "init",
+                "doc": "The {@link ParseExceptionInit} properties."
+              }
+            ]
+          },
+          "accessibility": null,
+          "name": "constructor",
+          "params": [
+            {
+              "kind": "identifier",
+              "name": "message",
+              "optional": false,
+              "tsType": {
+                "repr": "string",
+                "kind": "keyword",
+                "keyword": "string"
+              }
+            },
+            {
+              "kind": "identifier",
+              "name": "init",
+              "optional": true,
+              "tsType": {
+                "repr": "T",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "T"
+                }
+              }
+            }
+          ],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ParseException.ts",
+            "line": 93,
+            "col": 2
+          }
+        },
+        {
+          "accessibility": null,
+          "name": "constructor",
+          "params": [
+            {
+              "kind": "assign",
+              "left": {
+                "kind": "identifier",
+                "name": "msgOrInit",
+                "optional": false,
+                "tsType": {
+                  "repr": "",
+                  "kind": "union",
+                  "union": [
+                    {
+                      "repr": "string",
+                      "kind": "keyword",
+                      "keyword": "string"
+                    },
+                    {
+                      "repr": "T",
+                      "kind": "typeRef",
+                      "typeRef": {
+                        "typeParams": null,
+                        "typeName": "T"
+                      }
+                    }
+                  ]
+                }
+              },
+              "right": "[UNSUPPORTED]",
+              "tsType": null
+            },
+            {
+              "kind": "identifier",
+              "name": "maybeInit",
+              "optional": true,
+              "tsType": {
+                "repr": "T",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "T"
+                }
+              }
+            }
+          ],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ParseException.ts",
+            "line": 94,
+            "col": 2
+          }
+        }
+      ],
+      "properties": [
+        {
+          "jsDoc": {
+            "doc": "The exception code for the {@link ParseException} class."
+          },
+          "tsType": {
+            "repr": "number",
+            "kind": "keyword",
+            "keyword": "number"
+          },
+          "readonly": true,
+          "accessibility": "public",
+          "optional": false,
+          "isAbstract": false,
+          "isStatic": false,
+          "name": "code",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ParseException.ts",
+            "line": 111,
+            "col": 2
+          }
+        }
+      ],
+      "indexSignatures": [],
+      "methods": [],
+      "extends": "Exception",
+      "implements": [],
+      "typeParams": [
+        {
+          "name": "T",
+          "constraint": {
+            "repr": "ParseExceptionInit",
+            "kind": "typeRef",
+            "typeRef": {
+              "typeParams": null,
+              "typeName": "ParseExceptionInit"
+            }
+          },
+          "default": {
+            "repr": "ParseExceptionInit",
+            "kind": "typeRef",
+            "typeRef": {
+              "typeParams": null,
+              "typeName": "ParseExceptionInit"
+            }
+          }
+        }
+      ],
+      "superTypeParams": [
+        {
+          "repr": "T",
+          "kind": "typeRef",
+          "typeRef": {
+            "typeParams": null,
+            "typeName": "T"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "kind": "import",
+    "name": "Exception",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ParseException.ts",
+      "line": 11,
+      "col": 0
+    },
+    "declarationKind": "private",
+    "jsDoc": {
+      "doc": "Contains the ParseException class and associated types.\n",
+      "tags": [
+        {
+          "kind": "unsupported",
+          "value": "@copyright 2022 integer11. All rights reserved. MIT license."
+        }
+      ]
+    },
+    "importDef": {
+      "src": "file:///C:/source/partic11e/exceptions/src/exceptions/Exception.ts",
+      "imported": "Exception"
+    }
+  },
+  {
+    "kind": "import",
+    "name": "ParserType",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ParseException.ts",
+      "line": 15,
+      "col": 0
+    },
+    "declarationKind": "private",
+    "importDef": {
+      "src": "file:///C:/source/partic11e/exceptions/deps.ts",
+      "imported": "ParserType"
+    }
+  },
+  {
+    "kind": "import",
+    "name": "ExceptionInit",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ParseException.ts",
+      "line": 19,
+      "col": 0
+    },
+    "declarationKind": "private",
+    "importDef": {
+      "src": "file:///C:/source/partic11e/exceptions/src/exceptions/Exception.ts",
+      "imported": "ExceptionInit"
+    }
+  },
+  {
+    "kind": "interface",
+    "name": "TimeoutExceptionInit",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/TimeoutException.ts",
+      "line": 59,
+      "col": 0
+    },
+    "declarationKind": "export",
+    "jsDoc": {
+      "doc": "An interface describing the `init` properties for the\n{@link TimeoutException} class."
+    },
+    "interfaceDef": {
+      "extends": [
+        {
+          "repr": "ExceptionInit",
+          "kind": "typeRef",
+          "typeRef": {
+            "typeParams": null,
+            "typeName": "ExceptionInit"
+          }
+        }
+      ],
+      "methods": [],
+      "properties": [
+        {
+          "name": "operationName",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/TimeoutException.ts",
+            "line": 63,
+            "col": 2
+          },
+          "jsDoc": {
+            "doc": "The name of the operation that timed out."
+          },
+          "params": [],
+          "computed": false,
+          "optional": true,
+          "tsType": {
+            "repr": "string",
+            "kind": "keyword",
+            "keyword": "string"
+          },
+          "typeParams": []
+        },
+        {
+          "name": "operationTimeout",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/TimeoutException.ts",
+            "line": 68,
+            "col": 2
+          },
+          "jsDoc": {
+            "doc": "The number, in seconds, of the specified timeout."
+          },
+          "params": [],
+          "computed": false,
+          "optional": true,
+          "tsType": {
+            "repr": "number",
+            "kind": "keyword",
+            "keyword": "number"
+          },
+          "typeParams": []
+        }
+      ],
+      "callSignatures": [],
+      "indexSignatures": [],
+      "typeParams": []
+    }
+  },
+  {
+    "kind": "class",
+    "name": "TimeoutException",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/TimeoutException.ts",
+      "line": 76,
+      "col": 0
+    },
+    "declarationKind": "export",
+    "jsDoc": {
+      "doc": "An exception that occurs when an operation has exceeded a timeout threshold."
+    },
+    "classDef": {
+      "isAbstract": false,
+      "constructors": [
+        {
+          "jsDoc": {
+            "doc": "Creates a new {@link TimeoutException} with the default message,\n\"An unexpected error occurred\", and no\nexception init data."
+          },
+          "accessibility": null,
+          "name": "constructor",
+          "params": [],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/TimeoutException.ts",
+            "line": 91,
+            "col": 2
+          }
+        },
+        {
+          "jsDoc": {
+            "doc": "Creates a new {@link TimeoutException} with a message created based on\n{@link TimeoutExceptionInit} properties.\n",
+            "tags": [
+              {
+                "kind": "param",
+                "name": "init",
+                "doc": "The {@link TimeoutExceptionInit} properties."
+              }
+            ]
+          },
+          "accessibility": null,
+          "name": "constructor",
+          "params": [
+            {
+              "kind": "identifier",
+              "name": "init",
+              "optional": false,
+              "tsType": {
+                "repr": "T",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "T"
+                }
+              }
+            }
+          ],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/TimeoutException.ts",
+            "line": 98,
+            "col": 2
+          }
+        },
+        {
+          "jsDoc": {
+            "doc": "Creates a new {@link TimeoutException} with the supplied `message`,\noptionally with additional {@link TimeoutExceptionInit} properties.\n\n***NOTE: `message` is not altered by the `init` properties.***\n",
+            "tags": [
+              {
+                "kind": "param",
+                "name": "message",
+                "doc": "A message describing the exception."
+              },
+              {
+                "kind": "param",
+                "name": "init",
+                "doc": "The {@link TimeoutExceptionInit} properties."
+              }
+            ]
+          },
+          "accessibility": null,
+          "name": "constructor",
+          "params": [
+            {
+              "kind": "identifier",
+              "name": "message",
+              "optional": false,
+              "tsType": {
+                "repr": "string",
+                "kind": "keyword",
+                "keyword": "string"
+              }
+            },
+            {
+              "kind": "identifier",
+              "name": "init",
+              "optional": true,
+              "tsType": {
+                "repr": "T",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "T"
+                }
+              }
+            }
+          ],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/TimeoutException.ts",
+            "line": 108,
+            "col": 2
+          }
+        },
+        {
+          "accessibility": null,
+          "name": "constructor",
+          "params": [
+            {
+              "kind": "assign",
+              "left": {
+                "kind": "identifier",
+                "name": "msgOrInit",
+                "optional": false,
+                "tsType": {
+                  "repr": "",
+                  "kind": "union",
+                  "union": [
+                    {
+                      "repr": "string",
+                      "kind": "keyword",
+                      "keyword": "string"
+                    },
+                    {
+                      "repr": "T",
+                      "kind": "typeRef",
+                      "typeRef": {
+                        "typeParams": null,
+                        "typeName": "T"
+                      }
+                    }
+                  ]
+                }
+              },
+              "right": "[UNSUPPORTED]",
+              "tsType": null
+            },
+            {
+              "kind": "identifier",
+              "name": "maybeInit",
+              "optional": true,
+              "tsType": {
+                "repr": "T",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "T"
+                }
+              }
+            }
+          ],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/TimeoutException.ts",
+            "line": 109,
+            "col": 2
+          }
+        }
+      ],
+      "properties": [
+        {
+          "jsDoc": {
+            "doc": "The exception code for the {@link TimeoutException} class."
+          },
+          "tsType": {
+            "repr": "number",
+            "kind": "keyword",
+            "keyword": "number"
+          },
+          "readonly": true,
+          "accessibility": "public",
+          "optional": false,
+          "isAbstract": false,
+          "isStatic": false,
+          "name": "code",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/TimeoutException.ts",
+            "line": 126,
+            "col": 2
+          }
+        }
+      ],
+      "indexSignatures": [],
+      "methods": [],
+      "extends": "Exception",
+      "implements": [],
+      "typeParams": [
+        {
+          "name": "T",
+          "constraint": {
+            "repr": "TimeoutExceptionInit",
+            "kind": "typeRef",
+            "typeRef": {
+              "typeParams": null,
+              "typeName": "TimeoutExceptionInit"
+            }
+          },
+          "default": {
+            "repr": "TimeoutExceptionInit",
+            "kind": "typeRef",
+            "typeRef": {
+              "typeParams": null,
+              "typeName": "TimeoutExceptionInit"
+            }
+          }
+        }
+      ],
+      "superTypeParams": [
+        {
+          "repr": "T",
+          "kind": "typeRef",
+          "typeRef": {
+            "typeParams": null,
+            "typeName": "T"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "kind": "import",
+    "name": "Exception",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/TimeoutException.ts",
+      "line": 11,
+      "col": 0
+    },
+    "declarationKind": "private",
+    "jsDoc": {
+      "doc": "Contains the TimeoutException class and associated types.\n",
+      "tags": [
+        {
+          "kind": "unsupported",
+          "value": "@copyright 2022 integer11. All rights reserved. MIT license."
+        }
+      ]
+    },
+    "importDef": {
+      "src": "file:///C:/source/partic11e/exceptions/src/exceptions/Exception.ts",
+      "imported": "Exception"
+    }
+  },
+  {
+    "kind": "import",
+    "name": "ExceptionInit",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/TimeoutException.ts",
+      "line": 18,
+      "col": 0
+    },
+    "declarationKind": "private",
+    "importDef": {
+      "src": "file:///C:/source/partic11e/exceptions/src/exceptions/Exception.ts",
+      "imported": "ExceptionInit"
+    }
+  },
+  {
+    "kind": "interface",
+    "name": "ValueExceptionInit",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ValueException.ts",
+      "line": 57,
+      "col": 0
+    },
+    "declarationKind": "export",
+    "jsDoc": {
+      "doc": "An interface describing the `init` properties for the\n{@link ValueException} class."
+    },
+    "interfaceDef": {
+      "extends": [
+        {
+          "repr": "ExceptionInit",
+          "kind": "typeRef",
+          "typeRef": {
+            "typeParams": null,
+            "typeName": "ExceptionInit"
+          }
+        }
+      ],
+      "methods": [],
+      "properties": [
+        {
+          "name": "valueConstraints",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ValueException.ts",
+            "line": 61,
+            "col": 2
+          },
+          "jsDoc": {
+            "doc": "The constraints of the value."
+          },
+          "params": [],
+          "computed": false,
+          "optional": true,
+          "tsType": {
+            "repr": "",
+            "kind": "array",
+            "array": {
+              "repr": "string",
+              "kind": "keyword",
+              "keyword": "string"
+            }
+          },
+          "typeParams": []
+        },
+        {
+          "name": "valueName",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ValueException.ts",
+            "line": 66,
+            "col": 2
+          },
+          "jsDoc": {
+            "doc": "The name of the symbol that has an invalid value."
+          },
+          "params": [],
+          "computed": false,
+          "optional": true,
+          "tsType": {
+            "repr": "string",
+            "kind": "keyword",
+            "keyword": "string"
+          },
+          "typeParams": []
+        }
+      ],
+      "callSignatures": [],
+      "indexSignatures": [],
+      "typeParams": []
+    }
+  },
+  {
+    "kind": "class",
+    "name": "ValueException",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ValueException.ts",
+      "line": 74,
+      "col": 0
+    },
+    "declarationKind": "export",
+    "jsDoc": {
+      "doc": "An exception that occurs when a symbol has a correct type, but has an invalid value."
+    },
+    "classDef": {
+      "isAbstract": false,
+      "constructors": [
+        {
+          "jsDoc": {
+            "doc": "Creates a new {@link ValueException} with the default message,\n\"An unexpected error occurred\", and no\nexception init data."
+          },
+          "accessibility": null,
+          "name": "constructor",
+          "params": [],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ValueException.ts",
+            "line": 89,
+            "col": 2
+          }
+        },
+        {
+          "jsDoc": {
+            "doc": "Creates a new {@link ValueException} with a message created based on\n{@link ValueExceptionInit} properties.\n",
+            "tags": [
+              {
+                "kind": "param",
+                "name": "init",
+                "doc": "The {@link ValueExceptionInit} properties."
+              }
+            ]
+          },
+          "accessibility": null,
+          "name": "constructor",
+          "params": [
+            {
+              "kind": "identifier",
+              "name": "init",
+              "optional": false,
+              "tsType": {
+                "repr": "T",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "T"
+                }
+              }
+            }
+          ],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ValueException.ts",
+            "line": 96,
+            "col": 2
+          }
+        },
+        {
+          "jsDoc": {
+            "doc": "Creates a new {@link ValueException} with the supplied `message`,\noptionally with additional {@link ValueExceptionInit} properties.\n\n***NOTE: `message` is not altered by the `init` properties.***\n",
+            "tags": [
+              {
+                "kind": "param",
+                "name": "message",
+                "doc": "A message describing the exception."
+              },
+              {
+                "kind": "param",
+                "name": "init",
+                "doc": "The {@link ValueExceptionInit} properties."
+              }
+            ]
+          },
+          "accessibility": null,
+          "name": "constructor",
+          "params": [
+            {
+              "kind": "identifier",
+              "name": "message",
+              "optional": false,
+              "tsType": {
+                "repr": "string",
+                "kind": "keyword",
+                "keyword": "string"
+              }
+            },
+            {
+              "kind": "identifier",
+              "name": "init",
+              "optional": true,
+              "tsType": {
+                "repr": "T",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "T"
+                }
+              }
+            }
+          ],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ValueException.ts",
+            "line": 106,
+            "col": 2
+          }
+        },
+        {
+          "accessibility": null,
+          "name": "constructor",
+          "params": [
+            {
+              "kind": "assign",
+              "left": {
+                "kind": "identifier",
+                "name": "msgOrInit",
+                "optional": false,
+                "tsType": {
+                  "repr": "",
+                  "kind": "union",
+                  "union": [
+                    {
+                      "repr": "string",
+                      "kind": "keyword",
+                      "keyword": "string"
+                    },
+                    {
+                      "repr": "T",
+                      "kind": "typeRef",
+                      "typeRef": {
+                        "typeParams": null,
+                        "typeName": "T"
+                      }
+                    }
+                  ]
+                }
+              },
+              "right": "[UNSUPPORTED]",
+              "tsType": null
+            },
+            {
+              "kind": "identifier",
+              "name": "maybeInit",
+              "optional": true,
+              "tsType": {
+                "repr": "T",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "T"
+                }
+              }
+            }
+          ],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ValueException.ts",
+            "line": 107,
+            "col": 2
+          }
+        }
+      ],
+      "properties": [
+        {
+          "jsDoc": {
+            "doc": "The exception code for the {@link ValueException} class."
+          },
+          "tsType": {
+            "repr": "number",
+            "kind": "keyword",
+            "keyword": "number"
+          },
+          "readonly": true,
+          "accessibility": "public",
+          "optional": false,
+          "isAbstract": false,
+          "isStatic": false,
+          "name": "code",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ValueException.ts",
+            "line": 124,
+            "col": 2
+          }
+        }
+      ],
+      "indexSignatures": [],
+      "methods": [],
+      "extends": "Exception",
+      "implements": [],
+      "typeParams": [
+        {
+          "name": "T",
+          "constraint": {
+            "repr": "ValueExceptionInit",
+            "kind": "typeRef",
+            "typeRef": {
+              "typeParams": null,
+              "typeName": "ValueExceptionInit"
+            }
+          },
+          "default": {
+            "repr": "ValueExceptionInit",
+            "kind": "typeRef",
+            "typeRef": {
+              "typeParams": null,
+              "typeName": "ValueExceptionInit"
+            }
+          }
+        }
+      ],
+      "superTypeParams": [
+        {
+          "repr": "T",
+          "kind": "typeRef",
+          "typeRef": {
+            "typeParams": null,
+            "typeName": "T"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "kind": "import",
+    "name": "Exception",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ValueException.ts",
+      "line": 11,
+      "col": 0
+    },
+    "declarationKind": "private",
+    "jsDoc": {
+      "doc": "Contains the ValueException class and associated types.\n",
+      "tags": [
+        {
+          "kind": "unsupported",
+          "value": "@copyright 2022 integer11. All rights reserved. MIT license."
+        }
+      ]
+    },
+    "importDef": {
+      "src": "file:///C:/source/partic11e/exceptions/src/exceptions/Exception.ts",
+      "imported": "Exception"
+    }
+  },
+  {
+    "kind": "import",
+    "name": "ExceptionInit",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/ValueException.ts",
+      "line": 18,
+      "col": 0
+    },
+    "declarationKind": "private",
+    "importDef": {
+      "src": "file:///C:/source/partic11e/exceptions/src/exceptions/Exception.ts",
+      "imported": "ExceptionInit"
+    }
+  },
+  {
+    "kind": "interface",
+    "name": "IndexExceptionInit",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/IndexException.ts",
+      "line": 113,
+      "col": 0
+    },
+    "declarationKind": "export",
+    "jsDoc": {
+      "doc": "An interface describing the `init` properties for the\n{@link IndexException} class."
+    },
+    "interfaceDef": {
+      "extends": [
+        {
+          "repr": "ExceptionInit",
+          "kind": "typeRef",
+          "typeRef": {
+            "typeParams": null,
+            "typeName": "ExceptionInit"
+          }
+        }
+      ],
+      "methods": [],
+      "properties": [
+        {
+          "name": "index",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/IndexException.ts",
+            "line": 117,
+            "col": 2
+          },
+          "jsDoc": {
+            "doc": "The index that is outside the bounds of the array."
+          },
+          "params": [],
+          "computed": false,
+          "optional": true,
+          "tsType": {
+            "repr": "number",
+            "kind": "keyword",
+            "keyword": "number"
+          },
+          "typeParams": []
+        },
+        {
+          "name": "lowerBound",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/IndexException.ts",
+            "line": 122,
+            "col": 2
+          },
+          "jsDoc": {
+            "doc": "The lower bound of the array. Usually `0`, but can be any integer lower than the `upperBound`."
+          },
+          "params": [],
+          "computed": false,
+          "optional": true,
+          "tsType": {
+            "repr": "number",
+            "kind": "keyword",
+            "keyword": "number"
+          },
+          "typeParams": []
+        },
+        {
+          "name": "upperBound",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/IndexException.ts",
+            "line": 127,
+            "col": 2
+          },
+          "jsDoc": {
+            "doc": "The upper bound of the array. Can be any integer higher `lowerBound`."
+          },
+          "params": [],
+          "computed": false,
+          "optional": true,
+          "tsType": {
+            "repr": "number",
+            "kind": "keyword",
+            "keyword": "number"
+          },
+          "typeParams": []
+        },
+        {
+          "name": "valueName",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/IndexException.ts",
+            "line": 132,
+            "col": 2
+          },
+          "jsDoc": {
+            "doc": "The name of the symbol representing the array."
+          },
+          "params": [],
+          "computed": false,
+          "optional": true,
+          "tsType": {
+            "repr": "string",
+            "kind": "keyword",
+            "keyword": "string"
+          },
+          "typeParams": []
+        }
+      ],
+      "callSignatures": [],
+      "indexSignatures": [],
+      "typeParams": []
+    }
+  },
+  {
+    "kind": "class",
+    "name": "IndexException",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/IndexException.ts",
+      "line": 140,
+      "col": 0
+    },
+    "declarationKind": "export",
+    "jsDoc": {
+      "doc": "An exception that occurs when an index is outside the bounds of an array."
+    },
+    "classDef": {
+      "isAbstract": false,
+      "constructors": [
+        {
+          "jsDoc": {
+            "doc": "Creates a new {@link IndexException} with the default message,\n\"An unexpected error occurred\", and no\nexception init data."
+          },
+          "accessibility": null,
+          "name": "constructor",
+          "params": [],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/IndexException.ts",
+            "line": 155,
+            "col": 2
+          }
+        },
+        {
+          "jsDoc": {
+            "doc": "Creates a new {@link IndexException} with a message created based on\n{@link IndexExceptionInit} properties.\n",
+            "tags": [
+              {
+                "kind": "param",
+                "name": "init",
+                "doc": "The {@link IndexExceptionInit} properties."
+              }
+            ]
+          },
+          "accessibility": null,
+          "name": "constructor",
+          "params": [
+            {
+              "kind": "identifier",
+              "name": "init",
+              "optional": false,
+              "tsType": {
+                "repr": "T",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "T"
+                }
+              }
+            }
+          ],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/IndexException.ts",
+            "line": 162,
+            "col": 2
+          }
+        },
+        {
+          "jsDoc": {
+            "doc": "Creates a new {@link IndexException} with the supplied `message`,\noptionally with additional {@link IndexExceptionInit} properties.\n\n***NOTE: `message` is not altered by the `init` properties.***\n",
+            "tags": [
+              {
+                "kind": "param",
+                "name": "message",
+                "doc": "A message describing the exception."
+              },
+              {
+                "kind": "param",
+                "name": "init",
+                "doc": "The {@link IndexExceptionInit} properties."
+              }
+            ]
+          },
+          "accessibility": null,
+          "name": "constructor",
+          "params": [
+            {
+              "kind": "identifier",
+              "name": "message",
+              "optional": false,
+              "tsType": {
+                "repr": "string",
+                "kind": "keyword",
+                "keyword": "string"
+              }
+            },
+            {
+              "kind": "identifier",
+              "name": "init",
+              "optional": true,
+              "tsType": {
+                "repr": "T",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "T"
+                }
+              }
+            }
+          ],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/IndexException.ts",
+            "line": 172,
+            "col": 2
+          }
+        },
+        {
+          "accessibility": null,
+          "name": "constructor",
+          "params": [
+            {
+              "kind": "assign",
+              "left": {
+                "kind": "identifier",
+                "name": "msgOrInit",
+                "optional": false,
+                "tsType": {
+                  "repr": "",
+                  "kind": "union",
+                  "union": [
+                    {
+                      "repr": "string",
+                      "kind": "keyword",
+                      "keyword": "string"
+                    },
+                    {
+                      "repr": "T",
+                      "kind": "typeRef",
+                      "typeRef": {
+                        "typeParams": null,
+                        "typeName": "T"
+                      }
+                    }
+                  ]
+                }
+              },
+              "right": "[UNSUPPORTED]",
+              "tsType": null
+            },
+            {
+              "kind": "identifier",
+              "name": "maybeInit",
+              "optional": true,
+              "tsType": {
+                "repr": "T",
+                "kind": "typeRef",
+                "typeRef": {
+                  "typeParams": null,
+                  "typeName": "T"
+                }
+              }
+            }
+          ],
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/IndexException.ts",
+            "line": 173,
+            "col": 2
+          }
+        }
+      ],
+      "properties": [
+        {
+          "jsDoc": {
+            "doc": "The exception code for the {@link IndexException} class."
+          },
+          "tsType": {
+            "repr": "number",
+            "kind": "keyword",
+            "keyword": "number"
+          },
+          "readonly": true,
+          "accessibility": "public",
+          "optional": false,
+          "isAbstract": false,
+          "isStatic": false,
+          "name": "code",
+          "location": {
+            "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/IndexException.ts",
+            "line": 190,
+            "col": 2
+          }
+        }
+      ],
+      "indexSignatures": [],
+      "methods": [],
+      "extends": "Exception",
+      "implements": [],
+      "typeParams": [
+        {
+          "name": "T",
+          "constraint": {
+            "repr": "IndexExceptionInit",
+            "kind": "typeRef",
+            "typeRef": {
+              "typeParams": null,
+              "typeName": "IndexExceptionInit"
+            }
+          },
+          "default": {
+            "repr": "IndexExceptionInit",
+            "kind": "typeRef",
+            "typeRef": {
+              "typeParams": null,
+              "typeName": "IndexExceptionInit"
+            }
+          }
+        }
+      ],
+      "superTypeParams": [
+        {
+          "repr": "T",
+          "kind": "typeRef",
+          "typeRef": {
+            "typeParams": null,
+            "typeName": "T"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "kind": "import",
+    "name": "Exception",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/IndexException.ts",
+      "line": 11,
+      "col": 0
+    },
+    "declarationKind": "private",
+    "jsDoc": {
+      "doc": "Contains the IndexException class and associated types.\n",
+      "tags": [
+        {
+          "kind": "unsupported",
+          "value": "@copyright 2022 integer11. All rights reserved. MIT license."
+        }
+      ]
+    },
+    "importDef": {
+      "src": "file:///C:/source/partic11e/exceptions/src/exceptions/Exception.ts",
+      "imported": "Exception"
+    }
+  },
+  {
+    "kind": "import",
+    "name": "ValueException",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/IndexException.ts",
+      "line": 12,
+      "col": 0
+    },
+    "declarationKind": "private",
+    "importDef": {
+      "src": "file:///C:/source/partic11e/exceptions/src/exceptions/ValueException.ts",
+      "imported": "ValueException"
+    }
+  },
+  {
+    "kind": "import",
+    "name": "ExceptionInit",
+    "location": {
+      "filename": "file:///C:/source/partic11e/exceptions/src/exceptions/IndexException.ts",
+      "line": 19,
+      "col": 0
+    },
+    "declarationKind": "private",
+    "importDef": {
+      "src": "file:///C:/source/partic11e/exceptions/src/exceptions/Exception.ts",
+      "imported": "ExceptionInit"
+    }
+  }
+]
