@@ -1,7 +1,7 @@
 /**
  * Test cases for the {@link ParseException} exception.
  *
- * @copyright 2022 IntegerEleven. All rights reserved. MIT license.
+ * @copyright 2022 integer11. All rights reserved. MIT license.
  */
 
 import { ParseExceptionInit } from "../../mod.ts";

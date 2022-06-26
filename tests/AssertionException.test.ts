@@ -4,7 +4,7 @@
  * AssertionException is currently just an `Exception` with a different `code`
  * property, so that's all we are testing right now.
  *
- * @copyright 2022 IntegerEleven. All rights reserved. MIT license.
+ * @copyright 2022 integer11. All rights reserved. MIT license.
  */
 
 //  #region feature-import-remote

@@ -1,13 +1,26 @@
 /**
- * Contains the class and types for creating an {@link ArgumentException}.
+ * Contains the ArgumentException class and associated types.
  *
- * @copyright 2021-2022 IntegerEleven. All rights reserved. MIT license.
+ * @copyright 2022 integer11. All rights reserved. MIT license.
  */
 
-import { Exception, ExceptionInit } from "./Exception.ts";
+//  #region feature-import-remote
+//  #endregion
 
+//  #region feature-import-local
+import { Exception } from "./Exception.ts";
+//  #endregion
+
+//  #region type-import-remote
+//  #endregion
+
+//  #region type-import-local
+import type { ExceptionInit } from "./Exception.ts";
+//  #endregion
+
+//  #region constants-local
 /**
- * The default {@link ArgumentException} message.
+ * The default {@link ArgumentException} message;
  */
 const DEFAULT_MSG = "An argument has the correct type, but an invalid value.";
 
@@ -34,7 +47,9 @@ const msgFromInit = (init: ArgumentExceptionInit): string => {
       return DEFAULT_MSG;
   }
 };
+//  #endregion
 
+//  #region type-export-file
 /**
  * An interface describing the `init` properties for the
  * {@link ArgumentException} class.
@@ -50,19 +65,22 @@ export interface ArgumentExceptionInit extends ExceptionInit {
    */
   argumentName?: string;
 }
+//  #endregion
 
+//  #region feature-export-file
 /**
- * A class representing exceptions that occur when an argument has a correct
- * type, but has an invalid value.
+ * An exception that occurs when an argument has the correct type, but an invalid value.
  */
 export class ArgumentException<
   T extends ArgumentExceptionInit = ArgumentExceptionInit,
 > extends Exception<T> {
-  /**
-   * The exception code for the {@link ArgumentException} class.
-   */
-  public readonly code: number = 11;
+  //  #region static-properties
+  //  #endregion
 
+  //  #region static-methods
+  //  #endregion
+
+  //  #region constructors
   /**
    * Creates a new {@link ArgumentException} with the default message,
    * "An argument has the correct type, but an invalid value.", and no
@@ -97,4 +115,55 @@ export class ArgumentException<
 
     super(message, init);
   }
+  //  #endregion
+
+  //  #region properties
+  /**
+   * The exception code for the {@link ArgumentException} class.
+   */
+  public readonly code: number = 11;
+
+  //  #endregion
+
+  //  #region interface-implementations
+  //  #endregion
+
+  //  #region abstract-methods
+  //  #endregion
+
+  //  #region method-overrides
+  //  #endregion
+
+  //  #region native-overrides
+  //  #endregion
+
+  //  #region methods
+  //  #endregion
+
+  //  #region _static-properties
+  //  #endregion
+
+  //  #region _static-methods
+  //  #endregion
+
+  //  #region _properties
+  //  #endregion
+
+  //  #region _method-overrides
+  //  #endregion
+
+  //  #region _methods
+  //  #endregion
+
+  //  #region #static-methods
+  //  #endregion
+
+  //  #region #static-properties
+  //  #endregion
+
+  //  #region #methods
+  //  #endregion
+
+  //  #region #properties
+  //  #endregion
 }

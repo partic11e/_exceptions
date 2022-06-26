@@ -1,15 +1,27 @@
 /**
- * Contains the class and types for creating a {@link DecoratorException}.
+ * Contains the DecoratorException class and associated types.
  *
- * @copyright 2021-2022 IntegerEleven. All rights reserved. MIT license.
+ * @copyright 2022 integer11. All rights reserved. MIT license.
  */
 
+//  #region feature-import-remote
+//  #endregion
+
+//  #region feature-import-local
+import { Exception } from "./Exception.ts";
+//  #endregion
+
+//  #region type-import-remote
 import type { DecoratorType } from "../../deps.ts";
+//  #endregion
 
-import { Exception, ExceptionInit } from "./Exception.ts";
+//  #region type-import-local
+import type { ExceptionInit } from "./Exception.ts";
+//  #endregion
 
+//  #region constants-local
 /**
- * The default {@link DecoratorException} message.
+ * The default {@link DecoratorException} message;
  */
 const DEFAULT_MSG = "A decorator failed to apply.";
 
@@ -38,6 +50,9 @@ const msgFromInit = (init: DecoratorExceptionInit): string => {
   }
 };
 
+//  #endregion
+
+//  #region type-export-file
 /**
  * An interface describing the `init` properties for the
  * {@link DecoratorException} class.
@@ -53,22 +68,26 @@ export interface DecoratorExceptionInit extends ExceptionInit {
    */
   decoratorType?: DecoratorType;
 }
+//  #endregion
 
+// #region feature-export-file
 /**
- * A class representing exceptions that occur when an operation has been
- * prematurely aborted.
+ * An exception that occurs when a decorator fails to apply.
  */
 export class DecoratorException<
   T extends DecoratorExceptionInit = DecoratorExceptionInit,
 > extends Exception<T> {
-  /**
-   * The exception code for the {@link DecoratorException} class.
-   */
-  public readonly code: number = 10;
+  //  #region static-properties
+  //  #endregion
 
+  //  #region static-methods
+  //  #endregion
+
+  //  #region constructors
   /**
    * Creates a new {@link DecoratorException} with the default message,
-   * "A decorator failed to apply.", and no exception init data.
+   * "An unexpected error occurred", and no
+   * exception init data.
    */
   constructor();
   /**
@@ -99,4 +118,56 @@ export class DecoratorException<
 
     super(message, init);
   }
+  //  #endregion
+
+  //  #region properties
+  /**
+   * The exception code for the {@link DecoratorException} class.
+   */
+  public readonly code: number = 10;
+
+  //  #endregion
+
+  //  #region interface-implementations
+  //  #endregion
+
+  //  #region abstract-methods
+  //  #endregion
+
+  //  #region method-overrides
+  //  #endregion
+
+  //  #region native-overrides
+  //  #endregion
+
+  //  #region methods
+  //  #endregion
+
+  //  #region _static-properties
+  //  #endregion
+
+  //  #region _static-methods
+  //  #endregion
+
+  //  #region _properties
+  //  #endregion
+
+  //  #region _method-overrides
+  //  #endregion
+
+  //  #region _methods
+  //  #endregion
+
+  //  #region #static-methods
+  //  #endregion
+
+  //  #region #static-properties
+  //  #endregion
+
+  //  #region #methods
+  //  #endregion
+
+  //  #region #properties
+  //  #endregion
 }
+//  #endregion

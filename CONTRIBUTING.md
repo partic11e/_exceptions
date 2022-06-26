@@ -23,7 +23,7 @@ Roadmap repo.
 If you are interested in contributing with code, you only need to be familiar
 with [TypeScript][typescript] and [Deno][deno].
 
-You can contribute to documentation by looking at [documentation issues][deno].
+You can contribute to documentation by looking at [documentation issues][documentation].
 
 # Making code contributions
 

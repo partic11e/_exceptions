@@ -1,17 +1,27 @@
 /**
- * Contains the class and types for creating a {@link ParseException}.
+ * Contains the ParseException class and associated types.
  *
- * @copyright 2021-2022 IntegerEleven. All rights reserved. MIT license.
+ * @copyright 2022 integer11. All rights reserved. MIT license.
  */
 
-import type { ParserType } from "../../deps.ts";
+//  #region feature-import-remote
+//  #endregion
 
-import { TExceptionInit } from "../types/mod.ts";
-
+//  #region feature-import-local
 import { Exception } from "./Exception.ts";
+//  #endregion
 
+//  #region type-import-remote
+import type { ParserType } from "../../deps.ts";
+//  #endregion
+
+//  #region type-import-local
+import type { ExceptionInit } from "./Exception.ts";
+//  #endregion
+
+//  #region constants-local
 /**
- * The default {@link ParseException} message.
+ * The default {@link ParseException} message;
  */
 const DEFAULT_MSG = "A parser was unable to parse content.";
 
@@ -29,33 +39,39 @@ const msgFromInit = (init: ParseExceptionInit): string => {
     ? `The parser "${parser}" was unable to parser content.`
     : DEFAULT_MSG;
 };
+//  #endregion
 
+//  #region type-export-file
 /**
  * An interface describing the `init` properties for the
  * {@link ParseException} class.
  */
-export type ParseExceptionInit = TExceptionInit<{
+export interface ParseExceptionInit extends ExceptionInit {
   /**
    * The type of parser.
    */
   parser?: ParserType;
-}>;
+}
+//  #endregion
 
+//  #region feature-export-file
 /**
- * A class representing exceptions that occur when a format expression is
- * invalid for a formatter.
+ * An exception that occurs when a parser was unable to parse content.
  */
 export class ParseException<
   T extends ParseExceptionInit = ParseExceptionInit,
 > extends Exception<T> {
-  /**
-   * The exception code for the {@link ParseException} class.
-   */
-  public readonly code: number = 18;
+  //  #region static-properties
+  //  #endregion
 
+  //  #region static-methods
+  //  #endregion
+
+  //  #region constructors
   /**
    * Creates a new {@link ParseException} with the default message,
-   * "An expression for a formatter is invalid..", and no exception init data.
+   * "An unexpected error occurred", and no
+   * exception init data.
    */
   constructor();
   /**
@@ -86,4 +102,56 @@ export class ParseException<
 
     super(message, init);
   }
+  //  #endregion
+
+  //  #region properties
+  /**
+   * The exception code for the {@link ParseException} class.
+   */
+  public readonly code: number = 18;
+
+  //  #endregion
+
+  //  #region interface-implementations
+  //  #endregion
+
+  //  #region abstract-methods
+  //  #endregion
+
+  //  #region method-overrides
+  //  #endregion
+
+  //  #region native-overrides
+  //  #endregion
+
+  //  #region methods
+  //  #endregion
+
+  //  #region _static-properties
+  //  #endregion
+
+  //  #region _static-methods
+  //  #endregion
+
+  //  #region _properties
+  //  #endregion
+
+  //  #region _method-overrides
+  //  #endregion
+
+  //  #region _methods
+  //  #endregion
+
+  //  #region #static-methods
+  //  #endregion
+
+  //  #region #static-properties
+  //  #endregion
+
+  //  #region #methods
+  //  #endregion
+
+  //  #region #properties
+  //  #endregion
 }
+//  #endregion

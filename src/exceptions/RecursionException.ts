@@ -1,13 +1,26 @@
 /**
- * Contains the class and types for creating a {@link RecursionException}.
+ * Contains the RecursionException class and associated types.
  *
- * @copyright 2021-2022 IntegerEleven. All rights reserved. MIT license.
+ * @copyright 2022 integer11. All rights reserved. MIT license.
  */
 
-import { Exception, ExceptionInit } from "./Exception.ts";
+//  #region feature-import-remote
+//  #endregion
 
+//  #region feature-import-local
+import { Exception } from "./Exception.ts";
+//  #endregion
+
+//  #region type-import-remote
+//  #endregion
+
+//  #region type-import-local
+import type { ExceptionInit } from "./Exception.ts";
+//  #endregion
+
+//  #region constants-local
 /**
- * The default {@link RecursionException} message.
+ * The default {@link RecursionException} message;
  */
 const DEFAULT_MSG = "An operation exceeded the maximum recursion depth.";
 
@@ -45,7 +58,9 @@ const msgFromInit = (init: RecursionExceptionInit): string => {
       return DEFAULT_MSG;
   }
 };
+//  #endregion
 
+//  #region type-export-file
 /**
  * An interface describing the `init` properties for the
  * {@link RecursionException} class.
@@ -66,23 +81,26 @@ export interface RecursionExceptionInit extends ExceptionInit {
    */
   recursionLimit?: number;
 }
+//  #endregion
 
+//  #region feature-export-file
 /**
- * A class representing exceptions that occur when an operation has exceeded
- * a maximum number of recursions.
+ * An exception that occurs when an operation exceeds the maximum recursion depth.
  */
 export class RecursionException<
   T extends RecursionExceptionInit = RecursionExceptionInit,
 > extends Exception<T> {
-  /**
-   * The exception code for the {@link RecursionException} class.
-   */
-  public readonly code: number = 4;
+  //  #region static-properties
+  //  #endregion
 
+  //  #region static-methods
+  //  #endregion
+
+  //  #region constructors
   /**
    * Creates a new {@link RecursionException} with the default message,
-   * "An operation exceeded the maximum recursion depth.", and no exception
-   * init data.
+   * "An unexpected error occurred", and no
+   * exception init data.
    */
   constructor();
   /**
@@ -113,4 +131,56 @@ export class RecursionException<
 
     super(message, init);
   }
+  //  #endregion
+
+  //  #region properties
+  /**
+   * The exception code for the {@link RecursionException} class.
+   */
+  public readonly code: number = 4;
+
+  //  #endregion
+
+  //  #region interface-implementations
+  //  #endregion
+
+  //  #region abstract-methods
+  //  #endregion
+
+  //  #region method-overrides
+  //  #endregion
+
+  //  #region native-overrides
+  //  #endregion
+
+  //  #region methods
+  //  #endregion
+
+  //  #region _static-properties
+  //  #endregion
+
+  //  #region _static-methods
+  //  #endregion
+
+  //  #region _properties
+  //  #endregion
+
+  //  #region _method-overrides
+  //  #endregion
+
+  //  #region _methods
+  //  #endregion
+
+  //  #region #static-methods
+  //  #endregion
+
+  //  #region #static-properties
+  //  #endregion
+
+  //  #region #methods
+  //  #endregion
+
+  //  #region #properties
+  //  #endregion
 }
+//  #endregion

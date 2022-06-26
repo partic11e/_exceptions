@@ -1,14 +1,27 @@
 /**
- * Contains the class and types for creating an {@link IndexException}.
+ * Contains the IndexException class and associated types.
  *
- * @copyright 2021-2022 IntegerEleven. All rights reserved. MIT license.
+ * @copyright 2022 integer11. All rights reserved. MIT license.
  */
 
-import { Exception, ExceptionInit } from "./Exception.ts";
-import { ValueException } from "./ValueException.ts";
+//  #region feature-import-remote
+//  #endregion
 
+//  #region feature-import-local
+import { Exception } from "./Exception.ts";
+import { ValueException } from "./ValueException.ts";
+//  #endregion
+
+//  #region type-import-remote
+//  #endregion
+
+//  #region type-import-local
+import type { ExceptionInit } from "./Exception.ts";
+//  #endregion
+
+//  #region constants-local
 /**
- * The default {@link IndexException} message.
+ * The default {@link IndexException} message;
  */
 const DEFAULT_MSG = "An index is outside the bounds of an array.";
 
@@ -90,7 +103,9 @@ const msgFromInit = (init: IndexExceptionInit): string => {
       return DEFAULT_MSG;
   }
 };
+//  #endregion
 
+//  #region type-export-file
 /**
  * An interface describing the `init` properties for the
  * {@link IndexException} class.
@@ -116,23 +131,26 @@ export interface IndexExceptionInit extends ExceptionInit {
 
   valueName?: string;
 }
+//  #endregion
 
+// #region feature-export-file
 /**
- * A class representing exceptions that occur when an index is outside the
- * bounds of an array.
+ * An exception that occurs when an index is outside the bounds of an array.
  */
 export class IndexException<
   T extends IndexExceptionInit = IndexExceptionInit,
 > extends Exception<T> {
-  /**
-   * The exception code for the {@link IndexException} class.
-   */
-  public readonly code: number = 6;
+  //  #region static-properties
+  //  #endregion
 
+  //  #region static-methods
+  //  #endregion
+
+  //  #region constructors
   /**
    * Creates a new {@link IndexException} with the default message,
-   * "An index is outside the bounds of an array.", and no exception
-   * init data.
+   * "An unexpected error occurred", and no
+   * exception init data.
    */
   constructor();
   /**
@@ -163,4 +181,56 @@ export class IndexException<
 
     super(message, init);
   }
+  //  #endregion
+
+  //  #region properties
+  /**
+   * The exception code for the {@link IndexException} class.
+   */
+  public readonly code: number = 6;
+
+  //  #endregion
+
+  //  #region interface-implementations
+  //  #endregion
+
+  //  #region abstract-methods
+  //  #endregion
+
+  //  #region method-overrides
+  //  #endregion
+
+  //  #region native-overrides
+  //  #endregion
+
+  //  #region methods
+  //  #endregion
+
+  //  #region _static-properties
+  //  #endregion
+
+  //  #region _static-methods
+  //  #endregion
+
+  //  #region _properties
+  //  #endregion
+
+  //  #region _method-overrides
+  //  #endregion
+
+  //  #region _methods
+  //  #endregion
+
+  //  #region #static-methods
+  //  #endregion
+
+  //  #region #static-properties
+  //  #endregion
+
+  //  #region #methods
+  //  #endregion
+
+  //  #region #properties
+  //  #endregion
 }
+//  #endregion
