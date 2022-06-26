@@ -1,5 +1,6 @@
 <p align="center">
   <img alt="partic11e logo" height="70" src="https://raw.githubusercontent.com/partic11e/.github/main/profile/p11/logotype.svg" />
+  <strong>exceptions</strong>
 </p>
 
 <p align="center">
