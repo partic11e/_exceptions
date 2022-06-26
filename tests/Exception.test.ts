@@ -146,7 +146,7 @@ class ExceptionTest {
     const urlMsg4 = url4Params.get(esd.message);
     const urlData4 = url4Params.get(esd.data);
     const urlInner4 = url4Params.get(esd.cause);
-
+    console.log(url4);
     assertExists(urlMsg4);
     assertExists(urlData4);
     assertExists(urlInner4);

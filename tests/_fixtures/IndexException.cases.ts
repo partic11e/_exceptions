@@ -4,7 +4,7 @@
  * @copyright 2022 integer11. All rights reserved. MIT license.
  */
 
-import { IndexExceptionInit } from "../../mod.ts";
+import type { IndexExceptionInit } from "../../mod.ts";
 
 export const exCode = 6;
 

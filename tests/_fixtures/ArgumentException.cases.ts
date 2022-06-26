@@ -4,7 +4,7 @@
  * @copyright 2022 integer11. All rights reserved. MIT license.
  */
 
-import { ArgumentExceptionInit } from "../../mod.ts";
+import type { ArgumentExceptionInit } from "../../mod.ts";
 
 export const exCode = 11;
 

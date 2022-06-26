@@ -118,12 +118,12 @@ console.log(ex3.data);    //  { operationName, operationTimeout}
 
 [(to top)](#table-of-contents)
 
-Contributions are welcome! Take a look at our [contributing guidelines](CONTRIBUTING.md) to get
-started.
+Contributions are welcome! Take a look at our
+[contributing guidelines](CONTRIBUTING.md) to get started.
 
 ## License
 
 [(to top)](#table-of-contents)
 
-The MIT License (MIT) 2022 &middot; integer11. Refer to [LICENSE](LICENSE)
-for details.
+The MIT License (MIT) 2022 &middot; integer11. Refer to [LICENSE](LICENSE) for
+details.

@@ -4,7 +4,7 @@
  * @copyright 2022 integer11. All rights reserved. MIT license.
  */
 
-import { NotImplementedExceptionInit } from "../../mod.ts";
+import type { NotImplementedExceptionInit } from "../../mod.ts";
 
 export const exCode = 15;
 

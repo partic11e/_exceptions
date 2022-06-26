@@ -4,7 +4,7 @@
  * @copyright 2022 integer11. All rights reserved. MIT license.
  */
 
-import { KeyExceptionInit } from "../../mod.ts";
+import type { KeyExceptionInit } from "../../mod.ts";
 
 export const exCode = 7;
 

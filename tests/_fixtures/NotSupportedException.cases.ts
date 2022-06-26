@@ -4,7 +4,7 @@
  * @copyright 2022 integer11. All rights reserved. MIT license.
  */
 
-import { NotSupportedExceptionInit } from "../../mod.ts";
+import type { NotSupportedExceptionInit } from "../../mod.ts";
 
 export const exCode = 14;
 

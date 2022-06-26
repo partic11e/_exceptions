@@ -4,11 +4,11 @@
  * @copyright 2022 integer11. All rights reserved. MIT license.
  */
 
-import { DecoratorType } from "../../deps.ts";
+import { DecoratorEnum } from "../../deps.ts";
 
-import { Decorator } from "../../dev_deps.ts";
+import type { DecoratorType } from "../../deps.ts";
 
-import { DecoratorExceptionInit } from "../../mod.ts";
+import type { DecoratorExceptionInit } from "../../mod.ts";
 
 export const exCode = 10;
 
@@ -17,11 +17,11 @@ export const exName = "DecoratorException";
 const decoratorNames = [1, 2, 3, 4, 5].map((n) => `ExampleDecorator${n}`);
 
 const decoratorTypes: DecoratorType[] = [
-  Decorator.Class,
-  Decorator.Method,
-  Decorator.Accessor,
-  Decorator.Property,
-  Decorator.Parameter,
+  DecoratorEnum.Class,
+  DecoratorEnum.Method,
+  DecoratorEnum.Accessor,
+  DecoratorEnum.Property,
+  DecoratorEnum.Parameter,
 ];
 
 const messages = [

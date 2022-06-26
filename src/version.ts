@@ -8,5 +8,5 @@
 /**
  * The version of the partic11e library exception module.
  */
-export const VERSION = "1.0.0-alpha.0";
+export const VERSION = "1.0.0-alpha.2";
 //  #endregion

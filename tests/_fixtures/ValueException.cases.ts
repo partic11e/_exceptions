@@ -4,7 +4,7 @@
  * @copyright 2022 integer11. All rights reserved. MIT license.
  */
 
-import { ValueExceptionInit } from "../../mod.ts";
+import type { ValueExceptionInit } from "../../mod.ts";
 
 export const exCode = 5;
 

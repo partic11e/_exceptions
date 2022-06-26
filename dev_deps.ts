@@ -8,14 +8,6 @@
 //  #endregion
 
 //  #region export-constants
-export {
-  CodeBase,
-  Decorator,
-  Formatter,
-  Operation,
-  Parser,
-  Resource,
-} from "https://denopkg.com/partic11e/common@dev/mod.ts";
 //  #endregion
 
 //  #region export-features

@@ -4,7 +4,7 @@
  * @copyright 2022 integer11. All rights reserved. MIT license.
  */
 
-import { ParseExceptionInit } from "../../mod.ts";
+import type { ParseExceptionInit } from "../../mod.ts";
 
 export const exCode = 18;
 
